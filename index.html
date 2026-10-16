@@ -46,7 +46,7 @@ h4{font-size:1rem}
 p{margin:0}
 a{color:var(--accent)}
 .wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-section{padding-block:72px}
+section{padding-block:72px;scroll-margin-top:84px}
 section.tight{padding-block:40px}
 .band{background:var(--bg-2)}
 .eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;font-family:var(--display)}
@@ -212,6 +212,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
 .seg button{border:none;background:transparent;color:var(--fg-2);padding:9px 16px;font-family:var(--display);font-weight:600;cursor:pointer;font-size:.9rem}
 .seg button.on{background:var(--accent);color:#fff}
+.seg button[disabled]{opacity:.4;cursor:not-allowed}
 .prov{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
 .pcard .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
@@ -1459,6 +1460,8 @@ function buildProgram(goal,days,place){
 }
 function renderTrainer(){
   const t=T[lang]; const g=GOALS[tgoal];
+  if(tgoal==="senior"&&tdays===4) tdays=3;
+  document.querySelector('#daysSeg button[data-v="4"]').disabled = (tgoal==="senior");
   [["goalSeg",tgoal],["daysSeg",String(tdays)],["placeSeg",tplace]].forEach(([id,v])=>document.querySelectorAll("#"+id+" button").forEach(b=>b.classList.toggle("on",b.dataset.v===v)));
   const box=document.getElementById("days"); box.innerHTML="";
   buildProgram(tgoal,tdays,tplace).forEach(([kind,list,dn],i)=>{
@@ -1488,7 +1491,7 @@ function renderExLib(){
   Object.keys(EX).forEach(k=>{ const e=EX[k]; const it=document.createElement("div"); it.className="it"; it.innerHTML=e.s; const n=document.createElement("strong"); n.textContent=e[lang]; const m=document.createElement("span"); m.className="m"; m.textContent=e.m[lang]; it.append(n,m); lib.appendChild(it); });
 }
 document.getElementById("goalSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tgoal=b.dataset.v; if(tgoal==="senior"&&tdays===4) tdays=3; renderTrainer(); });
-document.getElementById("daysSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tdays=Number(b.dataset.v); renderTrainer(); });
+document.getElementById("daysSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b||b.disabled) return; tdays=Number(b.dataset.v); renderTrainer(); });
 document.getElementById("placeSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tplace=b.dataset.v; renderTrainer(); });
 /* InBody upload (demo) */
 (function(){
