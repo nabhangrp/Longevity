@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Longevity — منصة ذكاء اصطناعي لإطالة العمر الصحي، مبنية في الإمارات للعالم. افهم فحوصاتك، مدرب شخصي افتراضي، برنامج انقطاع الطمث، ودليل عيادات معتمدة.">
+<meta property="og:title" content="Longevity">
+<meta property="og:description" content="افهم فحوصاتك، وعِش أطول وأنت بصحتك. Understand your lab results. Live longer, in good health.">
+<meta property="og:type" content="website">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Longevity</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: one calm column, sand-and-sea palette; bilingual AR/EN with RTL/LTR switch; three views routed by hash (home / report / providers). */
+:root{
+  --bg:#F7F6F1; --bg-2:#EEEBE2; --card:#FFFFFF;
+  --fg:#15302D; --fg-2:#4E635F; --line:#D9D4C7;
+  --accent:#176B5C; --accent-2:#0F4F44; --accent-soft:#E3EFEB;
+  --gold:#B88A3C; --gold-soft:#F3E9D3;
+  --ok:#2E7D57; --ok-soft:#E3F1E8; --warn:#B9731A; --warn-soft:#FBEBD2; --bad:#B5443A; --bad-soft:#F8E1DE;
+  --display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Readex Pro",system-ui,-apple-system,Segoe UI,sans-serif;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1D1B;--bg-2:#132725;--card:#17302D;--fg:#EDEAE1;--fg-2:#A9B5B1;--line:#2A423E;
+  --accent:#4FB399;--accent-2:#7ACDB7;--accent-soft:#1B3A35;--gold:#D9B06A;--gold-soft:#2C2A1E;
+  --ok:#6BC79A;--ok-soft:#1C3A2C;--warn:#E0A24E;--warn-soft:#3A2E17;--bad:#E07A70;--bad-soft:#3E201D;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1D1B;--bg-2:#132725;--card:#17302D;--fg:#EDEAE1;--fg-2:#A9B5B1;--line:#2A423E;
+  --accent:#4FB399;--accent-2:#7ACDB7;--accent-soft:#1B3A35;--gold:#D9B06A;--gold-soft:#2C2A1E;
+  --ok:#6BC79A;--ok-soft:#1C3A2C;--warn:#E0A24E;--warn-soft:#3A2E17;--bad:#E07A70;--bad-soft:#3E201D;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.7;margin:0}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0;font-weight:600}
+h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:700}
+h2{font-size:clamp(1.5rem,3.4vw,2.2rem)}
+h3{font-size:1.15rem}
+h4{font-size:1rem}
+p{margin:0}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+section.tight{padding-block:40px}
+.band{background:var(--bg-2)}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;font-family:var(--display)}
+[dir="rtl"] .eyebrow{letter-spacing:0;font-size:.9rem}
+.lead{color:var(--fg-2);font-size:1.12rem;max-width:62ch}
+.stack{display:grid;gap:18px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid>*{min-width:0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-family:var(--display);text-decoration:none;border:1.5px solid var(--accent);cursor:pointer;font-size:1rem;transition:transform .15s;background:transparent;color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.small{padding:8px 16px;font-size:.92rem}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
+.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.note{font-size:.88rem;color:var(--fg-2)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:600;border:1px solid var(--line);background:var(--bg-2);color:var(--fg-2);white-space:nowrap}
+.chip.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.chip.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.chip.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.chip.acc{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.chip.gold{background:var(--gold-soft);color:var(--gold);border-color:transparent}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--accent) 0 72%,var(--gold) 72% 100%);position:relative}
+.logo .mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg)}
+.navlinks{display:flex;gap:6px;align-items:center;font-size:.95rem;flex-wrap:wrap;justify-content:flex-end}
+.navlinks a{color:var(--fg-2);text-decoration:none;padding:6px 10px;border-radius:999px}
+.navlinks a:hover{color:var(--fg)}
+.navlinks a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+@media (max-width:760px){.navlinks .hide-m{display:none}}
+.lang{border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 14px;font-family:var(--display);font-weight:600;cursor:pointer}
+.demo-bar{background:var(--gold-soft);color:var(--fg);font-size:.85rem;text-align:center;padding:6px 12px;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{padding-block:72px 56px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:36px;grid-template-columns:1.2fr .8fr;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero-art{aspect-ratio:1/1;max-width:100%;width:100%;max-height:380px}
+.badges{display:flex;flex-wrap:wrap;gap:10px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--fg);font-size:.88rem;border:1px solid var(--line)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.card p{color:var(--fg-2);font-size:.98rem}
+.card.link{text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+.card.link:hover{transform:translateY(-2px);border-color:var(--accent)}
+.card.link h3{color:var(--accent)}
+.steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.step{padding:22px;border-top:3px solid var(--line);display:grid;gap:8px}
+.step.active{border-top-color:var(--accent)}
+.step .k{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* stats strip */
+.stats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;display:grid;gap:4px;min-width:0}
+.stat .v{font-family:var(--display);font-weight:700;font-size:1.9rem;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.1}
+.stat .l{font-size:.92rem;color:var(--fg-2)}
+.stat .s{font-size:.78rem;color:var(--fg-2);opacity:.8}
+
+/* roadmap */
+.roadmap{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));position:relative}
+.rm{padding:18px 16px 0;border-top:3px solid var(--accent);display:grid;gap:6px;min-width:0}
+.rm.future{border-top-color:var(--line)}
+.rm .m{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.85rem;font-variant-numeric:tabular-nums}
+.rm.future .m{color:var(--fg-2)}
+
+/* plans */
+.plans{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:12px;align-content:start;min-width:0}
+.plan.featured{border-color:var(--accent);box-shadow:0 10px 30px -18px var(--accent)}
+.price{font-family:var(--display);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums}
+.price small{font-size:.95rem;color:var(--fg-2);font-weight:400}
+.plan ul{margin:0;padding-inline-start:20px;color:var(--fg-2);font-size:.96rem;display:grid;gap:6px}
+
+/* two-col */
+.split{display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:start}
+.split.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.split>*{min-width:0}
+.list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.list li{display:flex;gap:12px;align-items:flex-start}
+.list li::before{content:"";flex:0 0 10px;height:10px;margin-top:11px;border-radius:50%;background:var(--gold)}
+
+/* founder */
+.founder{display:grid;gap:28px;grid-template-columns:140px 1fr;align-items:center}
+@media (max-width:600px){.founder{grid-template-columns:1fr}}
+.avatar{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold) 0,var(--accent) 60%,var(--accent-2) 100%);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;font-size:2.2rem}
+
+/* form */
+form{display:grid;gap:14px}
+.row{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:.92rem;color:var(--fg-2)}
+input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);font:inherit;font-size:1rem}
+.status{padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--line);font-size:.95rem}
+.status.ok{border-color:var(--ok)}
+.copyline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+code.sel{user-select:all;background:var(--card);border:1px solid var(--line);padding:4px 10px;border-radius:8px;font-family:var(--body)}
+
+/* owner panel */
+.owner{border:1.5px dashed var(--gold);border-radius:var(--radius);padding:20px;display:grid;gap:12px}
+.owner table{width:100%;border-collapse:collapse;font-size:.92rem}
+.owner th,.owner td{text-align:start;padding:8px 6px;border-bottom:1px solid var(--line)}
+.tablewrap{overflow-x:auto}
+
+/* ---------- report view ---------- */
+.rep-head{display:grid;gap:20px;grid-template-columns:1fr auto;align-items:end}
+@media (max-width:700px){.rep-head{grid-template-columns:1fr}}
+.profile{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.profile .av{width:52px;height:52px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.2rem}
+.profile .meta{font-size:.9rem;color:var(--fg-2)}
+.rep-grid{display:grid;gap:20px;grid-template-columns:320px 1fr;align-items:start}
+@media (max-width:860px){.rep-grid{grid-template-columns:1fr}}
+.rep-grid>*{min-width:0}
+.score{display:grid;gap:12px;justify-items:center;text-align:center}
+.score svg{width:100%;max-width:240px;height:auto}
+.score .big{font-family:var(--display);font-weight:700;font-size:1.05rem}
+.kv{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.kv .stat{padding:14px 16px}
+.kv .stat .v{font-size:1.5rem}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-family:var(--body);font-size:12px;fill:var(--fg-2)}
+.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .ar{fill:var(--accent);opacity:.08}
+.chart .dot{fill:var(--accent);stroke:var(--card);stroke-width:2}
+.chart .lbl{fill:var(--fg);font-weight:600;font-family:var(--display)}
+.markers{width:100%;border-collapse:collapse;font-size:.94rem}
+.markers th{text-align:start;font-size:.8rem;color:var(--fg-2);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.markers td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.markers td.n{font-weight:600;white-space:nowrap}
+.markers td.v{font-variant-numeric:tabular-nums;white-space:nowrap}
+.markers td.x{color:var(--fg-2);font-size:.9rem;min-width:220px}
+.markers tr:last-child td{border-bottom:none}
+.doc-banner{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius);background:var(--warn-soft);border:1px solid var(--warn)}
+.doc-banner .ic{flex:0 0 36px;height:36px;border-radius:50%;background:var(--warn);color:#fff;display:grid;place-items:center;font-weight:700;font-family:var(--display)}
+.cuisine{display:flex;gap:8px;flex-wrap:wrap}
+.cuisine button{border:1.5px solid var(--line);background:var(--card);color:var(--fg-2);border-radius:999px;padding:7px 14px;font-family:var(--display);font-weight:600;cursor:pointer;font-size:.9rem}
+.cuisine button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.meals{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.meal{background:var(--bg-2);border-radius:12px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.meal .t{font-size:.8rem;color:var(--gold);font-weight:600;font-family:var(--display)}
+.meal .d{font-size:.95rem}
+.meal .w{font-size:.82rem;color:var(--fg-2)}
+.week{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.week .card{padding:16px 18px;gap:6px}
+.week .card h4{color:var(--accent)}
+.week .card p{font-size:.92rem}
+.next{display:grid;gap:10px}
+.next div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.next div:last-child{border-bottom:none}
+.next span:last-child{color:var(--fg-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- providers view ---------- */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.filters select,.filters input{width:auto;min-width:160px;padding:10px 12px}
+.filters input{flex:1 1 200px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{border:none;background:transparent;color:var(--fg-2);padding:9px 16px;font-family:var(--display);font-weight:600;cursor:pointer;font-size:.9rem}
+.seg button.on{background:var(--accent);color:#fff}
+.prov{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.pcard .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.pcard h3{font-size:1.02rem}
+.pcard .loc{font-size:.88rem;color:var(--fg-2)}
+.pcard .tags{display:flex;gap:6px;flex-wrap:wrap}
+.pcard .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap}
+.count{font-size:.9rem;color:var(--fg-2)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85rem;color:var(--fg-2)}
+
+/* chat */
+.chat-fab{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(20px + env(safe-area-inset-right,0px));z-index:30;border:none;background:var(--accent);color:#fff;border-radius:999px;padding:14px 20px;font-family:var(--display);font-weight:600;box-shadow:0 12px 30px -10px var(--accent-2);cursor:pointer;font-size:1rem}
+[dir="rtl"] .chat-fab{inset-inline-end:calc(20px + env(safe-area-inset-left,0px))}
+.chat{position:fixed;bottom:calc(80px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(20px + env(safe-area-inset-right,0px));width:min(380px,calc(100vw - 32px));max-height:min(560px,70vh);z-index:31;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.5);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden}
+[dir="rtl"] .chat{inset-inline-end:calc(20px + env(safe-area-inset-left,0px))}
+.chat-h{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-weight:600}
+.chat-h button{background:none;border:none;color:var(--fg-2);font-size:1.3rem;cursor:pointer}
+.chat-log{overflow-y:auto;padding:14px;display:grid;gap:10px;align-content:start;min-height:160px}
+.msg{padding:10px 14px;border-radius:14px;max-width:88%;font-size:.95rem;white-space:pre-wrap}
+.msg.u{background:var(--accent);color:#fff;justify-self:end}
+.msg.a{background:var(--bg-2);justify-self:start}
+.chat-in{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
+.chat-in input{flex:1;min-width:0}
+.chat-in button{border:none;background:var(--accent);color:#fff;border-radius:10px;padding:0 16px;font-weight:600;cursor:pointer}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.chips button{border:1px solid var(--line);background:var(--card);color:var(--fg-2);border-radius:999px;padding:4px 10px;font-size:.82rem;cursor:pointer;font-family:inherit}
+
+/* ---------- InBody ---------- */
+.inbody{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+@media (max-width:860px){.inbody{grid-template-columns:1fr}}
+.inbody>*{min-width:0}
+.drop{border:2px dashed var(--line);border-radius:var(--radius);padding:24px;text-align:center;display:grid;gap:6px;justify-items:center;background:var(--bg-2);cursor:pointer}
+.drop.on{border-color:var(--accent);background:var(--accent-soft)}
+.drop input{display:none}
+.drop .ic{width:44px;height:44px;border-radius:50%;background:var(--card);color:var(--accent);display:grid;place-items:center;font-size:1.4rem;font-weight:700;font-family:var(--display);border:1px solid var(--line)}
+.comp{display:grid;gap:12px}
+.comp .r{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;font-size:.94rem}
+.comp .r .x{grid-column:1/-1;font-size:.84rem;color:var(--fg-2)}
+.comp .bar{grid-column:1/-1;height:8px;border-radius:999px;background:var(--bg-2);position:relative;overflow:hidden}
+.comp .bar i{position:absolute;inset-inline-start:0;top:0;bottom:0;border-radius:999px;background:var(--accent)}
+.comp .bar i.warn{background:var(--warn)}
+.comp .bar i.bad{background:var(--bad)}
+.comp .v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.segbody{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center;font-size:.78rem;color:var(--fg-2)}
+.segbody div{background:var(--bg-2);border-radius:10px;padding:8px 4px}
+.segbody b{display:block;font-size:1rem;color:var(--fg);font-variant-numeric:tabular-nums;font-family:var(--display)}
+.segbody b.low{color:var(--warn)}
+/* ---------- trainer ---------- */
+.tr-controls{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.tr-controls .seg{display:flex;width:100%}
+.tr-controls .seg button{flex:1;padding:9px 6px;font-size:.86rem}
+.days{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0;display:grid;align-content:start}
+.day .dh{padding:12px 18px;background:var(--accent-soft);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.day .dh h3{color:var(--accent);font-size:1rem}
+.day .dh span{font-size:.82rem;color:var(--fg-2)}
+.ex{display:grid;grid-template-columns:68px 1fr;gap:12px;padding:12px 18px;border-top:1px solid var(--line);align-items:center}
+.ex .pic{width:68px;height:68px;border-radius:12px;background:var(--bg-2);color:var(--fg);display:grid;place-items:center}
+.ex .pic svg{width:60px;height:60px}
+.ex .nm{font-weight:600;font-size:.95rem}
+.ex .sr{font-size:.86rem;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.ex .cue{font-size:.8rem;color:var(--fg-2)}
+.day .ft{padding:10px 18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--fg-2);background:var(--bg-2)}
+.phases{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.phase{padding:18px 16px 0;border-top:3px solid var(--accent);display:grid;gap:6px;min-width:0}
+.phase .w{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.85rem}
+.exlib{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.exlib .it{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:4px;justify-items:center;text-align:center;font-size:.85rem;min-width:0}
+.exlib .it svg{width:76px;height:76px;color:var(--fg)}
+.exlib .it .m{font-size:.75rem;color:var(--fg-2)}
+.rules{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.rules .card{padding:16px 18px;gap:6px}
+.rules .card h4{color:var(--accent)}
+.rules .card p{font-size:.9rem}
+/* ---------- women ---------- */
+.sym{display:flex;gap:8px;flex-wrap:wrap}
+.sym span{padding:7px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:.9rem}
+.snap{display:grid;gap:20px;grid-template-columns:1fr 1fr;align-items:start}
+@media (max-width:860px){.snap{grid-template-columns:1fr}}
+.snap>*{min-width:0}
+.mini{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.mini .stat{padding:12px 14px}
+.mini .stat .v{font-size:1.35rem}
+.mini .stat .v small{font-size:.8rem;color:var(--fg-2);font-weight:400}
+footer{padding-block:40px;border-top:1px solid var(--line);color:var(--fg-2);font-size:.9rem}
+footer .wrap{display:grid;gap:12px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer nav a{text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="demo-bar" data-i="demo_bar"></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home"><span class="mark"></span><span>Longevity</span></a>
+    <nav class="navlinks">
+      <a href="#home" data-view="home" data-i="nav_home"></a>
+      <a href="#report" data-view="report" data-i="nav_report"></a>
+      <a href="#providers" data-view="providers" data-i="nav_providers"></a>
+      <a href="#trainer" data-view="trainer" data-i="nav_trainer"></a>
+      <a href="#women" data-view="women" data-i="nav_women"></a>
+      <a class="hide-m" href="#plans" data-i="nav_plans"></a>
+      <a href="#join" class="btn primary small" data-i="nav_join"></a>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HOME ===================== -->
+<main id="view-home">
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="stack">
+      <span class="eyebrow" data-i="hero_eyebrow"></span>
+      <h1 data-i="hero_h1"></h1>
+      <p class="lead" data-i="hero_lead"></p>
+      <div class="cta-row">
+        <a class="btn primary" href="#join" data-i="hero_cta"></a>
+        <a class="btn" href="#report" data-i="hero_cta2"></a>
+      </div>
+      <div class="badges">
+        <span class="badge" data-i="badge1"></span>
+        <span class="badge" data-i="badge2"></span>
+        <span class="badge" data-i="badge3"></span>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="Health score ring">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#176B5C"/><stop offset="1" stop-color="#B88A3C"/></linearGradient></defs>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="var(--line)" stroke-width="22"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="url(#g1)" stroke-width="22" stroke-linecap="round" stroke-dasharray="942" stroke-dashoffset="245" transform="rotate(-90 200 200)"/>
+      <text x="200" y="185" text-anchor="middle" font-family="Readex Pro,sans-serif" font-size="72" font-weight="700" fill="var(--fg)">74</text>
+      <text x="200" y="222" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="18" fill="var(--fg-2)" data-i="art_score"></text>
+      <text x="200" y="262" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="15" fill="var(--accent)" data-i="art_bio"></text>
+      <g font-family="IBM Plex Sans Arabic,sans-serif" font-size="13" fill="var(--fg-2)">
+        <rect x="40" y="330" width="320" height="44" rx="12" fill="var(--card)" stroke="var(--line)"/>
+        <text x="200" y="357" text-anchor="middle" data-i="art_example"></text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap grid">
+    <a class="card link" href="#report"><span class="eyebrow" data-i="qk1_e"></span><h3 data-i="qk1_h"></h3><p data-i="qk1_p"></p></a>
+    <a class="card link" href="#providers"><span class="eyebrow" data-i="qk2_e"></span><h3 data-i="qk2_h"></h3><p data-i="qk2_p"></p></a>
+    <a class="card link" href="#trainer"><span class="eyebrow" data-i="qk4_e"></span><h3 data-i="qk4_h"></h3><p data-i="qk4_p"></p></a>
+    <a class="card link" href="#women"><span class="eyebrow" data-i="qk5_e"></span><h3 data-i="qk5_h"></h3><p data-i="qk5_p"></p></a>
+    <a class="card link" href="#partners"><span class="eyebrow" data-i="qk3_e"></span><h3 data-i="qk3_h"></h3><p data-i="qk3_p"></p></a>
+  </div>
+</section>
+
+<section class="band" id="problem">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="prob_eyebrow"></span>
+    <h2 data-i="prob_h2"></h2>
+    <div class="grid">
+      <div class="card"><h3 data-i="prob1_h"></h3><p data-i="prob1_p"></p></div>
+      <div class="card"><h3 data-i="prob2_h"></h3><p data-i="prob2_p"></p></div>
+      <div class="card"><h3 data-i="prob3_h"></h3><p data-i="prob3_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="what_eyebrow"></span>
+    <h2 data-i="what_h2"></h2>
+    <p class="lead" data-i="what_lead"></p>
+    <div class="grid">
+      <div class="card"><h3 data-i="f1_h"></h3><p data-i="f1_p"></p></div>
+      <div class="card"><h3 data-i="f2_h"></h3><p data-i="f2_p"></p></div>
+      <div class="card"><h3 data-i="f3_h"></h3><p data-i="f3_p"></p></div>
+      <div class="card"><h3 data-i="f4_h"></h3><p data-i="f4_p"></p></div>
+      <div class="card"><h3 data-i="f5_h"></h3><p data-i="f5_p"></p></div>
+      <div class="card"><h3 data-i="f6_h"></h3><p data-i="f6_p"></p></div>
+      <div class="card"><h3 data-i="f7_h"></h3><p data-i="f7_p"></p></div>
+      <div class="card"><h3 data-i="f8_h"></h3><p data-i="f8_p"></p></div>
+    </div>
+    <p class="note" data-i="what_not"></p>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="how_eyebrow"></span>
+    <h2 data-i="how_h2"></h2>
+    <div class="steps">
+      <div class="step active"><span class="k">1</span><h3 data-i="s1_h"></h3><p class="note" data-i="s1_p"></p></div>
+      <div class="step"><span class="k">2</span><h3 data-i="s2_h"></h3><p class="note" data-i="s2_p"></p></div>
+      <div class="step"><span class="k">3</span><h3 data-i="s3_h"></h3><p class="note" data-i="s3_p"></p></div>
+      <div class="step"><span class="k">4</span><h3 data-i="s4_h"></h3><p class="note" data-i="s4_p"></p></div>
+    </div>
+    <div><a class="btn" href="#report" data-i="how_cta"></a></div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="plans_eyebrow"></span>
+    <h2 data-i="plans_h2"></h2>
+    <p class="lead" data-i="plans_lead"></p>
+    <div class="plans">
+      <div class="plan">
+        <h3 data-i="p1_h"></h3>
+        <div class="price">0 <small data-i="aed_m"></small></div>
+        <ul><li data-i="p1_1"></li><li data-i="p1_2"></li><li data-i="p1_3"></li></ul>
+      </div>
+      <div class="plan featured">
+        <h3 data-i="p2_h"></h3>
+        <div class="price">79 <small data-i="aed_m"></small></div>
+        <p class="note" data-i="p2_y"></p>
+        <ul><li data-i="p2_1"></li><li data-i="p2_2"></li><li data-i="p2_5"></li><li data-i="p2_3"></li><li data-i="p2_4"></li><li data-i="p2_6"></li></ul>
+      </div>
+      <div class="plan">
+        <h3 data-i="p3_h"></h3>
+        <div class="price">1,499 <small data-i="aed_y"></small></div>
+        <ul><li data-i="p3_1"></li><li data-i="p3_2"></li></ul>
+      </div>
+    </div>
+    <p class="note" data-i="plans_note"></p>
+  </div>
+</section>
+
+<section class="band" id="partners">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="part_eyebrow"></span>
+    <h2 data-i="part_h2"></h2>
+    <div class="split three">
+      <div class="card">
+        <h3 data-i="pa_h"></h3>
+        <ul class="list"><li data-i="pa_1"></li><li data-i="pa_2"></li><li data-i="pa_3"></li></ul>
+        <a class="btn" href="#join" data-i="pa_cta"></a>
+      </div>
+      <div class="card">
+        <h3 data-i="pb_h"></h3>
+        <ul class="list"><li data-i="pb_1"></li><li data-i="pb_2"></li><li data-i="pb_3"></li></ul>
+        <a class="btn" href="#join" data-i="pb_cta"></a>
+      </div>
+      <div class="card">
+        <h3 data-i="pc_h"></h3>
+        <ul class="list"><li data-i="pc_1"></li><li data-i="pc_2"></li><li data-i="pc_3"></li></ul>
+        <a class="btn" href="#join" data-i="pc_cta"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="why_eyebrow"></span>
+    <h2 data-i="why_h2"></h2>
+    <div class="stats">
+      <div class="stat"><span class="v">$32B</span><span class="l" data-i="st1_l"></span><span class="s" data-i="st1_s"></span></div>
+      <div class="stat"><span class="v">$69B</span><span class="l" data-i="st2_l"></span><span class="s" data-i="st2_s"></span></div>
+      <div class="stat"><span class="v">10–11</span><span class="l" data-i="st3_l"></span><span class="s" data-i="st3_s"></span></div>
+      <div class="stat"><span class="v">2026</span><span class="l" data-i="st4_l"></span><span class="s" data-i="st4_s"></span></div>
+    </div>
+    <div class="split">
+      <ul class="list"><li data-i="why_1"></li><li data-i="why_2"></li><li data-i="why_3"></li><li data-i="why_4"></li></ul>
+      <div class="card">
+        <h3 data-i="trust_h"></h3>
+        <p data-i="trust_p"></p>
+        <p data-i="trust_p2"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="roadmap">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="rm_eyebrow"></span>
+    <h2 data-i="rm_h2"></h2>
+    <div class="roadmap">
+      <div class="rm"><span class="m" data-i="rm1_m"></span><h4 data-i="rm1_h"></h4><p class="note" data-i="rm1_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm2_m"></span><h4 data-i="rm2_h"></h4><p class="note" data-i="rm2_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm3_m"></span><h4 data-i="rm3_h"></h4><p class="note" data-i="rm3_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm4_m"></span><h4 data-i="rm4_h"></h4><p class="note" data-i="rm4_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm5_m"></span><h4 data-i="rm5_h"></h4><p class="note" data-i="rm5_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap founder">
+    <div class="avatar">N</div>
+    <div class="stack">
+      <span class="eyebrow" data-i="fo_eyebrow"></span>
+      <h2 data-i="fo_h2"></h2>
+      <p class="lead" data-i="fo_p"></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="join">
+  <div class="wrap split">
+    <div class="stack">
+      <span class="eyebrow" data-i="join_eyebrow"></span>
+      <h2 data-i="join_h2"></h2>
+      <p class="lead" data-i="join_lead"></p>
+      <ul class="list"><li data-i="join_1"></li><li data-i="join_2"></li><li data-i="join_3"></li></ul>
+    </div>
+    <form id="wl" class="card" novalidate>
+      <label><span data-i="l_name"></span><input id="name" name="name" required autocomplete="name"></label>
+      <div class="row">
+        <label><span data-i="l_email"></span><input id="email" name="email" type="email" autocomplete="email"></label>
+        <label><span data-i="l_phone"></span><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971"></label>
+      </div>
+      <label><span data-i="l_type"></span>
+        <select id="type" name="type">
+          <option value="individual" data-i="t_ind"></option>
+          <option value="clinic" data-i="t_clinic"></option>
+          <option value="company" data-i="t_company"></option>
+          <option value="club" data-i="t_club"></option>
+          <option value="women" data-i="t_women"></option>
+          <option value="investor" data-i="t_inv"></option>
+        </select>
+      </label>
+      <label><span data-i="l_city"></span><input id="city" name="city" autocomplete="address-level2"></label>
+      <button class="btn primary" type="submit" id="submitBtn" data-i="l_submit"></button>
+      <div class="status" id="status" hidden></div>
+      <p class="note" data-i="l_privacy"></p>
+    </form>
+  </div>
+  <div class="wrap" style="margin-top:28px">
+    <div class="owner" id="ownerPanel" hidden>
+      <strong data-i="own_h"></strong>
+      <div class="note" id="ownerCount"></div>
+      <div class="tablewrap"><table id="ownerTable"></table></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== REPORT ===================== -->
+<main id="view-report" hidden>
+<section class="tight band">
+  <div class="wrap rep-head">
+    <div class="stack" style="gap:10px">
+      <span class="eyebrow" data-i="rp_eyebrow"></span>
+      <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)" data-i="rp_h1"></h1>
+      <p class="lead" data-i="rp_lead"></p>
+    </div>
+    <div class="profile card" style="padding:14px 18px">
+      <div class="av">A</div>
+      <div><strong data-i="rp_name"></strong><div class="meta" data-i="rp_meta"></div></div>
+      <span class="chip gold" data-i="rp_demo"></span>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap rep-grid">
+    <div class="card score">
+      <span class="eyebrow" data-i="rp_score_e"></span>
+      <svg viewBox="0 0 200 200" role="img" aria-label="Health score 74 of 100">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--line)" stroke-width="14"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="502.6" stroke-dashoffset="130.7" transform="rotate(-90 100 100)"/>
+        <text x="100" y="96" text-anchor="middle" font-family="Readex Pro,sans-serif" font-size="52" font-weight="700" fill="var(--fg)">74</text>
+        <text x="100" y="124" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="13" fill="var(--fg-2)" data-i="rp_of100"></text>
+      </svg>
+      <div class="big" data-i="rp_score_msg"></div>
+      <div class="kv" style="width:100%">
+        <div class="stat"><span class="v">41</span><span class="l" data-i="rp_bio"></span></div>
+        <div class="stat"><span class="v">42</span><span class="l" data-i="rp_chrono"></span></div>
+      </div>
+      <p class="note" data-i="rp_score_note"></p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow" data-i="rp_trend_e"></span>
+      <h3 data-i="rp_trend_h"></h3>
+      <svg class="chart" viewBox="0 0 640 230" role="img" aria-label="Health score over six months, 61 to 74">
+        <g class="grid">
+          <line x1="40" x2="620" y1="30" y2="30"/><line x1="40" x2="620" y1="80" y2="80"/><line x1="40" x2="620" y1="130" y2="130"/><line x1="40" x2="620" y1="180" y2="180"/>
+        </g>
+        <text x="30" y="34" text-anchor="end">80</text><text x="30" y="84" text-anchor="end">70</text><text x="30" y="134" text-anchor="end">60</text><text x="30" y="184" text-anchor="end">50</text>
+        <path class="ar" d="M70,125 L178,120 L286,105 L394,95 L502,70 L610,60 L610,180 L70,180 Z"/>
+        <path class="ln" d="M70,125 L178,120 L286,105 L394,95 L502,70 L610,60"/>
+        <circle class="dot" cx="70" cy="125" r="5"/><circle class="dot" cx="178" cy="120" r="5"/><circle class="dot" cx="286" cy="105" r="5"/><circle class="dot" cx="394" cy="95" r="5"/><circle class="dot" cx="502" cy="70" r="5"/><circle class="dot" cx="610" cy="60" r="6"/>
+        <text class="lbl" x="70" y="148" text-anchor="middle">61</text>
+        <text class="lbl" x="610" y="48" text-anchor="middle">74</text>
+        <text x="70" y="208" text-anchor="middle" data-i="m1"></text><text x="178" y="208" text-anchor="middle" data-i="m2"></text><text x="286" y="208" text-anchor="middle" data-i="m3"></text><text x="394" y="208" text-anchor="middle" data-i="m4"></text><text x="502" y="208" text-anchor="middle" data-i="m5"></text><text x="610" y="208" text-anchor="middle" data-i="m6"></text>
+      </svg>
+      <p class="note" data-i="rp_trend_note"></p>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap stack">
+    <div class="doc-banner">
+      <div class="ic">!</div>
+      <div><strong data-i="rp_doc_h"></strong><p class="note" data-i="rp_doc_p"></p></div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div style="padding:18px 20px 6px"><span class="eyebrow" data-i="rp_mk_e"></span><h3 data-i="rp_mk_h"></h3></div>
+      <div class="tablewrap">
+        <table class="markers" id="markers"></table>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="chip ok" data-i="lg_opt"></span></span>
+      <span><span class="chip" data-i="lg_norm"></span></span>
+      <span><span class="chip warn" data-i="lg_att"></span></span>
+      <span><span class="chip bad" data-i="lg_doc"></span></span>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="inbody">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="ib_e"></span>
+    <h2 data-i="ib_h"></h2>
+    <p class="lead" data-i="ib_lead"></p>
+    <div class="inbody">
+      <div class="stack">
+        <label class="drop" id="ibDrop">
+          <input type="file" id="ibFile" accept="image/*,.pdf">
+          <span class="ic">↑</span>
+          <strong data-i="ib_drop"></strong>
+          <span class="note" data-i="ib_drop_s"></span>
+        </label>
+        <div class="status ok" id="ibStatus" hidden></div>
+        <div class="card">
+          <div class="profile" style="padding:0">
+            <div class="av">A</div>
+            <div><strong data-i="rp_name"></strong><div class="meta" data-i="ib_date"></div></div>
+          </div>
+          <div class="kv">
+            <div class="stat"><span class="v">72</span><span class="l" data-i="ib_score"></span></div>
+            <div class="stat"><span class="v">86.4 <small style="font-size:.9rem">kg</small></span><span class="l" data-i="ib_w"></span></div>
+          </div>
+          <h4 data-i="ib_seg"></h4>
+          <div class="segbody">
+            <div><span data-i="seg_ra"></span><b>98%</b></div>
+            <div><span data-i="seg_la"></span><b>96%</b></div>
+            <div><span data-i="seg_tr"></span><b>100%</b></div>
+            <div><span data-i="seg_rl"></span><b class="low">94%</b></div>
+            <div><span data-i="seg_ll"></span><b class="low">92%</b></div>
+          </div>
+          <p class="note" data-i="ib_seg_x"></p>
+        </div>
+      </div>
+      <div class="card comp">
+        <div class="r"><span data-i="ib_smm"></span><span class="v">34.2 kg</span><div class="bar"><i class="warn" style="width:52%"></i></div><span class="x" data-i="ib_smm_x"></span></div>
+        <div class="r"><span data-i="ib_fat"></span><span class="v">28.7 %</span><div class="bar"><i class="bad" style="width:82%"></i></div><span class="x" data-i="ib_fat_x"></span></div>
+        <div class="r"><span data-i="ib_vfa"></span><span class="v">12</span><div class="bar"><i class="bad" style="width:70%"></i></div><span class="x" data-i="ib_vfa_x"></span></div>
+        <div class="r"><span data-i="ib_whr"></span><span class="v">0.93</span><div class="bar"><i class="warn" style="width:64%"></i></div><span class="x" data-i="ib_whr_x"></span></div>
+        <div class="r"><span data-i="ib_bmr"></span><span class="v">1,790 kcal</span><div class="bar"><i style="width:58%"></i></div><span class="x" data-i="ib_bmr_x"></span></div>
+        <div class="doc-banner" style="background:var(--accent-soft);border-color:var(--accent)"><div class="ic" style="background:var(--accent)">✓</div><div><strong data-i="ib_action_h"></strong><p class="note" data-i="ib_action"></p></div></div>
+        <div><a class="btn primary" href="#trainer" data-i="ib_cta"></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="rp_plan_e"></span>
+    <h2 data-i="rp_plan_h"></h2>
+    <p class="lead" data-i="rp_plan_lead"></p>
+    <div class="card">
+      <h4 data-i="rp_cuisine_h"></h4>
+      <div class="cuisine" id="cuisine"></div>
+      <div class="meals" id="meals"></div>
+      <p class="note" data-i="rp_cuisine_note"></p>
+    </div>
+    <div class="week">
+      <div class="card"><h4 data-i="wk1_h"></h4><p data-i="wk1_p"></p></div>
+      <div class="card"><h4 data-i="wk2_h"></h4><p data-i="wk2_p"></p></div>
+      <div class="card"><h4 data-i="wk3_h"></h4><p data-i="wk3_p"></p></div>
+      <div class="card"><h4 data-i="wk4_h"></h4><p data-i="wk4_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap split">
+    <div class="card">
+      <span class="eyebrow" data-i="rp_next_e"></span>
+      <h3 data-i="rp_next_h"></h3>
+      <div class="next">
+        <div><span data-i="nx1"></span><span data-i="nx1_d"></span></div>
+        <div><span data-i="nx2"></span><span data-i="nx2_d"></span></div>
+        <div><span data-i="nx3"></span><span data-i="nx3_d"></span></div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="eyebrow" data-i="rp_book_e"></span>
+      <h3 data-i="rp_book_h"></h3>
+      <p data-i="rp_book_p"></p>
+      <div class="cta-row"><a class="btn" href="#providers" data-i="rp_book_cta"></a><a class="btn primary" href="#join" data-i="rp_join_cta"></a></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:20px"><p class="note" data-i="rp_disclaimer"></p></div>
+</section>
+</main>
+
+<!-- ===================== PROVIDERS ===================== -->
+<main id="view-providers" hidden>
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="pv_eyebrow"></span>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)" data-i="pv_h1"></h1>
+    <p class="lead" data-i="pv_lead"></p>
+    <div class="filters">
+      <div class="seg" id="regionSeg">
+        <button type="button" data-r="all" class="on" data-i="pv_all"></button>
+        <button type="button" data-r="uae" data-i="pv_uae"></button>
+        <button type="button" data-r="abroad" data-i="pv_abroad"></button>
+      </div>
+      <select id="typeSel">
+        <option value="all" data-i="pt_all"></option>
+        <option value="hospital" data-i="pt_hospital"></option>
+        <option value="longevity" data-i="pt_longevity"></option>
+        <option value="lab" data-i="pt_lab"></option>
+        <option value="wellness" data-i="pt_wellness"></option>
+        <option value="fitness" data-i="pt_fitness"></option>
+        <option value="senior" data-i="pt_senior"></option>
+      </select>
+      <input id="pvSearch" type="search" autocomplete="off">
+    </div>
+    <div class="count" id="pvCount"></div>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap stack">
+    <div class="prov" id="provGrid"></div>
+    <p class="note" data-i="pv_note"></p>
+    <div class="card" style="max-width:560px">
+      <h3 data-i="pv_cta_h"></h3>
+      <p data-i="pv_cta_p"></p>
+      <div><a class="btn primary" href="#join" data-i="pv_cta"></a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== TRAINER ===================== -->
+<main id="view-trainer" hidden>
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="tr_eyebrow"></span>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)" data-i="tr_h1"></h1>
+    <p class="lead" data-i="tr_lead"></p>
+    <div class="tr-controls">
+      <label><span data-i="tr_goal"></span><div class="seg" id="goalSeg"><button type="button" data-v="fat" data-i="g_fat"></button><button type="button" data-v="muscle" data-i="g_muscle"></button><button type="button" data-v="health" data-i="g_health"></button><button type="button" data-v="senior" data-i="g_senior"></button><button type="button" data-v="meno" data-i="g_meno"></button></div></label>
+      <label><span data-i="tr_days"></span><div class="seg" id="daysSeg"><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button></div></label>
+      <label><span data-i="tr_place"></span><div class="seg" id="placeSeg"><button type="button" data-v="gym" data-i="pl_gym"></button><button type="button" data-v="home" data-i="pl_home"></button></div></label>
+    </div>
+    <div class="status" id="trNote"><span data-i="tr_ahmed"></span></div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap stack">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><h2 data-i="tr_prog_h"></h2><span class="chip gold" data-i="rp_demo"></span></div>
+    <div class="days" id="days"></div>
+    <p class="note" data-i="tr_disc"></p>
+  </div>
+</section>
+
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="tr_ph_e"></span>
+    <h2 data-i="tr_ph_h"></h2>
+    <div class="phases">
+      <div class="phase"><span class="w" data-i="ph1_w"></span><h4 data-i="ph1_h"></h4><p class="note" data-i="ph1_p"></p></div>
+      <div class="phase"><span class="w" data-i="ph2_w"></span><h4 data-i="ph2_h"></h4><p class="note" data-i="ph2_p"></p></div>
+      <div class="phase"><span class="w" data-i="ph3_w"></span><h4 data-i="ph3_h"></h4><p class="note" data-i="ph3_p"></p></div>
+      <div class="phase"><span class="w" data-i="ph4_w"></span><h4 data-i="ph4_h"></h4><p class="note" data-i="ph4_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="tr_rules_e"></span>
+    <h2 data-i="tr_rules_h"></h2>
+    <div class="rules">
+      <div class="card"><h4 data-i="r1_h"></h4><p data-i="r1_p"></p></div>
+      <div class="card"><h4 data-i="r2_h"></h4><p data-i="r2_p"></p></div>
+      <div class="card"><h4 data-i="r3_h"></h4><p data-i="r3_p"></p></div>
+      <div class="card"><h4 data-i="r4_h"></h4><p data-i="r4_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="tr_lib_e"></span>
+    <h2 data-i="tr_lib_h"></h2>
+    <p class="lead" data-i="tr_lib_p"></p>
+    <div class="exlib" id="exlib"></div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="card" style="max-width:560px">
+      <h3 data-i="tr_cta_h"></h3>
+      <p data-i="tr_cta_p"></p>
+      <div class="cta-row"><a class="btn primary" href="#join" data-i="rp_join_cta"></a><a class="btn" href="#report" data-i="nav_report"></a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== WOMEN ===================== -->
+<main id="view-women" hidden>
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="wm_eyebrow"></span>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)" data-i="wm_h1"></h1>
+    <p class="lead" data-i="wm_lead"></p>
+    <div class="stats">
+      <div class="stat"><span class="v">75%</span><span class="l" data-i="ws1_l"></span><span class="s" data-i="ws1_s"></span></div>
+      <div class="stat"><span class="v">7+</span><span class="l" data-i="ws2_l"></span><span class="s" data-i="ws2_s"></span></div>
+      <div class="stat"><span class="v">20%</span><span class="l" data-i="ws3_l"></span><span class="s" data-i="ws3_s"></span></div>
+      <div class="stat"><span class="v">40–60</span><span class="l" data-i="ws4_l"></span><span class="s" data-i="ws4_s"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="wm_sym_e"></span>
+    <h2 data-i="wm_sym_h"></h2>
+    <p class="lead" data-i="wm_sym_p"></p>
+    <div class="sym">
+      <span data-i="sy1"></span><span data-i="sy2"></span><span data-i="sy3"></span><span data-i="sy4"></span><span data-i="sy5"></span><span data-i="sy6"></span><span data-i="sy7"></span><span data-i="sy8"></span><span data-i="sy9"></span>
+    </div>
+  </div>
+</section>
+
+<section class="tight band">
+  <div class="wrap stack">
+    <span class="eyebrow" data-i="wm_do_e"></span>
+    <h2 data-i="wm_do_h"></h2>
+    <div class="grid">
+      <div class="card"><h3 data-i="wd1_h"></h3><p data-i="wd1_p"></p></div>
+      <div class="card"><h3 data-i="wd2_h"></h3><p data-i="wd2_p"></p></div>
+      <div class="card"><h3 data-i="wd3_h"></h3><p data-i="wd3_p"></p></div>
+      <div class="card"><h3 data-i="wd4_h"></h3><p data-i="wd4_p"></p></div>
+      <div class="card"><h3 data-i="wd5_h"></h3><p data-i="wd5_p"></p></div>
+      <div class="card"><h3 data-i="wd6_h"></h3><p data-i="wd6_p"></p></div>
+    </div>
+    <p class="note" data-i="wm_not"></p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap stack">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><div><span class="eyebrow" data-i="wm_snap_e"></span><h2 data-i="wm_snap_h"></h2></div><span class="chip gold" data-i="rp_demo"></span></div>
+    <div class="snap">
+      <div class="card">
+        <div class="profile" style="padding:0"><div class="av">N</div><div><strong data-i="wm_name"></strong><div class="meta" data-i="wm_meta"></div></div></div>
+        <h4 data-i="wm_hf_h"></h4>
+        <svg class="chart" viewBox="0 0 640 200" role="img" aria-label="Hot flashes per week over eight weeks, 8 down to 3">
+          <g class="grid"><line x1="40" x2="620" y1="20" y2="20"/><line x1="40" x2="620" y1="70" y2="70"/><line x1="40" x2="620" y1="120" y2="120"/><line x1="40" x2="620" y1="170" y2="170"/></g>
+          <text x="30" y="24" text-anchor="end">10</text><text x="30" y="74" text-anchor="end">7</text><text x="30" y="124" text-anchor="end">3</text><text x="30" y="174" text-anchor="end">0</text>
+          <path class="ar" d="M60,50 L140,65 L220,65 L300,80 L380,95 L460,110 L540,110 L620,125 L620,170 L60,170 Z"/>
+          <path class="ln" d="M60,50 L140,65 L220,65 L300,80 L380,95 L460,110 L540,110 L620,125"/>
+          <circle class="dot" cx="60" cy="50" r="5"/><circle class="dot" cx="140" cy="65" r="5"/><circle class="dot" cx="220" cy="65" r="5"/><circle class="dot" cx="300" cy="80" r="5"/><circle class="dot" cx="380" cy="95" r="5"/><circle class="dot" cx="460" cy="110" r="5"/><circle class="dot" cx="540" cy="110" r="5"/><circle class="dot" cx="620" cy="125" r="6"/>
+          <text class="lbl" x="60" y="40" text-anchor="middle">8</text><text class="lbl" x="620" y="148" text-anchor="middle">3</text>
+          <text x="60" y="195" text-anchor="middle" data-i="wk_1"></text><text x="340" y="195" text-anchor="middle" data-i="wk_4"></text><text x="620" y="195" text-anchor="middle" data-i="wk_8"></text>
+        </svg>
+        <p class="note" data-i="wm_hf_note"></p>
+      </div>
+      <div class="card">
+        <h4 data-i="wm_mini_h"></h4>
+        <div class="mini">
+          <div class="stat"><span class="v">6.6 <small>h</small></span><span class="l" data-i="wm_sleep"></span></div>
+          <div class="stat"><span class="v">−1.2</span><span class="l" data-i="wm_dexa"></span></div>
+          <div class="stat"><span class="v">16</span><span class="l" data-i="wm_vitd"></span></div>
+          <div class="stat"><span class="v">22.1 <small>kg</small></span><span class="l" data-i="wm_smm"></span></div>
+        </div>
+        <div class="legend"><span class="chip warn" data-i="wm_dexa_x"></span><span class="chip bad" data-i="wm_vitd_x"></span></div>
+        <div class="doc-banner" style="background:var(--accent-soft);border-color:var(--accent)"><div class="ic" style="background:var(--accent)">✓</div><div><strong data-i="ib_action_h"></strong><p class="note" data-i="wm_action"></p></div></div>
+        <div class="cta-row"><a class="btn" href="#trainer" data-i="wm_tr_cta"></a><a class="btn" href="#providers" data-i="wm_dir_cta"></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight band">
+  <div class="wrap split">
+    <div class="card">
+      <h3 data-i="wm_priv_h"></h3>
+      <ul class="list"><li data-i="wp1"></li><li data-i="wp2"></li><li data-i="wp3"></li></ul>
+    </div>
+    <div class="card">
+      <h3 data-i="wm_corp_h"></h3>
+      <ul class="list"><li data-i="wc1"></li><li data-i="wc2"></li><li data-i="wc3"></li></ul>
+      <div><a class="btn" href="#join" data-i="pb_cta"></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="card" style="max-width:560px">
+      <h3 data-i="wm_cta_h"></h3>
+      <p data-i="wm_cta_p"></p>
+      <div class="cta-row"><a class="btn primary" href="#join" data-i="rp_join_cta"></a></div>
+    </div>
+    <p class="note" style="margin-top:16px" data-i="wm_disc"></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Longevity</strong>
+    <nav><a href="#home" data-i="nav_home"></a><a href="#report" data-i="nav_report"></a><a href="#providers" data-i="nav_providers"></a><a href="#trainer" data-i="nav_trainer"></a><a href="#women" data-i="nav_women"></a><a href="#join" data-i="nav_join"></a></nav>
+    <p data-i="ft_1"></p>
+    <p data-i="ft_2"></p>
+    <p>© 2026 Longevity · Dubai, UAE</p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" type="button" data-i="chat_fab"></button>
+<div class="chat" id="chat" hidden>
+  <div class="chat-h"><span data-i="chat_h"></span><button type="button" id="chatClose" aria-label="Close">×</button></div>
+  <div class="chat-log" id="chatLog"></div>
+  <div class="chips" id="chips"></div>
+  <div class="chat-in"><input id="chatIn" autocomplete="off"><button type="button" id="chatSend" data-i="chat_send"></button></div>
+</div>
+
+<script>
+/* ============ i18n ============ */
+const T = {
+ar:{
+ demo_bar:"نسخة تجريبية للعرض. البيانات في صفحة التقرير توضيحية وليست لشخص حقيقي.",
+ nav_home:"الرئيسية", nav_report:"نموذج التقرير", nav_providers:"دليل الجهات", nav_plans:"الباقات", nav_join:"سجّل مبكراً",
+ hero_eyebrow:"قريباً في الإمارات", hero_h1:"افهم فحوصاتك، وعِش أطول وأنت بصحتك",
+ hero_lead:"Longevity منصة ذكاء اصطناعي مبنية في الإمارات للعالم. تقرأ نتائج فحوصاتك، وتحوّلها إلى خطة يومية بسيطة لإطالة العمر الصحي، وتوصلك بالعيادات والمختبرات الموثوقة. بالعربية والإنجليزية.",
+ hero_cta:"انضم لقائمة الانتظار", hero_cta2:"شاهد نموذج التقرير",
+ badge1:"بياناتك داخل الإمارات", badge2:"بالعربية والإنجليزية", badge3:"مراجعة طبيب مرخص",
+ art_score:"الدرجة الصحية", art_bio:"العمر البيولوجي: 41 سنة", art_example:"مثال توضيحي لواجهة المنصة",
+ qk1_e:"المنتج", qk1_h:"كيف سيبدو تقريرك", qk1_p:"درجة صحية، عمر بيولوجي، شرح كل مؤشر، وخطة أسبوعية. نموذج كامل ببيانات توضيحية.",
+ qk2_e:"الشبكة", qk2_h:"دليل العيادات والمستشفيات", qk2_p:"جهات داخل الإمارات وخارجها، مرشّحة للإدراج في الدليل المحايد.",
+ qk3_e:"الشراكات", qk3_h:"للشركات والنوادي", qk3_p:"برامج صحة الموظفين مع بطولات وجوائز، وبرنامج خاص لمنتسبي النوادي.",
+ prob_eyebrow:"المشكلة", prob_h2:"الفحص صار سهلاً. فهمه ما زال صعباً.",
+ prob1_h:"أرقام بلا تفسير", prob1_p:"نتيجة المختبر تصلك كجدول أرقام، بدون شرح مفهوم ولا خطوة عملية تبدأ بها.",
+ prob2_h:"خدمات متفرقة", prob2_p:"عيادات، مختبرات، تغذية، رياضة، نوم. كل جهة لوحدها، ولا أحد يجمعها ويرشدك للمناسب لك.",
+ prob3_h:"خطط لا تشبه حياتك", prob3_p:"أغلب المنصات تفرض نمط أكل وحياة واحداً على الجميع. الناس في العالم يأكلون ويعيشون بطرق مختلفة، والخطة لازم تتكيف معهم.",
+ what_eyebrow:"ماذا نقدم", what_h2:"ثماني خدمات في الإصدار الأول",
+ what_lead:"نركّز على ما يحتاجه الشخص فعلاً: يفهم، يلتزم، ويتابع تحسّنه.",
+ f1_h:"الملف الصحي وتكوين الجسم", f1_p:"استبيان ذكي عن نمط حياتك وأهدافك، مع رفع تقرير InBody لقراءة الكتلة العضلية والدهون وتوازن الأطراف.",
+ f2_h:"قارئ الفحوصات", f2_p:"ارفع صورة أو PDF لنتيجة أي مختبر. النظام يستخرج الأرقام ويشرحها بلغتك: الطبيعي، المثالي، والمقلق.",
+ f3_h:"الدرجة الصحية والعمر البيولوجي", f3_p:"رقم واحد سهل تتابعه، ويتحسن مع التزامك بالخطة.",
+ f4_h:"الخطة اليومية", f4_p:"أكل، حركة، نوم، وتوتر، في خطوات صغيرة أسبوعية مع تذكيرات. أنت تختار مطبخك: عالمي، عربي، آسيوي، إماراتي وخليجي، أو إيطالي.",
+ f5_h:"دليل مقدمي الخدمة", f5_p:"مختبرات وعيادات إطالة عمر وأخصائيو تغذية ومدربون معتمدون في الإمارات وحول العالم، مع حجز مباشر وتقييمات موثقة.",
+ f6_h:"مراجعة الطبيب", f6_p:"أي نتيجة غير طبيعية تُحوّل تلقائياً لطبيب مرخص قبل أي توصية. النظام لا يشخّص.",
+ what_not:"ما لا تفعله المنصة: لا تشخّص، ولا تصف أدوية، ولا تبيع علاجات غير مثبتة علمياً.",
+ how_eyebrow:"كيف تعمل", how_h2:"أربع خطوات من الفحص إلى الخطة",
+ s1_h:"أنشئ ملفك", s1_p:"دقائق قليلة تجاوب فيها عن نمط حياتك وأهدافك.",
+ s2_h:"ارفع فحوصاتك", s2_p:"نتائجك الحالية من أي مختبر، أو احجز فحصاً من شريك معتمد.",
+ s3_h:"افهم واستلم خطتك", s3_p:"شرح مبسّط بلغتك، ودرجة صحية، وخطة أسبوعية قابلة للتنفيذ.",
+ s4_h:"تابع تحسّنك", s4_p:"مؤشراتك تتحسن مع الوقت، وتنبيه بموعد الفحص القادم.",
+ how_cta:"شاهد كيف يبدو التقرير",
+ plans_eyebrow:"الباقات", plans_h2:"أسعار مقترحة عند الإطلاق", plans_lead:"أقل من خدمات المستشفيات المحلية، وقريبة من المنصات العالمية. المسجّلون مبكراً يحصلون على أفضل سعر.",
+ aed_m:"درهم / شهرياً", aed_y:"درهم / سنوياً",
+ p1_h:"مجاني", p1_1:"ملف صحي شخصي", p1_2:"قراءة فحص واحد", p1_3:"دليل الجهات",
+ p2_h:"مميز", p2_y:"أو 699 درهم سنوياً", p2_1:"قراءة فحوصات بلا حد", p2_2:"خطة يومية كاملة", p2_3:"متابعة مستمرة", p2_4:"مساعد محادثة ذكي",
+ p3_h:"مميز مع طبيب", p3_1:"كل مزايا الباقة المميزة", p3_2:"مراجعة طبيب مرخص مرتين في السنة",
+ plans_note:"الأسعار تقديرية وقابلة للتغيير قبل الإطلاق الرسمي.",
+ part_eyebrow:"الشركاء", part_h2:"للعيادات والشركات والنوادي",
+ pa_h:"العيادات والمختبرات", pa_1:"عملاء مؤهلون يصلونك من خلال المنصة", pa_2:"إدراج في دليل محايد يعتمد مقدمي خدمة موثوقين فقط", pa_3:"حجز مباشر بعمولة واضحة، وإدراج مميز اختياري", pa_cta:"سجّل كمقدم خدمة",
+ pb_h:"برامج صحة الموظفين", pb_1:"اشتراك مميز لكل الموظفين، مع لوحة تقارير مجمّعة وبدون أسماء", pb_2:"بطولة داخلية ومسابقات بين الموظفين والأقسام", pb_3:"جوائز وحوافز داخل البرنامج تكافئ الالتزام والتحسّن", pb_cta:"اطلب عرضاً للشركات",
+ pc_h:"النوادي الرياضية ونوادي كبار السن", pc_1:"برنامج خاص لمنتسبي النوادي الرياضية في الدولة", pc_2:"خدمة مصممة لأعضاء نوادي كبار السن: متابعة أبسط وخطة آمنة", pc_3:"عرض جماعي للنادي، ومتابعة للمدربين", pc_cta:"سجّل ناديك",
+ why_eyebrow:"لماذا الآن", why_h2:"الإمارات تبني قطاع إطالة العمر. ونحن نبني منصته للعالم.",
+ st1_l:"سوق إطالة العمر في الإمارات (متوقع 2026)", st1_s:"المصدر: وام",
+ st2_l:"السوق العالمي بحلول 2032، بنمو سنوي 16.8٪", st2_s:"المصدر: MarkNtel",
+ st3_l:"سنة فرق بين متوسط العمر والعمر الصحي في الإمارات", st3_s:"78 سنة عمر، 67 سنة صحية",
+ st4_l:"تأسيس هيئة دبي لإطالة العمر", st4_s:"القانون رقم 17 لسنة 2026",
+ why_1:"دبي أنشأت في 2026 هيئة متخصصة لتنظيم قطاع إطالة العمر، واعتمدت استراتيجيتها في سبتمبر 2026.",
+ why_2:"الفحوصات الشاملة صارت متوفرة وبأسعار معقولة، لكن تحويلها إلى خطة يومية مفهومة ما زال غائباً.",
+ why_3:"المنصة محايدة: تجمع عدة مختبرات وعيادات، ولا تتبع مستشفى واحداً.",
+ why_4:"الخطة تتكيف مع حياتك: المطبخ الذي تختاره، رمضان والصيام، المناخ، ونمط نومك.",
+ trust_h:"ثقة وحوكمة", trust_p:"كل البيانات الصحية تُخزّن وتُعالج داخل دولة الإمارات، مع موافقة واضحة منك وحق حذف بياناتك في أي وقت.",
+ trust_p2:"نطلق بعد الحصول على التصاريح اللازمة من الجهات المختصة في دبي.",
+ rm_eyebrow:"خارطة الطريق", rm_h2:"من الفكرة إلى 3,000 مشترك في 18 شهراً",
+ rm1_m:"الآن", rm1_h:"قائمة الانتظار", rm1_p:"الهدف 5,000 مسجّل، وبناء شبكة الجهات.",
+ rm2_m:"الشهر 6", rm2_h:"النسخة التجريبية", rm2_p:"200 مستخدم، فحص مخفض مع مختبر شريك.",
+ rm3_m:"الشهر 7", rm3_h:"الإطلاق الرسمي", rm3_p:"بعد الفحص الأمني والتصاريح.",
+ rm4_m:"الشهر 12", rm4_h:"1,000 مشترك مدفوع", rm4_p:"و20 جهة في الدليل.",
+ rm5_m:"الشهر 18", rm5_h:"3,000 مشترك", rm5_p:"و5 شركات ونوادٍ في البرامج الجماعية.",
+ fo_eyebrow:"المؤسس", fo_h2:"نبهان إبراهيم",
+ fo_p:"رائد أعمال إماراتي مهتم بالصحة، وصاحب أول مشروع تدريب شخصي في دبي. مؤسس Health Road، وبمهمة واحدة: صحة أطول للإنسان، بخطة تفهمها وتقدر تلتزم بها.",
+ join_eyebrow:"التسجيل المبكر", join_h2:"كن من أول 5,000 مستخدم",
+ join_lead:"سجّل الآن وستصلك دعوة للنسخة التجريبية قبل الإطلاق الرسمي.",
+ join_1:"أولوية الدخول للنسخة التجريبية", join_2:"فحص مخفض مع مختبر شريك", join_3:"أفضل سعر للاشتراك السنوي",
+ l_name:"الاسم", l_email:"البريد الإلكتروني", l_phone:"رقم الجوال", l_type:"أنا", t_ind:"فرد مهتم بالصحة الوقائية", t_clinic:"عيادة أو مختبر", t_company:"شركة (برنامج موظفين)", t_club:"نادٍ رياضي أو نادي كبار السن", t_inv:"مستثمر", l_city:"المدينة", l_submit:"سجّلني في قائمة الانتظار",
+ l_privacy:"نستخدم بياناتك فقط للتواصل معك بخصوص الإطلاق. لا نشاركها مع أي جهة.",
+ st_need:"اكتب اسمك وأحد وسيلتي التواصل (بريد أو جوال).", st_saving:"جارٍ الحفظ…", st_ok:"تم التسجيل. سنتواصل معك قبل الإطلاق.",
+ st_nodb:"التسجيل المباشر غير متاح في هذه النسخة بعد. تواصل معنا عبر البريد:", st_err:"لم يكتمل الحفظ. حاول مرة أخرى أو تواصل عبر البريد:",
+ own_h:"لوحة المالك: المسجّلون في قائمة الانتظار", own_count:"عدد المسجّلين: ",
+ ft_1:"Longevity منصة عافية رقمية. لا تقدم تشخيصاً طبياً ولا تصف أدوية. أي نتيجة غير طبيعية تُحوّل لطبيب مرخص.",
+ ft_2:"الموقع في مرحلة ما قبل الإطلاق. المعلومات والأسعار تقديرية. أسماء الجهات في الدليل مرشّحة للإدراج ولا تعني شراكة قائمة.",
+ /* report */
+ rp_eyebrow:"نموذج التقرير", rp_h1:"هكذا سيبدو تقريرك", rp_lead:"رقم واحد تتابعه، شرح لكل مؤشر بلغتك، وخطة أسبوعية تبدأ بها اليوم. هذا نموذج ببيانات توضيحية لشخص افتراضي.",
+ rp_name:"أحمد (مثال افتراضي)", rp_meta:"42 سنة · دبي · آخر فحص: 3 أكتوبر 2026", rp_demo:"بيانات توضيحية",
+ rp_score_e:"الدرجة الصحية", rp_of100:"من 100", rp_score_msg:"تحسّن 13 نقطة خلال 6 أشهر",
+ rp_bio:"العمر البيولوجي (تقديري)", rp_chrono:"العمر الفعلي",
+ rp_score_note:"الدرجة تجمع نتائج الفحوصات والنوم والنشاط والتغذية في رقم واحد. ترتفع مع الالتزام بالخطة.",
+ rp_trend_e:"التقدّم", rp_trend_h:"الدرجة الصحية خلال 6 أشهر",
+ m1:"مايو", m2:"يونيو", m3:"يوليو", m4:"أغسطس", m5:"سبتمبر", m6:"أكتوبر",
+ rp_trend_note:"أكبر قفزة جاءت بعد إضافة المشي اليومي وتعديل الفطور في أغسطس.",
+ rp_doc_h:"مؤشران حُوِّلا لمراجعة طبيب مرخص", rp_doc_p:"السكر التراكمي والكوليسترول الضار خارج النطاق المثالي. لا تُعطى أي توصية علاجية قبل مراجعة الطبيب. موعد المراجعة: خلال 48 ساعة.",
+ rp_mk_e:"الفحوصات", rp_mk_h:"قراءة الفحوصات بلغتك",
+ th_marker:"المؤشر", th_value:"النتيجة", th_status:"الحالة", th_meaning:"ماذا يعني", th_action:"ما نفعله",
+ lg_opt:"مثالي", lg_norm:"طبيعي", lg_att:"يحتاج انتباه", lg_doc:"مراجعة طبيب",
+ rp_plan_e:"الخطة الأسبوعية", rp_plan_h:"خطة أحمد لهذا الأسبوع", rp_plan_lead:"خطوات صغيرة مبنية على نتائجه. الأكل يتغير حسب المطبخ الذي يختاره.",
+ rp_cuisine_h:"اختر مطبخك", rp_cuisine_note:"الأطباق أمثلة توضيحية تراعي ارتفاع الكوليسترول والسكر التراكمي ونقص فيتامين د في هذا النموذج.",
+ c_intl:"عالمي", c_arab:"عربي", c_asian:"آسيوي", c_gulf:"إماراتي وخليجي", c_ital:"إيطالي",
+ ml_b:"الفطور", ml_l:"الغداء", ml_d:"العشاء",
+ wk1_h:"حركة", wk1_p:"مشي سريع 30 دقيقة × 5 أيام، وتمرينا مقاومة في الأسبوع. الهدف 7,500 خطوة يومياً.",
+ wk2_h:"نوم", wk2_p:"النوم قبل 11:30 مساءً، وإيقاف الشاشات قبلها بـ 45 دقيقة. الهدف 7 ساعات.",
+ wk3_h:"تغذية", wk3_p:"ألياف في كل وجبة، سمك دهني مرتين أسبوعياً، وتقليل الخبز الأبيض والعصائر.",
+ wk4_h:"توتر وشمس", wk4_p:"10 دقائق تنفّس أو مشي بعد الغداء، و15 دقيقة شمس صباحية 3 مرات في الأسبوع.",
+ rp_next_e:"القادم", rp_next_h:"الفحوصات والمواعيد القادمة",
+ nx1:"مراجعة الطبيب (سكر تراكمي وكوليسترول)", nx1_d:"خلال 48 ساعة",
+ nx2:"إعادة فحص فيتامين د", nx2_d:"بعد 8 أسابيع",
+ nx3:"فحص شامل لقياس التحسّن", nx3_d:"أبريل 2027",
+ rp_book_e:"الحجز", rp_book_h:"احجز من داخل التقرير", rp_book_p:"المختبرات والعيادات المعتمدة تظهر هنا مع السعر والموعد المتاح. الحجز يفتح عند الإطلاق.",
+ rp_book_cta:"تصفح دليل الجهات", rp_join_cta:"سجّل للنسخة التجريبية",
+ rp_disclaimer:"هذا النموذج توضيحي لشخص افتراضي. المنصة لا تشخّص ولا تصف أدوية، وأي نتيجة غير طبيعية تُحوّل لطبيب مرخص.",
+ /* providers */
+ pv_eyebrow:"دليل الجهات", pv_h1:"عيادات ومستشفيات ومختبرات داخل الإمارات وخارجها", pv_lead:"دليل محايد يعتمد مقدمي خدمة موثوقين فقط، مع حجز مباشر عند الإطلاق. الجهات أدناه مرشّحة للإدراج.",
+ pv_all:"الكل", pv_uae:"داخل الإمارات", pv_abroad:"خارج الإمارات",
+ pt_all:"كل الأنواع", pt_hospital:"مستشفيات", pt_longevity:"عيادات إطالة العمر", pt_lab:"مختبرات", pt_wellness:"منتجعات صحية", pt_fitness:"نوادٍ رياضية", pt_senior:"نوادي كبار السن",
+ pv_search:"ابحث باسم الجهة أو المدينة", pv_count_1:"جهة", pv_count_n:"جهة مرشّحة",
+ pv_status:"مرشّح للإدراج", pv_book:"الحجز عند الإطلاق", pv_none:"لا توجد نتائج مطابقة.",
+ pv_note:"الأسماء أعلاه لجهات قائمة ومعروفة، مدرجة كمرشّحين للدليل. لا يوجد اتفاق شراكة قائم مع أي منها حتى الآن، والإدراج النهائي بعد التحقق من الترخيص والاعتماد.",
+ pv_cta_h:"هل تمثّل عيادة أو مختبراً أو نادياً؟", pv_cta_p:"سجّل الآن لتكون من أول الجهات المعتمدة في الدليل عند الإطلاق.", pv_cta:"سجّل جهتك",
+ ty:{hospital:"مستشفى",longevity:"عيادة إطالة عمر",lab:"مختبر",wellness:"منتجع صحي",fitness:"نادٍ رياضي",senior:"نادي كبار السن"},
+ nav_trainer:"المدرب الافتراضي",
+ qk4_e:"التدريب", qk4_h:"مدربك الشخصي الافتراضي", qk4_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصور توضيحية، يتكيف مع تقرير InBody ونتائج فحوصاتك.",
+ f7_h:"المدرب الشخصي الافتراضي", f7_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصورة توضيحية لكل تمرين، يتكيف أسبوعياً مع تقدمك وتقرير InBody وفحوصاتك.",
+ p2_5:"برنامج تدريب شخصي متكيّف",
+ ib_e:"تكوين الجسم", ib_h:"قراءة تقرير InBody", ib_lead:"ارفع تقرير جهاز InBody (أو Tanita وSeca) والمنصة تقرأ الأرقام، وتربطها بفحوصاتك، وتبني عليها برنامجك التدريبي.",
+ ib_drop:"ارفع تقرير InBody (صورة أو PDF)", ib_drop_s:"اسحب الملف هنا أو اضغط للاختيار", ib_got:"تم استلام الملف: ", ib_got_s:" القراءة الآلية تعمل عند الإطلاق. أدناه نموذج القراءة لأحمد.",
+ ib_date:"آخر قياس: 3 أكتوبر 2026 · InBody 570",
+ ib_score:"درجة InBody (من 100)", ib_w:"الوزن", ib_smm:"الكتلة العضلية الهيكلية", ib_fat:"نسبة الدهون", ib_vfa:"مستوى الدهون الحشوية", ib_bmr:"معدل الأيض الأساسي", ib_whr:"نسبة الخصر إلى الورك",
+ ib_smm_x:"في الحد الأدنى للنطاق الطبيعي (33.5–41 كجم). الهدف: +2 كجم خلال 6 أشهر.",
+ ib_fat_x:"أعلى من النطاق الطبيعي (10–20٪). الهدف: 22٪ خلال 6 أشهر.",
+ ib_vfa_x:"أعلى من 10. مرتبط بارتفاع السكر التراكمي والدهون الثلاثية في فحوصاتك.",
+ ib_whr_x:"فوق 0.90 يعني دهوناً حول البطن. يتابَع مع الدهون الحشوية.",
+ ib_bmr_x:"أساس حساب سعراتك: 1,790 + النشاط ≈ 2,400 سعرة يومياً.",
+ ib_seg:"توازن العضلات بين الأطراف", ib_seg_x:"الأرجل أقل من المتوسط (92–94٪) مقارنة بالجذع والذراعين. لذلك برنامجك يركز على الأرجل.",
+ seg_ra:"ذراع يمنى", seg_la:"ذراع يسرى", seg_tr:"جذع", seg_rl:"رجل يمنى", seg_ll:"رجل يسرى",
+ ib_action_h:"ما نفعله", ib_action:"برنامج مقاومة 3 أيام بتركيز على الأرجل، بروتين 1.6 غ لكل كجم (≈ 140 غ يومياً)، مشي بعد الوجبات، وإعادة قياس InBody بعد 8 أسابيع.",
+ ib_cta:"شاهد برنامج أحمد التدريبي",
+ tr_eyebrow:"المدرب الشخصي الافتراضي", tr_h1:"برنامج حديد ومقاومة كامل، لكل منتسب", tr_lead:"المدرب الافتراضي يبني برنامجك من تقرير InBody وفحوصاتك وهدفك وأيامك ومكان تدريبك، ويعدّله كل أسبوع حسب تقدمك. غيّر الخيارات وشاهد البرنامج يتغير.",
+ tr_goal:"الهدف", g_fat:"خسارة دهون", g_muscle:"بناء عضل", g_health:"صحة عامة", g_senior:"كبار السن (آمن)",
+ tr_days:"أيام في الأسبوع", tr_place:"المكان", pl_gym:"نادٍ رياضي", pl_home:"المنزل",
+ tr_ahmed:"نموذج أحمد: دهون 28.7٪، دهون حشوية 12، أرجل أقل من المتوسط ← الإعداد المقترح: خسارة دهون، 3 أيام، نادٍ رياضي.",
+ tr_prog_h:"برنامج الأسبوع", day:"اليوم", d_full:"كامل الجسم", d_upper:"الجزء العلوي", d_lower:"الجزء السفلي",
+ x_sets:"مجموعات", x_reps:"تكرار", x_rest:"راحة", x_sec:"ث", x_rpe:"الجهد",
+ dn:["السبت","الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس"],
+ wu:"الإحماء: 5 دقائق مشي سريع + حركة مفصلية.", fin_fat:"الختام: 10 دقائق مشي سريع.", fin_senior:"الختام: 3 دقائق تمارين توازن.", fin_def:"الختام: 5 دقائق إطالة.",
+ tr_ph_e:"التدرّج", tr_ph_h:"كيف يتطور البرنامج",
+ ph1_w:"الأسبوع 1–2", ph1_h:"تعلّم الأداء", ph1_p:"أوزان خفيفة، جهد 6–7 من 10، تثبيت التقنية.",
+ ph2_w:"الأسبوع 3", ph2_h:"زيادة الحمل", ph2_p:"+2.5 إلى 5٪ وزن أو +1–2 تكرار إذا أكملت كل المجموعات.",
+ ph3_w:"الأسبوع 4", ph3_h:"أسبوع تخفيف", ph3_p:"−30٪ من الحجم للتعافي، ثم تبدأ دورة جديدة.",
+ ph4_w:"الأسبوع 8", ph4_h:"إعادة قياس", ph4_p:"InBody جديد، مقارنة الكتلة العضلية والدهون، وتحديث البرنامج.",
+ tr_rules_e:"كيف يعمل كمدرب شخصي", tr_rules_h:"يراقب، يعدّل، ويحميك",
+ r1_h:"يبني من بياناتك", r1_p:"InBody، الفحوصات، الهدف، الأيام، المعدات المتاحة، والإصابات السابقة.",
+ r2_h:"يعدّل أسبوعياً", r2_p:"أكملت الجلسات بجهد 7 أو أقل؟ يرفع الحمل. فاتتك جلسة؟ يعيد التوزيع. نوم سيئ؟ جلسة أخف.",
+ r3_h:"يربط التمرين بالفحوصات", r3_p:"سكر تراكمي مرتفع → مشي بعد الوجبات. فيتامين د منخفض → تمرين صباحي في الشمس. ضغط مرتفع → بلا حبس نفس.",
+ r4_h:"يحميك", r4_p:"استبيان جاهزية قبل البدء، وتحويل لطبيب مرخص عند ضغط مرتفع أو مشكلة قلبية أو إصابة. لكبار السن: أوزان أخف وتمارين توازن.",
+ tr_lib_e:"مكتبة التمارين", tr_lib_h:"صورة توضيحية لكل تمرين", tr_lib_p:"كل تمرين في البرنامج يأتي بصورة توضيحية وتلميح أداء، وفيديو قصير عند الإطلاق.",
+ tr_cta_h:"جرّب مدربك في النسخة التجريبية", tr_cta_p:"سجّل في قائمة الانتظار وستصلك دعوة مع فتح النسخة التجريبية.",
+ tr_disc:"البرنامج نموذج توضيحي وليس وصفة تدريب لشخص بعينه. استشر طبيباً قبل البدء إذا كان لديك ضغط مرتفع أو مشكلة قلبية أو إصابة.",
+ nav_women:"صحة المرأة",
+ qk5_e:"للنساء", qk5_h:"برنامج انقطاع الطمث", qk5_p:"متتبّع أعراض، فحوصات هذه المرحلة، تدريب للعظام والعضل، نوم وهبّات ساخنة، وطبيبتك على بُعد خطوة.",
+ f8_h:"برامج صحة المرأة: انقطاع الطمث", f8_p:"برنامج كامل لما قبل وبعد انقطاع الطمث: تتبّع الأعراض والمحفزات، قراءة الفحوصات وكثافة العظام، تدريب مقاومة للعظام، تغذية ونوم، وملخص جاهز لطبيبة النساء.",
+ p2_6:"برنامج انقطاع الطمث للنساء",
+ t_women:"امرأة مهتمة ببرنامج انقطاع الطمث",
+ g_meno:"انقطاع الطمث", fin_meno:"الختام: 3 دقائق قفز خفيف وتوازن، وتمارين قاع الحوض.",
+ wm_eyebrow:"صحة المرأة", wm_h1:"برنامج انقطاع الطمث: خطة واضحة لمرحلة يتجاهلها الجميع",
+ wm_lead:"ما قبل انقطاع الطمث (Perimenopause) وما بعده يغيّران النوم والوزن والعظام والمزاج لسنوات. Longevity يعطي المرأة خطة يومية مبنية على أعراضها وفحوصاتها، ويوصلها بطبيبة مرخصة عندما تحتاج قراراً طبياً.",
+ ws1_l:"من النساء يعانين هبّات ساخنة وتعرّقاً ليلياً", ws1_s:"تقديرات الدراسات الكبرى",
+ ws2_l:"سنوات متوسط استمرار الأعراض", ws2_s:"دراسة SWAN الأمريكية",
+ ws3_l:"فقد محتمل في كثافة العظام خلال 5–7 سنوات بعد الانقطاع", ws3_s:"مؤسسة صحة العظام وهشاشة العظام",
+ ws4_l:"سنة: الفئة العمرية التي يخدمها البرنامج", ws4_s:"متوسط عمر الانقطاع حوالي 51",
+ wm_sym_e:"ما نتابعه", wm_sym_h:"الأعراض التي يغطيها البرنامج", wm_sym_p:"تسجّلينها في دقيقة يومياً، والمنصة تكتشف النمط والمحفزات خلال أسابيع.",
+ sy1:"هبّات ساخنة", sy2:"تعرّق ليلي", sy3:"اضطراب النوم", sy4:"تقلب المزاج والقلق", sy5:"زيادة الوزن حول البطن", sy6:"فقد العضل والعظم", sy7:"ضبابية ذهنية", sy8:"آلام المفاصل", sy9:"صحة المهبل والمثانة",
+ wm_do_e:"ماذا يقدم البرنامج", wm_do_h:"ست خدمات في برنامج واحد",
+ wd1_h:"متتبّع الأعراض والمحفزات", wd1_p:"هبّات، نوم، مزاج، طاقة، تغيّر الدورة. تقرير شهري يكشف المحفزات: الكافيين، الأكل الحار، الحر، التوتر.",
+ wd2_h:"قراءة فحوصات هذه المرحلة", wd2_p:"فيتامين د، الدهون، السكر التراكمي، الغدة الدرقية، الفيريتين، وقراءة فحص كثافة العظام (DEXA) وتقرير InBody للكتلة العضلية.",
+ wd3_h:"تدريب للعظام والعضل", wd3_p:"وضع خاص في المدرب الافتراضي: مقاومة 2–3 مرات أسبوعياً لحماية العظم والعضل، تمارين توازن، وقاع الحوض.",
+ wd4_h:"تغذية المرحلة", wd4_p:"بروتين 1.2–1.6 غ لكل كجم، كالسيوم 1,200 ملغ يومياً، فيتامين د، ألياف، وتقليل الكافيين مساءً، بالمطبخ الذي تختارينه.",
+ wd5_h:"النوم والهبّات الساخنة", wd5_p:"تنفّس بطيء عند الهبّة، تبريد الغرفة والملابس بطبقات، تقليل المحفزات، ومبادئ العلاج السلوكي للأرق.",
+ wd6_h:"طبيبتك على بُعد خطوة", wd6_p:"ملخص جاهز للزيارة بأعراضك وفحوصاتك، ودليل أطباء نساء ومراكز انقطاع طمث مرخصة لمناقشة العلاج الهرموني وغيره. القرار الطبي للطبيب وحده.",
+ wm_not:"المنصة لا تشخّص ولا تصف علاجاً هرمونياً أو أدوية. دورها: تتبّع، فهم، خطة حياة، وتجهيزك لزيارة الطبيب.",
+ wm_snap_e:"لقطة من البرنامج", wm_snap_h:"لوحة نورة بعد 8 أسابيع",
+ wm_name:"نورة (مثال افتراضي)", wm_meta:"49 سنة · دبي · ما قبل انقطاع الطمث",
+ wm_hf_h:"الهبّات الساخنة في الأسبوع", wk_1:"الأسبوع 1", wk_4:"الأسبوع 4", wk_8:"الأسبوع 8",
+ wm_hf_note:"انخفضت من 8 إلى 3 أسبوعياً بعد تقليل الكافيين بعد الظهر، وتبريد غرفة النوم، والمشي اليومي.",
+ wm_mini_h:"مؤشرات نورة",
+ wm_sleep:"متوسط النوم (كان 5.4)", wm_dexa:"كثافة العظام T-score", wm_vitd:"فيتامين د ng/mL", wm_smm:"الكتلة العضلية",
+ wm_dexa_x:"العظام: يحتاج انتباه (−1.2)", wm_vitd_x:"فيتامين د: مراجعة طبيب",
+ wm_action:"مقاومة 3 أيام للعظام، بروتين وكالسيوم في الخطة، ملخص لطبيبة النساء خلال أسبوعين، وإعادة فحص فيتامين د بعد 8 أسابيع وDEXA بعد سنة.",
+ wm_tr_cta:"برنامج التدريب لهذه المرحلة", wm_dir_cta:"أطباء النساء في الدليل",
+ wm_priv_h:"خصوصية وراحة", wp1:"مدربات وأخصائيات نساء عند الطلب", wp2:"مجتمع نساء خاص داخل المنصة، بلا أسماء", wp3:"بياناتك داخل الإمارات، وحذفها بيدك في أي وقت",
+ wm_corp_h:"للشركات: مسار صحة المرأة", wc1:"دعم الموظفات في مرحلة انقطاع الطمث يقلل الغياب ويرفع الاحتفاظ بالكفاءات", wc2:"يُضاف إلى برنامج صحة الموظفين بدون تكلفة إضافية لكل موظفة", wc3:"تقارير مجمّعة وبدون أسماء للموارد البشرية",
+ wm_cta_h:"انضمي للنسخة التجريبية", wm_cta_p:"أول 500 امرأة في قائمة الانتظار يحصلن على البرنامج مجاناً خلال التجربة.",
+ wm_disc:"هذا النموذج توضيحي لشخصية افتراضية. المحتوى الطبي يراجعه طبيب نساء مرخص قبل الإطلاق، والمنصة لا تصف علاجاً.",
+ chat_fab:"اسأل Longevity", chat_h:"مساعد Longevity", chat_send:"إرسال",
+ chat_hi:"أهلاً. أجاوبك عن المنصة والباقات والشراكات والدليل. لا أحلل فحوصات شخصية في هذه المرحلة.",
+ chat_na:"المساعد الذكي يعمل للمستخدمين المسجّلين في claude.ai حالياً. راسلنا على البريد أدناه.",
+ chat_faq:"هذه نسخة تجريبية من المساعد تجيب عن الأسئلة الشائعة. المساعد الكامل بالذكاء الاصطناعي يعمل عند الإطلاق.",
+ chat_unknown:"ما عندي إجابة دقيقة عن هذا السؤال في النسخة التجريبية. راسلنا:",
+ chips:["ما هي المنصة؟","كيف يعمل المدرب الافتراضي؟","كم سعر الاشتراك؟","كيف أنضم كعيادة؟"],
+ copy:"نسخ", copied:"تم النسخ"
+},
+en:{
+ demo_bar:"Demo build for presentation. Data on the report page is illustrative, not a real person.",
+ nav_home:"Home", nav_report:"Sample report", nav_providers:"Provider directory", nav_plans:"Plans", nav_join:"Join early",
+ hero_eyebrow:"Coming soon in the UAE", hero_h1:"Understand your lab results. Live longer, in good health.",
+ hero_lead:"Longevity is an AI platform built in the UAE for the world. It reads your lab results, turns them into a simple daily plan for a longer healthy life, and connects you with trusted clinics and labs. In Arabic and English.",
+ hero_cta:"Join the waitlist", hero_cta2:"See the sample report",
+ badge1:"Your data stays in the UAE", badge2:"Arabic and English", badge3:"Licensed doctor review",
+ art_score:"Health score", art_bio:"Biological age: 41", art_example:"Illustrative example of the platform",
+ qk1_e:"Product", qk1_h:"What your report looks like", qk1_p:"Health score, biological age, every marker explained, and a weekly plan. A full sample with illustrative data.",
+ qk2_e:"Network", qk2_h:"Clinics and hospitals directory", qk2_p:"Providers in the UAE and abroad, shortlisted for the neutral directory.",
+ qk3_e:"Partnerships", qk3_h:"For companies and clubs", qk3_p:"Employee wellness programs with championships and prizes, and a dedicated program for club members.",
+ prob_eyebrow:"The problem", prob_h2:"Testing got easy. Understanding it did not.",
+ prob1_h:"Numbers without meaning", prob1_p:"Lab results arrive as a table of figures, with no plain explanation and no first step to take.",
+ prob2_h:"Scattered services", prob2_p:"Clinics, labs, nutrition, fitness, sleep. Each on its own, with nobody connecting them or guiding you to the right one.",
+ prob3_h:"Plans that don't fit your life", prob3_p:"Most platforms impose one diet and lifestyle on everyone. People around the world eat and live differently, and the plan has to adapt to them.",
+ what_eyebrow:"What we do", what_h2:"Eight services in the first release",
+ what_lead:"We focus on what a person actually needs: understand, commit, and track progress.",
+ f1_h:"Health profile and body composition", f1_p:"A smart questionnaire on your lifestyle and goals, plus an InBody report upload to read muscle mass, fat and limb balance.",
+ f2_h:"Lab report reader", f2_p:"Upload a photo or PDF from any lab. The system extracts the numbers and explains them in your language: normal, optimal, and concerning.",
+ f3_h:"Health score and biological age", f3_p:"One simple number you can follow, improving as you stick to the plan.",
+ f4_h:"Daily plan", f4_p:"Food, movement, sleep and stress in small weekly steps with reminders. You choose your cuisine: international, Arabic, Asian, Emirati and Gulf, or Italian.",
+ f5_h:"Provider directory", f5_p:"Accredited labs, longevity clinics, nutritionists and coaches in the UAE and worldwide, with direct booking and verified reviews.",
+ f6_h:"Doctor review", f6_p:"Any abnormal result is routed to a licensed doctor before any recommendation. The system never diagnoses.",
+ what_not:"What the platform does not do: no diagnosis, no prescriptions, no unproven treatments.",
+ how_eyebrow:"How it works", how_h2:"Four steps from test to plan",
+ s1_h:"Create your profile", s1_p:"A few minutes on your lifestyle and goals.",
+ s2_h:"Upload your results", s2_p:"Your existing results from any lab, or book a test with an accredited partner.",
+ s3_h:"Understand and get your plan", s3_p:"A plain explanation in your language, a health score, and a weekly plan you can act on.",
+ s4_h:"Track your progress", s4_p:"Your markers improve over time, with a reminder for your next test.",
+ how_cta:"See what the report looks like",
+ plans_eyebrow:"Plans", plans_h2:"Proposed launch pricing", plans_lead:"Below local hospital services, close to global platforms. Early members get the best price.",
+ aed_m:"AED / month", aed_y:"AED / year",
+ p1_h:"Free", p1_1:"Personal health profile", p1_2:"One lab report reading", p1_3:"Provider directory",
+ p2_h:"Premium", p2_y:"or AED 699 / year", p2_1:"Unlimited report readings", p2_2:"Full daily plan", p2_3:"Ongoing tracking", p2_4:"Smart chat assistant",
+ p3_h:"Premium + Doctor", p3_1:"Everything in Premium", p3_2:"Licensed doctor review twice a year",
+ plans_note:"Prices are indicative and may change before the official launch.",
+ part_eyebrow:"Partners", part_h2:"For clinics, companies and clubs",
+ pa_h:"Clinics and labs", pa_1:"Qualified clients reach you through the platform", pa_2:"Listing in a neutral directory that accredits trusted providers only", pa_3:"Direct booking with a clear commission, optional featured listing", pa_cta:"Register as a provider",
+ pb_h:"Employee wellness programs", pb_1:"Premium subscription for every employee, with an aggregated anonymous dashboard", pb_2:"In-house championship and competitions between employees and departments", pb_3:"Prizes and incentives inside the program that reward consistency and progress", pb_cta:"Request a corporate offer",
+ pc_h:"Sports clubs and senior clubs", pc_1:"A dedicated program for members of sports clubs across the country", pc_2:"A service designed for senior club members: simpler tracking and a safe plan", pc_3:"Group offer for the club, with coach follow-up", pc_cta:"Register your club",
+ why_eyebrow:"Why now", why_h2:"The UAE is building the longevity sector. We are building its platform for the world.",
+ st1_l:"UAE longevity market (projected 2026)", st1_s:"Source: WAM",
+ st2_l:"Global market by 2032, growing 16.8% a year", st2_s:"Source: MarkNtel",
+ st3_l:"years between life expectancy and healthy life in the UAE", st3_s:"78 years lived, 67 healthy",
+ st4_l:"Dubai Longevity Authority established", st4_s:"Law No. 17 of 2026",
+ why_1:"Dubai established a dedicated authority to regulate the longevity sector in 2026 and approved its strategy in September 2026.",
+ why_2:"Comprehensive testing is now available and affordable, but turning it into a clear daily plan is still missing.",
+ why_3:"The platform is neutral: it brings together several labs and clinics and belongs to no single hospital.",
+ why_4:"The plan adapts to your life: the cuisine you choose, Ramadan and fasting, the climate, and your sleep pattern.",
+ trust_h:"Trust and governance", trust_p:"All health data is stored and processed inside the UAE, with your clear consent and the right to delete your data at any time.",
+ trust_p2:"We launch after obtaining the required permits from the competent authorities in Dubai.",
+ rm_eyebrow:"Roadmap", rm_h2:"From idea to 3,000 subscribers in 18 months",
+ rm1_m:"Now", rm1_h:"Waitlist", rm1_p:"Target 5,000 sign-ups and building the provider network.",
+ rm2_m:"Month 6", rm2_h:"Beta", rm2_p:"200 users, discounted test with a partner lab.",
+ rm3_m:"Month 7", rm3_h:"Official launch", rm3_p:"After the security audit and permits.",
+ rm4_m:"Month 12", rm4_h:"1,000 paid subscribers", rm4_p:"and 20 providers in the directory.",
+ rm5_m:"Month 18", rm5_h:"3,000 subscribers", rm5_p:"and 5 companies and clubs in group programs.",
+ fo_eyebrow:"Founder", fo_h2:"Nabhan Ibrahim",
+ fo_p:"Emirati entrepreneur with a passion for health, and founder of the first personal training business in Dubai. Founder of Health Road, with one mission: a longer healthy life, through a plan you understand and can stick to.",
+ join_eyebrow:"Early access", join_h2:"Be among the first 5,000 members",
+ join_lead:"Register now and receive an invitation to the beta before the official launch.",
+ join_1:"Priority access to the beta", join_2:"Discounted test with a partner lab", join_3:"Best price on the annual plan",
+ l_name:"Name", l_email:"Email", l_phone:"Mobile", l_type:"I am", t_ind:"An individual interested in preventive health", t_clinic:"A clinic or lab", t_company:"A company (employee program)", t_club:"A sports club or senior club", t_inv:"An investor", l_city:"City", l_submit:"Add me to the waitlist",
+ l_privacy:"We use your details only to contact you about the launch. We never share them.",
+ st_need:"Enter your name and an email or mobile number.", st_saving:"Saving…", st_ok:"You are on the list. We will contact you before launch.",
+ st_nodb:"Direct registration is not available in this version yet. Reach us by email:", st_err:"Could not save. Try again or email us:",
+ own_h:"Owner panel: waitlist registrations", own_count:"Registered: ",
+ ft_1:"Longevity is a digital wellness platform. It does not provide medical diagnosis or prescribe medication. Abnormal results are routed to a licensed doctor.",
+ ft_2:"This site is in pre-launch. Information and prices are indicative. Provider names in the directory are shortlisted candidates and do not imply an existing partnership.",
+ rp_eyebrow:"Sample report", rp_h1:"This is what your report looks like", rp_lead:"One number to follow, every marker explained in your language, and a weekly plan you can start today. A sample with illustrative data for a fictional person.",
+ rp_name:"Ahmed (fictional example)", rp_meta:"42 · Dubai · Last test: 3 Oct 2026", rp_demo:"Illustrative data",
+ rp_score_e:"Health score", rp_of100:"out of 100", rp_score_msg:"Up 13 points in 6 months",
+ rp_bio:"Biological age (estimated)", rp_chrono:"Actual age",
+ rp_score_note:"The score combines lab results, sleep, activity and nutrition into one number. It rises as you follow the plan.",
+ rp_trend_e:"Progress", rp_trend_h:"Health score over 6 months",
+ m1:"May", m2:"Jun", m3:"Jul", m4:"Aug", m5:"Sep", m6:"Oct",
+ rp_trend_note:"The biggest jump came after adding a daily walk and changing breakfast in August.",
+ rp_doc_h:"Two markers routed to a licensed doctor", rp_doc_p:"HbA1c and LDL cholesterol are outside the optimal range. No treatment advice is given before the doctor's review. Review due within 48 hours.",
+ rp_mk_e:"Lab results", rp_mk_h:"Your results, explained",
+ th_marker:"Marker", th_value:"Result", th_status:"Status", th_meaning:"What it means", th_action:"What we do",
+ lg_opt:"Optimal", lg_norm:"Normal", lg_att:"Needs attention", lg_doc:"Doctor review",
+ rp_plan_e:"Weekly plan", rp_plan_h:"Ahmed's plan for this week", rp_plan_lead:"Small steps based on his results. Food changes with the cuisine he chooses.",
+ rp_cuisine_h:"Choose your cuisine", rp_cuisine_note:"Dishes are illustrative examples that account for the high LDL, borderline HbA1c and low vitamin D in this sample.",
+ c_intl:"International", c_arab:"Arabic", c_asian:"Asian", c_gulf:"Emirati & Gulf", c_ital:"Italian",
+ ml_b:"Breakfast", ml_l:"Lunch", ml_d:"Dinner",
+ wk1_h:"Movement", wk1_p:"Brisk 30-minute walk × 5 days and two resistance sessions a week. Target 7,500 steps a day.",
+ wk2_h:"Sleep", wk2_p:"In bed before 11:30 pm, screens off 45 minutes earlier. Target 7 hours.",
+ wk3_h:"Nutrition", wk3_p:"Fiber with every meal, oily fish twice a week, less white bread and juice.",
+ wk4_h:"Stress and sunlight", wk4_p:"10 minutes of breathing or a walk after lunch, and 15 minutes of morning sun three times a week.",
+ rp_next_e:"Up next", rp_next_h:"Upcoming tests and appointments",
+ nx1:"Doctor review (HbA1c and cholesterol)", nx1_d:"Within 48 hours",
+ nx2:"Vitamin D re-test", nx2_d:"In 8 weeks",
+ nx3:"Full panel to measure progress", nx3_d:"April 2027",
+ rp_book_e:"Booking", rp_book_h:"Book from inside the report", rp_book_p:"Accredited labs and clinics appear here with price and next available slot. Booking opens at launch.",
+ rp_book_cta:"Browse the directory", rp_join_cta:"Register for the beta",
+ rp_disclaimer:"This sample is illustrative, for a fictional person. The platform does not diagnose or prescribe; any abnormal result is routed to a licensed doctor.",
+ pv_eyebrow:"Provider directory", pv_h1:"Clinics, hospitals and labs in the UAE and abroad", pv_lead:"A neutral directory that accredits trusted providers only, with direct booking at launch. The providers below are shortlisted candidates.",
+ pv_all:"All", pv_uae:"In the UAE", pv_abroad:"Outside the UAE",
+ pt_all:"All types", pt_hospital:"Hospitals", pt_longevity:"Longevity clinics", pt_lab:"Labs", pt_wellness:"Wellness retreats", pt_fitness:"Sports clubs", pt_senior:"Senior clubs",
+ pv_search:"Search by name or city", pv_count_1:"provider", pv_count_n:"shortlisted providers",
+ pv_status:"Shortlisted", pv_book:"Booking at launch", pv_none:"No matching results.",
+ pv_note:"The names above are real, established institutions listed as candidates for the directory. No partnership agreement exists with any of them yet; final listing follows license and accreditation checks.",
+ pv_cta_h:"Do you represent a clinic, lab or club?", pv_cta_p:"Register now to be among the first accredited providers in the directory at launch.", pv_cta:"Register your organization",
+ ty:{hospital:"Hospital",longevity:"Longevity clinic",lab:"Laboratory",wellness:"Wellness retreat",fitness:"Sports club",senior:"Senior club"},
+ nav_trainer:"Virtual trainer",
+ qk4_e:"Training", qk4_h:"Your virtual personal trainer", qk4_p:"A complete strength and resistance program for every member, with illustrations, adapted to your InBody report and lab results.",
+ f7_h:"Virtual personal trainer", f7_p:"A complete strength and resistance program for every member, with an illustration for every exercise, adapting weekly to your progress, InBody report and labs.",
+ p2_5:"Adaptive personal training program",
+ ib_e:"Body composition", ib_h:"InBody report reading", ib_lead:"Upload your InBody report (or Tanita and Seca) and the platform reads the numbers, links them to your labs, and builds your training program on them.",
+ ib_drop:"Upload your InBody report (image or PDF)", ib_drop_s:"Drag the file here or click to choose", ib_got:"File received: ", ib_got_s:" Automatic reading goes live at launch. Below is the sample reading for Ahmed.",
+ ib_date:"Last measurement: 3 Oct 2026 · InBody 570",
+ ib_score:"InBody score (of 100)", ib_w:"Weight", ib_smm:"Skeletal muscle mass", ib_fat:"Body fat percentage", ib_vfa:"Visceral fat level", ib_bmr:"Basal metabolic rate", ib_whr:"Waist-to-hip ratio",
+ ib_smm_x:"At the bottom of the normal range (33.5–41 kg). Target: +2 kg in 6 months.",
+ ib_fat_x:"Above the normal range (10–20%). Target: 22% in 6 months.",
+ ib_vfa_x:"Above 10. Linked to the elevated HbA1c and triglycerides in your labs.",
+ ib_whr_x:"Above 0.90 means fat around the abdomen. Tracked together with visceral fat.",
+ ib_bmr_x:"The base for your calorie target: 1,790 + activity ≈ 2,400 kcal a day.",
+ ib_seg:"Muscle balance between limbs", ib_seg_x:"Legs are below average (92–94%) compared with trunk and arms. That is why your program emphasizes the legs.",
+ seg_ra:"Right arm", seg_la:"Left arm", seg_tr:"Trunk", seg_rl:"Right leg", seg_ll:"Left leg",
+ ib_action_h:"What we do", ib_action:"A 3-day resistance program with a leg focus, protein at 1.6 g per kg (≈ 140 g a day), a walk after meals, and an InBody re-test in 8 weeks.",
+ ib_cta:"See Ahmed's training program",
+ tr_eyebrow:"Virtual personal trainer", tr_h1:"A complete strength and resistance program, for every member", tr_lead:"The virtual trainer builds your program from your InBody report, labs, goal, available days and training location, and adjusts it every week based on your progress. Change the options and watch the program change.",
+ tr_goal:"Goal", g_fat:"Fat loss", g_muscle:"Build muscle", g_health:"General health", g_senior:"Seniors (safe)",
+ tr_days:"Days per week", tr_place:"Location", pl_gym:"Gym", pl_home:"Home",
+ tr_ahmed:"Ahmed's sample: 28.7% fat, visceral fat 12, legs below average ← suggested setup: fat loss, 3 days, gym.",
+ tr_prog_h:"This week's program", day:"Day", d_full:"Full body", d_upper:"Upper body", d_lower:"Lower body",
+ x_sets:"sets", x_reps:"reps", x_rest:"rest", x_sec:"s", x_rpe:"effort",
+ dn:["Sat","Sun","Mon","Tue","Wed","Thu"],
+ wu:"Warm-up: 5 minutes brisk walk + joint mobility.", fin_fat:"Finisher: 10 minutes brisk walk.", fin_senior:"Finisher: 3 minutes of balance drills.", fin_def:"Finisher: 5 minutes of stretching.",
+ tr_ph_e:"Progression", tr_ph_h:"How the program evolves",
+ ph1_w:"Weeks 1–2", ph1_h:"Learn the movements", ph1_p:"Light loads, effort 6–7 out of 10, technique first.",
+ ph2_w:"Week 3", ph2_h:"Add load", ph2_p:"+2.5 to 5% weight or +1–2 reps once all sets are completed.",
+ ph3_w:"Week 4", ph3_h:"Deload", ph3_p:"−30% volume to recover, then a new cycle begins.",
+ ph4_w:"Week 8", ph4_h:"Re-measure", ph4_p:"New InBody, compare muscle and fat, update the program.",
+ tr_rules_e:"How it works as a personal trainer", tr_rules_h:"It watches, adjusts and protects you",
+ r1_h:"Builds from your data", r1_p:"InBody, labs, goal, days, available equipment and past injuries.",
+ r2_h:"Adjusts weekly", r2_p:"Completed all sessions at effort 7 or less? Load goes up. Missed a session? It redistributes. Poor sleep? A lighter session.",
+ r3_h:"Links training to your labs", r3_p:"High HbA1c → walk after meals. Low vitamin D → morning sessions in the sun. High blood pressure → no breath-holding.",
+ r4_h:"Protects you", r4_p:"A readiness questionnaire before starting, and referral to a licensed doctor for high blood pressure, heart conditions or injuries. For seniors: lighter loads and balance work.",
+ tr_lib_e:"Exercise library", tr_lib_h:"An illustration for every exercise", tr_lib_p:"Every exercise in the program comes with an illustration and a form cue, and a short video at launch.",
+ tr_cta_h:"Try your trainer in the beta", tr_cta_p:"Join the waitlist and you will receive an invitation when the beta opens.",
+ tr_disc:"The program is an illustrative sample, not a prescription for a specific person. Consult a doctor before starting if you have high blood pressure, a heart condition or an injury.",
+ nav_women:"Women's health",
+ qk5_e:"For women", qk5_h:"Menopause program", qk5_p:"Symptom tracker, labs for this stage, training for bone and muscle, sleep and hot flashes, and your doctor one step away.",
+ f8_h:"Women's health programs: menopause", f8_p:"A complete program for perimenopause and after: symptom and trigger tracking, labs and bone density reading, resistance training for bone, nutrition and sleep, and a ready summary for your gynecologist.",
+ p2_6:"Menopause program for women",
+ t_women:"A woman interested in the menopause program",
+ g_meno:"Menopause", fin_meno:"Finisher: 3 minutes of light impact and balance, plus pelvic floor exercises.",
+ wm_eyebrow:"Women's health", wm_h1:"Menopause program: a clear plan for a stage everyone ignores",
+ wm_lead:"Perimenopause and the years after change sleep, weight, bone and mood for years. Longevity gives a woman a daily plan built on her symptoms and labs, and connects her with a licensed doctor when a medical decision is needed.",
+ ws1_l:"of women experience hot flashes and night sweats", ws1_s:"Estimates from large studies",
+ ws2_l:"years: median duration of symptoms", ws2_s:"SWAN study (USA)",
+ ws3_l:"possible bone density loss in the 5–7 years after menopause", ws3_s:"Bone Health & Osteoporosis Foundation",
+ ws4_l:"years: the age range the program serves", ws4_s:"Average age at menopause is about 51",
+ wm_sym_e:"What we track", wm_sym_h:"Symptoms the program covers", wm_sym_p:"Log them in a minute a day; the platform finds the pattern and the triggers within weeks.",
+ sy1:"Hot flashes", sy2:"Night sweats", sy3:"Sleep disruption", sy4:"Mood swings and anxiety", sy5:"Weight gain around the abdomen", sy6:"Muscle and bone loss", sy7:"Brain fog", sy8:"Joint pain", sy9:"Vaginal and bladder health",
+ wm_do_e:"What the program does", wm_do_h:"Six services in one program",
+ wd1_h:"Symptom and trigger tracker", wd1_p:"Flashes, sleep, mood, energy, cycle changes. A monthly report reveals triggers: caffeine, spicy food, heat, stress.",
+ wd2_h:"Labs for this stage, explained", wd2_p:"Vitamin D, lipids, HbA1c, thyroid, ferritin, plus a reading of your bone density scan (DEXA) and InBody muscle mass.",
+ wd3_h:"Training for bone and muscle", wd3_p:"A dedicated mode in the virtual trainer: resistance 2–3 times a week to protect bone and muscle, balance work, and pelvic floor.",
+ wd4_h:"Nutrition for this stage", wd4_p:"Protein 1.2–1.6 g per kg, calcium 1,200 mg a day, vitamin D, fiber, less caffeine in the evening, in the cuisine you choose.",
+ wd5_h:"Sleep and hot flashes", wd5_p:"Slow breathing during a flash, a cool bedroom and layered clothing, fewer triggers, and the basics of behavioral therapy for insomnia.",
+ wd6_h:"Your doctor, one step away", wd6_p:"A ready visit summary with your symptoms and labs, and a directory of licensed gynecologists and menopause clinics to discuss hormone therapy and other options. Medical decisions belong to the doctor.",
+ wm_not:"The platform does not diagnose or prescribe hormone therapy or medication. Its role: track, understand, plan daily life, and prepare you for the doctor's visit.",
+ wm_snap_e:"A snapshot from the program", wm_snap_h:"Noura's dashboard after 8 weeks",
+ wm_name:"Noura (fictional example)", wm_meta:"49 · Dubai · perimenopause",
+ wm_hf_h:"Hot flashes per week", wk_1:"Week 1", wk_4:"Week 4", wk_8:"Week 8",
+ wm_hf_note:"Down from 8 to 3 a week after cutting afternoon caffeine, cooling the bedroom, and a daily walk.",
+ wm_mini_h:"Noura's markers",
+ wm_sleep:"Average sleep (was 5.4)", wm_dexa:"Bone density T-score", wm_vitd:"Vitamin D ng/mL", wm_smm:"Skeletal muscle mass",
+ wm_dexa_x:"Bone: needs attention (−1.2)", wm_vitd_x:"Vitamin D: doctor review",
+ wm_action:"3-day resistance program for bone, protein and calcium in the plan, a summary for her gynecologist within two weeks, vitamin D re-test in 8 weeks and DEXA in a year.",
+ wm_tr_cta:"Training program for this stage", wm_dir_cta:"Gynecologists in the directory",
+ wm_priv_h:"Privacy and comfort", wp1:"Female coaches and specialists on request", wp2:"A private women's community inside the platform, no names", wp3:"Your data stays in the UAE, and you can delete it any time",
+ wm_corp_h:"For companies: a women's health track", wc1:"Supporting employees through menopause reduces absence and keeps experienced talent", wc2:"Added to the employee wellness program at no extra cost per employee", wc3:"Aggregated, anonymous reports for HR",
+ wm_cta_h:"Join the beta", wm_cta_p:"The first 500 women on the waitlist get the program free during the trial.",
+ wm_disc:"This sample is illustrative, for a fictional person. Medical content is reviewed by a licensed gynecologist before launch, and the platform does not prescribe.",
+ chat_fab:"Ask Longevity", chat_h:"Longevity assistant", chat_send:"Send",
+ chat_hi:"Hi. I can answer questions about the platform, plans, partnerships and the directory. I do not analyze personal lab results at this stage.",
+ chat_na:"The AI assistant currently works for signed-in claude.ai users. Email us at the address below.",
+ chat_faq:"This is a demo assistant that answers common questions. The full AI assistant goes live at launch.",
+ chat_unknown:"I don't have a precise answer for that in the demo. Email us:",
+ chips:["What is the platform?","How does the virtual trainer work?","How much is it?","How do I join as a clinic?"],
+ copy:"Copy", copied:"Copied"
+}};
+const CONTACT_EMAIL = "hello@longevity.ae";
+const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxx" — when set, the waitlist posts there on the public site
+const CLAUDE_RT = (typeof claude!=="undefined" && claude && typeof claude.use==="function") ? claude : null;
+let lang = "ar";
+try{ const s = localStorage.getItem("lv_lang"); if(s==="en"||s==="ar") lang=s; }catch(e){}
+
+/* ============ sample report data ============ */
+const MARKERS = [
+ {n:{ar:"فيتامين د",en:"Vitamin D"}, v:"18 ng/mL", ref:"30–60", st:"att",
+  m:{ar:"أقل من النطاق الموصى به. شائع في المنطقة بسبب قلة التعرض للشمس.",en:"Below the recommended range. Common in the region due to limited sun exposure."},
+  a:{ar:"15 دقيقة شمس صباحية 3 مرات أسبوعياً، وإعادة الفحص بعد 8 أسابيع. المكملات بعد رأي الطبيب.",en:"15 minutes of morning sun three times a week, re-test in 8 weeks. Supplements only on the doctor's advice."}},
+ {n:{ar:"السكر التراكمي HbA1c",en:"HbA1c"}, v:"5.8 %", ref:"< 5.7", st:"doc",
+  m:{ar:"أعلى قليلاً من الطبيعي. يعكس متوسط السكر خلال 3 أشهر.",en:"Slightly above normal. Reflects average blood sugar over 3 months."},
+  a:{ar:"حُوِّل لطبيب مرخص. في الخطة: تقليل الخبز الأبيض والعصائر، ومشي بعد الوجبات.",en:"Routed to a licensed doctor. In the plan: less white bread and juice, a walk after meals."}},
+ {n:{ar:"الكوليسترول الضار LDL",en:"LDL cholesterol"}, v:"3.6 mmol/L", ref:"< 2.6", st:"doc",
+  m:{ar:"أعلى من المستوى المستهدف للوقاية من أمراض القلب.",en:"Above the target level for heart disease prevention."},
+  a:{ar:"حُوِّل لطبيب مرخص. في الخطة: ألياف في كل وجبة، سمك دهني مرتين أسبوعياً.",en:"Routed to a licensed doctor. In the plan: fiber with every meal, oily fish twice a week."}},
+ {n:{ar:"الدهون الثلاثية",en:"Triglycerides"}, v:"1.9 mmol/L", ref:"< 1.7", st:"att",
+  m:{ar:"أعلى قليلاً من الطبيعي، وغالباً مرتبطة بالسكريات والنشاط.",en:"Slightly above normal, usually linked to sugar intake and activity."},
+  a:{ar:"تتابع مع تغيير الأكل والحركة، وإعادة الفحص في الفحص الشامل القادم.",en:"Tracked with the food and movement changes, re-checked at the next full panel."}},
+ {n:{ar:"الفيريتين (مخزون الحديد)",en:"Ferritin (iron stores)"}, v:"85 ng/mL", ref:"30–300", st:"opt",
+  m:{ar:"مخزون الحديد جيد.",en:"Iron stores are good."},
+  a:{ar:"لا إجراء. يُعاد الفحص سنوياً.",en:"No action. Re-checked yearly."}},
+ {n:{ar:"الغدة الدرقية TSH",en:"TSH (thyroid)"}, v:"2.1 mIU/L", ref:"0.4–4.0", st:"norm",
+  m:{ar:"ضمن النطاق الطبيعي.",en:"Within the normal range."},
+  a:{ar:"لا إجراء.",en:"No action."}},
+ {n:{ar:"الالتهاب hs-CRP",en:"hs-CRP (inflammation)"}, v:"1.1 mg/L", ref:"< 1.0", st:"att",
+  m:{ar:"التهاب منخفض الدرجة، قريب من الحد. يتحسن مع النوم والحركة.",en:"Low-grade inflammation, near the limit. Improves with sleep and movement."},
+  a:{ar:"متابعة النوم 7 ساعات والمشي اليومي، وإعادة الفحص بعد 3 أشهر.",en:"Keep 7 hours of sleep and the daily walk, re-test in 3 months."}},
+ {n:{ar:"فيتامين ب12",en:"Vitamin B12"}, v:"410 pg/mL", ref:"200–900", st:"norm",
+  m:{ar:"ضمن النطاق الطبيعي.",en:"Within the normal range."},
+  a:{ar:"لا إجراء.",en:"No action."}}
+];
+const ST = {opt:{cls:"ok",k:"lg_opt"}, norm:{cls:"",k:"lg_norm"}, att:{cls:"warn",k:"lg_att"}, doc:{cls:"bad",k:"lg_doc"}};
+
+const CUISINES = ["intl","arab","asian","gulf","ital"];
+const MEALS = {
+ intl:{ b:{ar:"شوفان بالحليب مع التوت والجوز",en:"Oats with milk, berries and walnuts"}, l:{ar:"سلمون مشوي مع كينوا وسلطة خضراء",en:"Grilled salmon with quinoa and a green salad"}, d:{ar:"صدر دجاج مشوي مع خضار محمّصة وبطاطا حلوة",en:"Grilled chicken with roasted vegetables and sweet potato"} },
+ arab:{ b:{ar:"فول بزيت الزيتون مع خبز أسمر وخيار وطماطم",en:"Fava beans with olive oil, brown bread, cucumber and tomato"}, l:{ar:"سمك مشوي مع فريكة وسلطة فتوش بدون خبز مقلي",en:"Grilled fish with freekeh and fattoush without fried bread"}, d:{ar:"شوربة عدس مع سلطة تبولة وبيضة مسلوقة",en:"Lentil soup with tabbouleh and a boiled egg"} },
+ asian:{ b:{ar:"توفو مقلي بقليل من الزيت مع خضار وأرز بني قليل",en:"Lightly stir-fried tofu with vegetables and a little brown rice"}, l:{ar:"سلمون تيرياكي خفيف مع إدامامي وسلطة أعشاب بحرية",en:"Light teriyaki salmon with edamame and seaweed salad"}, d:{ar:"حساء ميسو مع دجاج مشوي وخضار مطهوة على البخار",en:"Miso soup with grilled chicken and steamed vegetables"} },
+ gulf:{ b:{ar:"بيض بالطماطم مع خبز رقاق أسمر ولبن",en:"Eggs with tomato, wholegrain regag bread and laban"}, l:{ar:"سمك مشوي مع أرز بني بالهيل وسلطة",en:"Grilled fish with cardamom brown rice and salad"}, d:{ar:"ثريد دجاج بخبز أسمر وخضار كثيرة",en:"Chicken thareed with wholegrain bread and plenty of vegetables"} },
+ ital:{ b:{ar:"زبادي يوناني مع فواكه وحفنة لوز",en:"Greek yogurt with fruit and a handful of almonds"}, l:{ar:"سلطة توسكانية بالفاصوليا والتونة وزيت الزيتون",en:"Tuscan bean and tuna salad with olive oil"}, d:{ar:"سمك بالفرن مع خضار متوسطية ومعكرونة حبوب كاملة بكمية صغيرة",en:"Baked fish with Mediterranean vegetables and a small portion of wholegrain pasta"} }
+};
+const MEAL_WHY = {ar:"ألياف أعلى، دهون صحية، وسكريات أقل.", en:"More fiber, healthy fats, less sugar."};
+let cuisine = "gulf";
+try{ const c=localStorage.getItem("lv_cuisine"); if(CUISINES.includes(c)) cuisine=c; }catch(e){}
+
+/* ============ providers data ============ */
+const PROVIDERS = [
+ {n:"Cleveland Clinic Abu Dhabi", ar:"كليفلاند كلينك أبوظبي", city:{ar:"أبوظبي",en:"Abu Dhabi"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل","قلب","طب وقائي"],en:["Executive health","Cardiology","Preventive"]}},
+ {n:"Mediclinic City Hospital", ar:"ميديكلينيك سيتي هوسبيتال", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل","مختبر"],en:["Health check","Laboratory"]}},
+ {n:"American Hospital Dubai", ar:"المستشفى الأمريكي دبي", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل","قلب"],en:["Health check","Cardiology"]}},
+ {n:"King's College Hospital London Dubai", ar:"مستشفى كينغز كوليدج لندن دبي", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل","غدد صماء"],en:["Health check","Endocrinology"]}},
+ {n:"Burjeel Medical City", ar:"برجيل الطبية", city:{ar:"أبوظبي",en:"Abu Dhabi"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل","أورام"],en:["Health check","Oncology"]}},
+ {n:"Aster Hospitals (Thrive by myAster)", ar:"مستشفيات أستر", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص منزلي","100+ مؤشر"],en:["Home testing","100+ biomarkers"]}},
+ {n:"NMC Royal Hospital", ar:"مستشفى إن إم سي رويال", city:{ar:"أبوظبي / دبي",en:"Abu Dhabi / Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["فحص شامل"],en:["Health check"]}},
+ {n:"Sheikh Shakhbout Medical City", ar:"مدينة الشيخ شخبوط الطبية", city:{ar:"أبوظبي",en:"Abu Dhabi"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"hospital", tags:{ar:["مستشفى حكومي","تخصصات متقدمة"],en:["Public hospital","Advanced specialties"]}},
+ {n:"Longevity Hub by Clinique La Prairie", ar:"مركز إطالة العمر، كلينيك لا بريري", city:{ar:"دبي، ون زعبيل",en:"Dubai, One Za'abeel"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"longevity", tags:{ar:["إطالة عمر","تشخيص متقدم"],en:["Longevity","Advanced diagnostics"]}},
+ {n:"Pura Longevity Clinic", ar:"عيادة بورا لإطالة العمر", city:{ar:"أبوظبي",en:"Abu Dhabi"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"longevity", tags:{ar:["إطالة عمر","مرخصة من دائرة الصحة"],en:["Longevity","DoH licensed"]}},
+ {n:"Unilabs Middle East", ar:"يونيلابس الشرق الأوسط", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"lab", tags:{ar:["مختبر","سحب منزلي"],en:["Laboratory","Home collection"]}},
+ {n:"Al Borg Diagnostics", ar:"مختبرات البرج", city:{ar:"دبي / أبوظبي",en:"Dubai / Abu Dhabi"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"lab", tags:{ar:["مختبر","باقات فحص"],en:["Laboratory","Test packages"]}},
+ {n:"GymNation", ar:"جيم نيشن", city:{ar:"الإمارات",en:"UAE-wide"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"fitness", tags:{ar:["نادٍ رياضي","برنامج منتسبين"],en:["Gym chain","Member program"]}},
+ {n:"Fitness First Middle East", ar:"فتنس فيرست", city:{ar:"الإمارات",en:"UAE-wide"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"fitness", tags:{ar:["نادٍ رياضي","برنامج منتسبين"],en:["Gym chain","Member program"]}},
+ {n:"Thukher Social Club", ar:"نادي ذخر الاجتماعي", city:{ar:"دبي",en:"Dubai"}, country:{ar:"الإمارات",en:"UAE"}, r:"uae", t:"senior", tags:{ar:["كبار المواطنين","برنامج خاص"],en:["Senior citizens","Dedicated program"]}},
+ {n:"King Faisal Specialist Hospital", ar:"مستشفى الملك فيصل التخصصي", city:{ar:"الرياض",en:"Riyadh"}, country:{ar:"السعودية",en:"Saudi Arabia"}, r:"abroad", t:"hospital", tags:{ar:["تخصصات متقدمة"],en:["Advanced specialties"]}},
+ {n:"Mayo Clinic", ar:"مايو كلينك", city:{ar:"روتشستر",en:"Rochester"}, country:{ar:"الولايات المتحدة",en:"USA"}, r:"abroad", t:"hospital", tags:{ar:["فحص تنفيذي","رأي ثانٍ"],en:["Executive health","Second opinion"]}},
+ {n:"Cleveland Clinic", ar:"كليفلاند كلينك", city:{ar:"أوهايو",en:"Ohio"}, country:{ar:"الولايات المتحدة",en:"USA"}, r:"abroad", t:"hospital", tags:{ar:["قلب","فحص تنفيذي"],en:["Cardiology","Executive health"]}},
+ {n:"Johns Hopkins Medicine", ar:"جونز هوبكنز", city:{ar:"بالتيمور",en:"Baltimore"}, country:{ar:"الولايات المتحدة",en:"USA"}, r:"abroad", t:"hospital", tags:{ar:["رأي ثانٍ","أبحاث"],en:["Second opinion","Research"]}},
+ {n:"Charité – Universitätsmedizin Berlin", ar:"شاريتيه برلين", city:{ar:"برلين",en:"Berlin"}, country:{ar:"ألمانيا",en:"Germany"}, r:"abroad", t:"hospital", tags:{ar:["مستشفى جامعي","فحص شامل"],en:["University hospital","Health check"]}},
+ {n:"Bumrungrad International Hospital", ar:"مستشفى بومرونغراد الدولي", city:{ar:"بانكوك",en:"Bangkok"}, country:{ar:"تايلاند",en:"Thailand"}, r:"abroad", t:"hospital", tags:{ar:["سياحة علاجية","فحص شامل"],en:["Medical travel","Health check"]}},
+ {n:"Apollo Hospitals", ar:"مستشفيات أبولو", city:{ar:"تشيناي",en:"Chennai"}, country:{ar:"الهند",en:"India"}, r:"abroad", t:"hospital", tags:{ar:["سياحة علاجية","فحص شامل"],en:["Medical travel","Health check"]}},
+ {n:"Samsung Medical Center", ar:"مركز سامسونغ الطبي", city:{ar:"سيول",en:"Seoul"}, country:{ar:"كوريا الجنوبية",en:"South Korea"}, r:"abroad", t:"hospital", tags:{ar:["فحص شامل","تشخيص متقدم"],en:["Health check","Advanced diagnostics"]}},
+ {n:"Acıbadem Healthcare Group", ar:"مجموعة أجيبادم", city:{ar:"إسطنبول",en:"Istanbul"}, country:{ar:"تركيا",en:"Türkiye"}, r:"abroad", t:"hospital", tags:{ar:["سياحة علاجية"],en:["Medical travel"]}},
+ {n:"Clinique La Prairie", ar:"كلينيك لا بريري", city:{ar:"مونترو",en:"Montreux"}, country:{ar:"سويسرا",en:"Switzerland"}, r:"abroad", t:"longevity", tags:{ar:["إطالة عمر","إقامة"],en:["Longevity","Residential"]}},
+ {n:"SHA Wellness Clinic", ar:"عيادة شا للعافية", city:{ar:"أليكانتي",en:"Alicante"}, country:{ar:"إسبانيا",en:"Spain"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","تغذية"],en:["Wellness retreat","Nutrition"]}},
+ {n:"Lanserhof", ar:"لانزرهوف", city:{ar:"تيغرنزيه",en:"Tegernsee"}, country:{ar:"ألمانيا",en:"Germany"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","طب وقائي"],en:["Wellness retreat","Preventive medicine"]}},
+ {n:"Chenot Palace Weggis", ar:"شينو بالاس",  city:{ar:"فيغيس",en:"Weggis"}, country:{ar:"سويسرا",en:"Switzerland"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","ديتوكس"],en:["Wellness retreat","Detox"]}}
+];
+let region="all", ptype="all", pq="";
+
+/* ============ exercise pictograms + program builder ============ */
+const SV = (inner)=>'<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+inner+'</svg>';
+const H = (x,y)=>'<circle cx="'+x+'" cy="'+y+'" r="9" fill="currentColor" stroke="none"/>';
+const DB = (x,y)=>'<circle cx="'+x+'" cy="'+y+'" r="5" fill="currentColor" stroke="none"/>';
+const FLOOR = '<path d="M8 108 L112 108" stroke-width="3" opacity=".5"/>';
+const EX = {
+ squat:{ar:"سكوات بالدمبل",en:"Goblet squat",m:{ar:"أرجل وجذع",en:"Legs and core"},c:{ar:"الصدر مرفوع، الركبة باتجاه أصابع القدم",en:"Chest up, knees track over the toes"},
+  s:SV(H(70,24)+'<path d="M68 34 L56 66 L80 74 L74 106 M62 106 L90 106 M64 44 L84 52"/>'+DB(88,54)+FLOOR)},
+ chair:{ar:"سكوات على الكرسي",en:"Chair squat",m:{ar:"أرجل (آمن)",en:"Legs (safe)"},c:{ar:"المس الكرسي بخفة وانهض بدون دفع اليدين",en:"Touch the chair lightly, stand without pushing with the hands"},
+  s:SV('<path d="M14 76 L46 76 M18 76 L18 106 M42 76 L42 106 M14 50 L14 76" stroke-width="4" opacity=".6"/>'+H(70,24)+'<path d="M68 34 L58 66 L82 72 L78 106 M66 106 L92 106 M64 44 L86 56"/>'+FLOOR)},
+ hinge:{ar:"رفعة ميتة رومانية بالدمبل",en:"Dumbbell Romanian deadlift",m:{ar:"خلفية الفخذ والأرداف",en:"Hamstrings and glutes"},c:{ar:"الظهر مستقيم، ادفع الورك للخلف، لا تدوّر الظهر",en:"Flat back, push the hips back, never round the spine"},
+  s:SV(H(86,40)+'<path d="M78 46 L50 62 L54 84 L50 106 M40 106 L64 106 M66 52 L72 90"/>'+DB(68,96)+DB(80,96)+'<path d="M68 96 L80 96"/>'+FLOOR)},
+ bench:{ar:"ضغط صدر بالدمبل",en:"Dumbbell bench press",m:{ar:"صدر وكتف وترايسبس",en:"Chest, shoulders, triceps"},c:{ar:"القدمان ثابتتان، لوحا الكتف مضمومان",en:"Feet planted, shoulder blades pulled together"},
+  s:SV('<rect x="18" y="78" width="84" height="7" rx="3" fill="currentColor" stroke="none" opacity=".5"/>'+H(28,68)+'<path d="M38 70 L80 70 L92 92 L92 106 M56 70 L56 40"/>'+DB(48,38)+DB(64,38)+'<path d="M48 38 L64 38"/>'+FLOOR)},
+ pushup:{ar:"ضغط أرضي",en:"Push-up",m:{ar:"صدر وكتف وجذع",en:"Chest, shoulders, core"},c:{ar:"الجسم خط مستقيم من الرأس إلى الكعب",en:"Body in one straight line from head to heels"},
+  s:SV(H(26,48)+'<path d="M34 54 L94 72 L102 94 M44 56 L46 94"/>'+FLOOR)},
+ wallpush:{ar:"ضغط على الحائط",en:"Wall push-up",m:{ar:"صدر وكتف (آمن)",en:"Chest and shoulders (safe)"},c:{ar:"ابتعد خطوة عن الحائط، انزل بالصدر ببطء",en:"Stand one step from the wall, lower the chest slowly"},
+  s:SV('<path d="M98 10 L98 108" stroke-width="4" opacity=".6"/>'+H(62,28)+'<path d="M64 38 L58 76 L56 106 M63 46 L94 42 M58 76 L66 106"/>'+FLOOR)},
+ row:{ar:"تجديف بالدمبل",en:"Dumbbell row",m:{ar:"ظهر وبايسبس",en:"Back and biceps"},c:{ar:"اسحب المرفق نحو الورك، لا تدوّر الجذع",en:"Pull the elbow toward the hip, do not twist the torso"},
+  s:SV(H(86,42)+'<path d="M78 48 L52 64 L56 84 L52 106 M42 106 L66 106 M68 54 L60 72 L68 88"/>'+DB(70,94)+'<path d="M58 78 L58 64" stroke-width="3"/><path d="M54 68 L58 62 L62 68" stroke-width="3"/>'+FLOOR)},
+ bandrow:{ar:"تجديف بالحبل المطاطي",en:"Band row",m:{ar:"ظهر (آمن)",en:"Back (safe)"},c:{ar:"اجلس مستقيماً واسحب المقبضين نحو البطن",en:"Sit tall and pull the handles toward the stomach"},
+  s:SV(H(50,30)+'<path d="M52 40 L54 76 L80 80 L80 106 M50 50 L72 58 M72 58 L110 52" stroke-dasharray="1 9"/><path d="M52 40 L54 76 L80 80 L80 106 M50 50 L72 58"/>'+FLOOR)},
+ ohp:{ar:"ضغط كتف بالدمبل",en:"Dumbbell overhead press",m:{ar:"كتف وترايسبس",en:"Shoulders and triceps"},c:{ar:"شدّ البطن، لا تقوّس أسفل الظهر",en:"Brace the core, do not arch the lower back"},
+  s:SV(H(60,28)+'<path d="M60 38 L60 70 L48 106 M60 70 L72 106 M60 44 L40 40 L38 18 M60 44 L80 40 L82 18"/>'+DB(38,14)+DB(82,14)+FLOOR)},
+ pulldown:{ar:"سحب علوي",en:"Lat pulldown",m:{ar:"ظهر عريض",en:"Lats"},c:{ar:"اسحب القبضة إلى أعلى الصدر مع إنزال الكتفين",en:"Pull the bar to the upper chest, shoulders down"},
+  s:SV('<path d="M60 2 L60 10" stroke-width="3" opacity=".6"/><path d="M28 10 L92 10"/>'+H(60,30)+'<path d="M60 40 L60 72 L46 84 L46 106 M60 72 L74 84 L74 106 M60 46 L42 32 L36 12 M60 46 L78 32 L84 12"/>'+FLOOR)},
+ bandpull:{ar:"سحب علوي بالحبل المطاطي",en:"Band pulldown",m:{ar:"ظهر عريض",en:"Lats"},c:{ar:"ثبّت الحبل فوق الباب واسحب للصدر",en:"Anchor the band above the door, pull to the chest"},
+  s:SV('<path d="M60 2 L60 12" stroke-width="3" opacity=".6"/><path d="M30 12 L90 12" stroke-dasharray="1 9"/>'+H(60,30)+'<path d="M60 40 L60 72 L46 84 L46 106 M60 72 L74 84 L74 106 M60 46 L42 32 L36 14 M60 46 L78 32 L84 14"/>'+FLOOR)},
+ lunge:{ar:"طعن خلفي",en:"Reverse lunge",m:{ar:"أرجل وأرداف وتوازن",en:"Legs, glutes, balance"},c:{ar:"الركبة الأمامية فوق الكاحل، الجذع عمودي",en:"Front knee over the ankle, torso upright"},
+  s:SV(H(64,20)+'<path d="M62 30 L58 62 L82 70 L82 106 M74 106 L94 106 M58 62 L44 86 L28 98 M60 40 L66 62"/>'+DB(68,66)+FLOOR)},
+ stepup:{ar:"صعود درجة",en:"Step-up",m:{ar:"أرجل وتوازن (آمن)",en:"Legs and balance (safe)"},c:{ar:"ادفع من كعب القدم العلوية، أمسك الدرابزين إن لزم",en:"Drive through the top heel, hold a rail if needed"},
+  s:SV('<rect x="70" y="78" width="38" height="30" rx="3" fill="currentColor" stroke="none" opacity=".25"/>'+H(60,16)+'<path d="M60 26 L62 58 L80 66 L80 78 M62 58 L50 82 L48 106 M60 34 L48 52"/>'+FLOOR)},
+ bridge:{ar:"جسر الحوض",en:"Glute bridge",m:{ar:"أرداف وأسفل الظهر",en:"Glutes and lower back"},c:{ar:"اضغط الأرداف في الأعلى وتوقف ثانية",en:"Squeeze the glutes at the top and pause for a second"},
+  s:SV(H(20,86)+'<path d="M30 86 L60 62 L84 68 L88 108 M40 86 L58 100"/>'+FLOOR)},
+ plank:{ar:"بلانك",en:"Plank",m:{ar:"جذع",en:"Core"},c:{ar:"شدّ البطن والأرداف، لا تهبط بالورك",en:"Brace the core and glutes, do not let the hips sag"},
+  s:SV(H(26,54)+'<path d="M34 58 L94 74 L102 96 M44 60 L40 80 L22 80"/>'+FLOOR)},
+ curl:{ar:"ثني الذراع بالدمبل",en:"Dumbbell curl",m:{ar:"بايسبس",en:"Biceps"},c:{ar:"المرفقان ثابتان بجانب الجسم",en:"Elbows pinned to the sides"},
+  s:SV(H(60,22)+'<path d="M60 32 L60 70 L50 106 M60 70 L70 106 M60 40 L42 46 L44 26 M60 40 L78 46 L76 26"/>'+DB(44,22)+DB(76,22)+FLOOR)}
+};
+const GOALS = {
+ fat:{sets:3,reps:"12–15",rest:"45–60",rpe:"7/10"},
+ muscle:{sets:4,reps:"8–10",rest:"90",rpe:"8/10"},
+ health:{sets:3,reps:"10–12",rest:"60",rpe:"7/10"},
+ senior:{sets:2,reps:"10–12",rest:"90",rpe:"5–6/10"},
+ meno:{sets:3,reps:"8–12",rest:"60–90",rpe:"7/10"}
+};
+let tgoal="fat", tdays=3, tplace="gym";
+function buildProgram(goal,days,place){
+  const gym=place==="gym", sen=goal==="senior";
+  const push = sen?"wallpush":(gym?"bench":"pushup");
+  const pull = sen?"bandrow":"row";
+  const vpull = gym?"pulldown":"bandpull";
+  const sq = sen?"chair":"squat";
+  const hg = sen?"bridge":"hinge";
+  const lg = sen?"stepup":"lunge";
+  const A=[sq,push,pull,hg,"plank"], B=[hg,vpull,"ohp",lg,"bridge"];
+  const U=[push,pull,"ohp",vpull,"curl"], L=[sq,hg,lg,"bridge","plank"];
+  if(days===2) return [["d_full",A,0],["d_full",B,3]];
+  if(days===3) return [["d_full",A,0],["d_full",B,2],["d_full",A,4]];
+  return [["d_upper",U,0],["d_lower",L,1],["d_upper",U,3],["d_lower",L,4]];
+}
+function renderTrainer(){
+  const t=T[lang]; const g=GOALS[tgoal];
+  [["goalSeg",tgoal],["daysSeg",String(tdays)],["placeSeg",tplace]].forEach(([id,v])=>document.querySelectorAll("#"+id+" button").forEach(b=>b.classList.toggle("on",b.dataset.v===v)));
+  const box=document.getElementById("days"); box.innerHTML="";
+  buildProgram(tgoal,tdays,tplace).forEach(([kind,list,dn],i)=>{
+    const d=document.createElement("div"); d.className="day";
+    const dh=document.createElement("div"); dh.className="dh";
+    const h=document.createElement("h3"); h.textContent=t.day+" "+(i+1)+" · "+t[kind];
+    const sp=document.createElement("span"); sp.textContent=t.dn[dn]; dh.append(h,sp); d.appendChild(dh);
+    const wu=document.createElement("div"); wu.className="ft"; wu.textContent=t.wu; d.appendChild(wu);
+    list.forEach(k=>{
+      const e=EX[k]; const row=document.createElement("div"); row.className="ex";
+      const pic=document.createElement("div"); pic.className="pic"; pic.innerHTML=e.s;
+      const txt=document.createElement("div");
+      const nm=document.createElement("div"); nm.className="nm"; nm.textContent=e[lang];
+      const sr=document.createElement("div"); sr.className="sr";
+      const timed=(k==="plank");
+      sr.textContent = timed ? (g.sets+" × 30–45 "+t.x_sec+" · "+t.x_rest+" "+g.rest+" "+t.x_sec)
+                             : (g.sets+" "+t.x_sets+" × "+g.reps+" "+t.x_reps+" · "+t.x_rest+" "+g.rest+" "+t.x_sec+" · "+t.x_rpe+" "+g.rpe);
+      const cue=document.createElement("div"); cue.className="cue"; cue.textContent=e.m[lang]+" — "+e.c[lang];
+      txt.append(nm,sr,cue); row.append(pic,txt); d.appendChild(row);
+    });
+    const ft=document.createElement("div"); ft.className="ft"; ft.textContent = tgoal==="fat"?t.fin_fat:(tgoal==="senior"?t.fin_senior:(tgoal==="meno"?t.fin_meno:t.fin_def)); d.appendChild(ft);
+    box.appendChild(d);
+  });
+}
+function renderExLib(){
+  const lib=document.getElementById("exlib"); lib.innerHTML="";
+  Object.keys(EX).forEach(k=>{ const e=EX[k]; const it=document.createElement("div"); it.className="it"; it.innerHTML=e.s; const n=document.createElement("strong"); n.textContent=e[lang]; const m=document.createElement("span"); m.className="m"; m.textContent=e.m[lang]; it.append(n,m); lib.appendChild(it); });
+}
+document.getElementById("goalSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tgoal=b.dataset.v; if(tgoal==="senior"&&tdays===4) tdays=3; renderTrainer(); });
+document.getElementById("daysSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tdays=Number(b.dataset.v); renderTrainer(); });
+document.getElementById("placeSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; tplace=b.dataset.v; renderTrainer(); });
+/* InBody upload (demo) */
+(function(){
+  const drop=document.getElementById("ibDrop"), inp=document.getElementById("ibFile"), st=document.getElementById("ibStatus");
+  function got(name){ st.hidden=false; st.textContent=T[lang].ib_got+name+"."+T[lang].ib_got_s; }
+  inp.addEventListener("change",()=>{ if(inp.files[0]) got(inp.files[0].name); });
+  ["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{ e.preventDefault(); drop.classList.add("on"); }));
+  ["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{ e.preventDefault(); drop.classList.remove("on"); }));
+  drop.addEventListener("drop",e=>{ const f=e.dataTransfer&&e.dataTransfer.files[0]; if(f) got(f.name); });
+})();
+
+/* ============ rendering ============ */
+function apply(){
+  const t=T[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i]").forEach(el=>{ const k=el.dataset.i; if(typeof t[k]==="string") el.textContent=t[k]; });
+  document.getElementById("langBtn").textContent = lang==="ar"?"EN":"عربي";
+  document.getElementById("pvSearch").placeholder = t.pv_search;
+  const chips=document.getElementById("chips"); chips.innerHTML="";
+  t.chips.forEach(c=>{ const b=document.createElement("button"); b.type="button"; b.textContent=c; b.onclick=()=>{ document.getElementById("chatIn").value=c; send(); }; chips.appendChild(b); });
+  renderMarkers(); renderCuisine(); renderProviders(); renderTrainer(); renderExLib();
+  try{ localStorage.setItem("lv_lang",lang);}catch(e){}
+}
+function renderMarkers(){
+  const t=T[lang]; const tb=document.getElementById("markers"); tb.innerHTML="";
+  const tr=document.createElement("tr");
+  ["th_marker","th_value","th_status","th_meaning","th_action"].forEach(k=>{ const th=document.createElement("th"); th.textContent=t[k]; tr.appendChild(th); });
+  tb.appendChild(tr);
+  MARKERS.forEach(m=>{
+    const r=document.createElement("tr");
+    const c1=document.createElement("td"); c1.className="n"; c1.textContent=m.n[lang];
+    const c2=document.createElement("td"); c2.className="v"; c2.innerHTML=""; c2.append(m.v); const s=document.createElement("div"); s.className="note"; s.textContent=(lang==="ar"?"المرجع: ":"Ref: ")+m.ref; c2.appendChild(s);
+    const c3=document.createElement("td"); const ch=document.createElement("span"); ch.className="chip "+ST[m.st].cls; ch.textContent=t[ST[m.st].k]; c3.appendChild(ch);
+    const c4=document.createElement("td"); c4.className="x"; c4.textContent=m.m[lang];
+    const c5=document.createElement("td"); c5.className="x"; c5.textContent=m.a[lang];
+    r.append(c1,c2,c3,c4,c5); tb.appendChild(r);
+  });
+}
+function renderCuisine(){
+  const t=T[lang]; const box=document.getElementById("cuisine"); box.innerHTML="";
+  const names={intl:"c_intl",arab:"c_arab",asian:"c_asian",gulf:"c_gulf",ital:"c_ital"};
+  CUISINES.forEach(c=>{ const b=document.createElement("button"); b.type="button"; b.textContent=t[names[c]]; b.className=c===cuisine?"on":""; b.onclick=()=>{ cuisine=c; try{localStorage.setItem("lv_cuisine",c);}catch(e){} renderCuisine(); }; box.appendChild(b); });
+  const ms=document.getElementById("meals"); ms.innerHTML="";
+  [["b","ml_b"],["l","ml_l"],["d","ml_d"]].forEach(([k,lab])=>{
+    const d=document.createElement("div"); d.className="meal";
+    const a=document.createElement("div"); a.className="t"; a.textContent=t[lab];
+    const b=document.createElement("div"); b.className="d"; b.textContent=MEALS[cuisine][k][lang];
+    const w=document.createElement("div"); w.className="w"; w.textContent=MEAL_WHY[lang];
+    d.append(a,b,w); ms.appendChild(d);
+  });
+}
+function renderProviders(){
+  const t=T[lang]; const g=document.getElementById("provGrid"); g.innerHTML="";
+  const q=pq.trim().toLowerCase();
+  const list=PROVIDERS.filter(p=>(region==="all"||p.r===region)&&(ptype==="all"||p.t===ptype)&&(!q||[p.n,p.ar,p.city.ar,p.city.en,p.country.ar,p.country.en].join(" ").toLowerCase().includes(q)));
+  document.getElementById("pvCount").textContent = list.length+" "+(list.length===1?t.pv_count_1:t.pv_count_n);
+  if(!list.length){ const e=document.createElement("p"); e.className="note"; e.textContent=t.pv_none; g.appendChild(e); return; }
+  list.forEach(p=>{
+    const c=document.createElement("div"); c.className="pcard";
+    const top=document.createElement("div"); top.className="top";
+    const h=document.createElement("h3"); h.textContent=lang==="ar"?p.ar:p.n;
+    const ty=document.createElement("span"); ty.className="chip acc"; ty.textContent=t.ty[p.t];
+    top.append(h,ty);
+    const sub=document.createElement("div"); sub.className="loc"; sub.textContent=(lang==="ar"?p.n:p.ar)+" · "+p.city[lang]+", "+p.country[lang];
+    const tags=document.createElement("div"); tags.className="tags"; p.tags[lang].forEach(x=>{ const s=document.createElement("span"); s.className="chip"; s.textContent=x; tags.appendChild(s); });
+    const foot=document.createElement("div"); foot.className="foot";
+    const st=document.createElement("span"); st.className="chip gold"; st.textContent=t.pv_status;
+    const bt=document.createElement("button"); bt.type="button"; bt.className="btn small"; bt.disabled=true; bt.textContent=t.pv_book;
+    foot.append(st,bt);
+    c.append(top,sub,tags,foot); g.appendChild(c);
+  });
+}
+document.getElementById("regionSeg").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; region=b.dataset.r; document.querySelectorAll("#regionSeg button").forEach(x=>x.classList.toggle("on",x===b)); renderProviders(); });
+document.getElementById("typeSel").addEventListener("change",e=>{ ptype=e.target.value; renderProviders(); });
+document.getElementById("pvSearch").addEventListener("input",e=>{ pq=e.target.value; renderProviders(); });
+document.getElementById("langBtn").onclick=()=>{ lang = lang==="ar"?"en":"ar"; apply(); };
+apply();
+
+/* ============ routing ============ */
+const VIEWS=["home","report","providers","trainer","women"];
+function route(){
+  const h=(location.hash||"").replace("#","");
+  const v=VIEWS.includes(h)?h:"home";
+  VIEWS.forEach(x=>{ document.getElementById("view-"+x).hidden=(x!==v); });
+  document.querySelectorAll("[data-view]").forEach(a=>a.classList.toggle("on",a.dataset.view===v));
+  if(v==="home" && h && h!=="home"){ const el=document.getElementById(h); if(el){ el.scrollIntoView({block:"start"}); return; } }
+  window.scrollTo(0,0);
+}
+addEventListener("hashchange",route); route();
+
+/* ============ waitlist (db) ============ */
+let db=null, user=null;
+const statusEl=document.getElementById("status");
+function showStatus(msg, ok, withEmail){
+  statusEl.hidden=false; statusEl.className="status"+(ok?" ok":"");
+  statusEl.innerHTML=""; statusEl.append(msg+" ");
+  if(withEmail){
+    const c=document.createElement("code"); c.className="sel"; c.textContent=CONTACT_EMAIL;
+    const b=document.createElement("button"); b.type="button"; b.className="btn small"; b.textContent=T[lang].copy;
+    b.onclick=()=>{ navigator.clipboard?.writeText(CONTACT_EMAIL).then(()=>{b.textContent=T[lang].copied;}).catch(()=>{ const r=document.createRange(); r.selectNodeContents(c); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }); };
+    const w=document.createElement("span"); w.className="copyline"; w.append(c,b); statusEl.append(w);
+  }
+}
+document.getElementById("wl").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const t=T[lang]; const g=id=>document.getElementById(id).value.trim();
+  const f={ name:g("name"), email:g("email"), phone:g("phone"), type:g("type"), city:g("city"), lang, ts:new Date().toISOString() };
+  const submitBtn=document.getElementById("submitBtn");
+  if(!f.name || (!f.email && !f.phone)){ showStatus(t.st_need,false,false); return; }
+  showStatus(t.st_saving,false,false); submitBtn.disabled=true;
+  try{
+    if(db && user){ const id=await user.id(); await db.doc("waitlist/"+id).set(f); }
+    else if(FORM_ENDPOINT){ const r=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(f)}); if(!r.ok) throw new Error("form"); }
+    else { submitBtn.disabled=false; showStatus(t.st_nodb,false,true); return; }
+    showStatus(t.st_ok,true,false); try{ localStorage.setItem("lv_joined","1"); }catch(_){}
+  }catch(err){ showStatus(t.st_err,false,true); }
+  submitBtn.disabled=false;
+});
+(async()=>{
+  try{
+    if(!CLAUDE_RT) throw new Error("no runtime");
+    [db,user] = await Promise.all([CLAUDE_RT.use("db"), CLAUDE_RT.use("user")]);
+    if(db && user && (await user.isOwner())){
+      document.getElementById("ownerPanel").hidden=false;
+      db.collection("waitlist").onSnapshot(snap=>{
+        const rows=[]; snap.forEach(d=>rows.push(d.data()));
+        rows.sort((a,b)=>(b.ts||"").localeCompare(a.ts||""));
+        document.getElementById("ownerCount").textContent=T[lang].own_count+rows.length;
+        const tb=document.getElementById("ownerTable");
+        tb.innerHTML="<tr><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>City</th><th>Date</th></tr>";
+        rows.forEach(r=>{ const tr=document.createElement("tr"); [r.name,r.email,r.phone,r.type,r.city,(r.ts||"").slice(0,10)].forEach(v=>{const td=document.createElement("td"); td.textContent=v||"—"; tr.appendChild(td);}); tb.appendChild(tr); });
+      });
+    }
+  }catch(e){}
+})();
+
+/* ============ AI assistant (sample) ============ */
+const KB = `You are the assistant on the pre-launch website of "Longevity", a bilingual (Arabic/English) AI longevity platform built in Dubai, UAE, for users worldwide, founded by Emirati entrepreneur Nabhan Ibrahim (founder of Health Road and of the first personal training business in Dubai).
+Answer in the same language the user writes (Arabic or English), briefly and plainly. Facts you may use:
+- What it does (first release): personal health profile; lab report reader (upload photo/PDF from any lab, numbers explained in Arabic or English: normal/optimal/concerning); health score and biological age; daily plan (food, movement, sleep, stress) where the user chooses their cuisine (international, Arabic, Asian, Emirati & Gulf, Italian), Ramadan mode later; directory of accredited labs, clinics, nutritionists, coaches in the UAE and worldwide with direct booking; licensed doctor review of any abnormal result.
+- Body composition: members upload an InBody (or Tanita/Seca) report; the platform reads skeletal muscle mass, body fat %, visceral fat level, BMR, limb balance, and links them to labs and to the training program; re-test every 8 weeks.
+- Virtual personal trainer: a complete strength and resistance program for every member (2, 3 or 4 days a week; gym or home; goals: fat loss, muscle, general health, seniors-safe), with an illustration and form cue for every exercise, 4-week progression (learn, add load, deload) and weekly adaptation from completed sessions, effort, sleep and injuries; readiness questionnaire and doctor referral for blood pressure, heart conditions or injuries.
+- Women's health: a menopause program (perimenopause and after, women 40-60): daily symptom and trigger tracker (hot flashes, night sweats, sleep, mood, weight, joint pain), reading of stage-relevant labs plus DEXA bone density and InBody, a menopause mode in the virtual trainer (resistance for bone and muscle, balance, pelvic floor), nutrition (protein 1.2-1.6 g/kg, calcium 1,200 mg/day, vitamin D), sleep and hot-flash management, a ready visit summary and a directory of licensed gynecologists and menopause clinics; the platform never prescribes hormone therapy. Included in Premium; a women's health track exists for corporate programs; female coaches on request; private community.
+- The website has a sample report page (illustrative data for a fictional person "Ahmed") and a provider directory page listing shortlisted hospitals, longevity clinics, labs, wellness retreats, sports clubs and senior clubs in the UAE and abroad. These providers are candidates; no partnership is signed yet.
+- It does NOT diagnose, prescribe medication, or sell unproven treatments.
+- Data: all health data stored and processed inside the UAE; clear consent; user can delete data anytime.
+- Status: pre-launch, collecting a waitlist (target first 5,000). Launch after required permits from Dubai authorities. Roadmap: beta month 6 (200 users), launch month 7, 1,000 paid subscribers month 12, 3,000 by month 18.
+- Proposed pricing (indicative): Free (profile, one report reading, directory); Premium AED 79/month or 699/year (unlimited readings, full daily plan, tracking, smart chat assistant); Premium + Doctor AED 1,499/year (doctor review twice a year). Corporate programs about AED 25 per employee per month with an aggregated anonymous dashboard, in-house championship and competitions between employees/departments, and prizes and incentives inside the program. Dedicated program for members of sports clubs and senior clubs in the UAE (group offers, coach follow-up). Clinics/labs: free directory listing after accreditation, booking commission 10-15%, optional featured listing AED 1,500/month.
+- Early members get: priority beta access, discounted test with a partner lab, best annual price.
+- Audience: individuals 30-60 in the UAE and worldwide, companies, clinics and labs, sports clubs and senior clubs.
+- Never claim it is the "first" Arabic or regional platform.
+- To join: fill the waitlist form on the home page (name + email or mobile, and whether individual/clinic/company/club/investor). Contact email: ${CONTACT_EMAIL}.
+Rules: never interpret a user's personal lab values, symptoms or medications; say the platform is not live yet and suggest consulting a licensed doctor. Do not invent features, dates or prices beyond the above. If unsure, say you don't know and point to the contact email. Keep answers under 120 words.`;
+const FAQ = [
+ {k:["ما هي","what is","المنصة","platform","longevity","ايش","وش"], ar:"Longevity منصة ذكاء اصطناعي مبنية في الإمارات للعالم، بالعربية والإنجليزية: تقرأ فحوصاتك وتقرير InBody، تعطيك درجة صحية وخطة يومية، مدرب شخصي افتراضي، برنامج لانقطاع الطمث، ودليل عيادات ومختبرات معتمدة. لا تشخّص ولا تصف أدوية.", en:"Longevity is an AI platform built in the UAE for the world, in Arabic and English: it reads your labs and InBody report, gives you a health score and a daily plan, a virtual personal trainer, a menopause program, and a directory of accredited clinics and labs. It does not diagnose or prescribe."},
+ {k:["سعر","اشتراك","كم","price","cost","how much","subscription","plan","باقة","باقات","مجاني","free"], ar:"الأسعار المقترحة عند الإطلاق: مجاني (ملف صحي، قراءة فحص واحد، الدليل)، مميز 79 درهم شهرياً أو 699 سنوياً (قراءات بلا حد، خطة كاملة، مدرب متكيّف، برنامج انقطاع الطمث، متابعة)، مميز مع طبيب 1,499 درهم سنوياً. المسجّلون مبكراً يحصلون على أفضل سعر.", en:"Proposed launch pricing: Free (profile, one report reading, directory), Premium AED 79/month or 699/year (unlimited readings, full plan, adaptive trainer, menopause program, tracking), Premium + Doctor AED 1,499/year. Early members get the best price."},
+ {k:["عيادة","مختبر","clinic","lab","provider","أنضم","join as","شريك","partner","إدراج"], ar:"العيادات والمختبرات تُدرج مجاناً في الدليل بعد التحقق من الترخيص، مع عمولة حجز 10–15٪ وإدراج مميز اختياري بـ 1,500 درهم شهرياً. سجّل من نموذج قائمة الانتظار واختر \"عيادة أو مختبر\".", en:"Clinics and labs are listed free in the directory after license checks, with a 10–15% booking commission and an optional featured listing at AED 1,500/month. Register through the waitlist form and choose \"A clinic or lab\"."},
+ {k:["بيانات","خصوصية","data","privacy","stored","تخزين","آمن","secure"], ar:"كل البيانات الصحية تُخزّن وتُعالج داخل دولة الإمارات، بموافقة واضحة منك، ويمكنك حذفها في أي وقت. لا نشارك بياناتك مع أي جهة.", en:"All health data is stored and processed inside the UAE, with your clear consent, and you can delete it at any time. We never share your data."},
+ {k:["مدرب","تدريب","تمرين","حديد","trainer","training","workout","exercise","gym","program"], ar:"المدرب الشخصي الافتراضي يبني لك برنامج حديد ومقاومة كاملاً من تقرير InBody وفحوصاتك وهدفك (2–4 أيام، نادٍ أو منزل)، بصورة توضيحية لكل تمرين، ويعدّله أسبوعياً. جرّبه من صفحة \"المدرب الافتراضي\".", en:"The virtual personal trainer builds a complete strength and resistance program from your InBody report, labs and goal (2–4 days, gym or home), with an illustration for every exercise, and adjusts it weekly. Try it on the Virtual trainer page."},
+ {k:["inbody","ان بودي","تكوين الجسم","دهون","عضل","body composition","muscle","fat"], ar:"ترفع تقرير InBody (أو Tanita وSeca) صورة أو PDF، والمنصة تقرأ الكتلة العضلية ونسبة الدهون والدهون الحشوية ومعدل الأيض وتوازن الأطراف، وتربطها بفحوصاتك وبرنامجك التدريبي. شاهد النموذج في صفحة التقرير.", en:"Upload your InBody (or Tanita/Seca) report as an image or PDF; the platform reads muscle mass, body fat, visceral fat, BMR and limb balance, and links them to your labs and training program. See the sample on the report page."},
+ {k:["انقطاع","الطمث","menopause","سن اليأس","نساء","women","هبات","hot flash"], ar:"برنامج انقطاع الطمث: متتبّع أعراض ومحفزات، قراءة فحوصات هذه المرحلة وكثافة العظام، تدريب للعظام والعضل، تغذية ونوم، وملخص جاهز لطبيبة النساء مع دليل أطباء مرخصين. المنصة لا تصف علاجاً هرمونياً.", en:"The menopause program: a symptom and trigger tracker, labs and bone density reading, training for bone and muscle, nutrition and sleep, and a ready summary for your gynecologist with a directory of licensed doctors. The platform does not prescribe hormone therapy."},
+ {k:["متى","إطلاق","launch","when","تجريبي","beta","موعد"], ar:"المنصة في مرحلة ما قبل الإطلاق. النسخة التجريبية في الشهر السادس (200 مستخدم من قائمة الانتظار)، والإطلاق الرسمي بعد التصاريح والفحص الأمني. سجّل الآن لتصلك الدعوة.", en:"The platform is in pre-launch. The beta opens in month 6 (200 users from the waitlist), and the official launch follows permits and the security audit. Register now to receive an invitation."},
+ {k:["شركة","شركات","موظف","company","corporate","employee","hr"], ar:"برامج الشركات: حوالي 25 درهم لكل موظف شهرياً، اشتراك مميز لكل الموظفين، لوحة تقارير مجمّعة بلا أسماء، بطولة داخلية ومسابقات، جوائز وحوافز، ومسار صحة المرأة. اطلب عرضاً من نموذج التسجيل.", en:"Corporate programs: about AED 25 per employee per month, Premium for every employee, an aggregated anonymous dashboard, in-house championships and competitions, prizes and incentives, and a women's health track. Request an offer through the registration form."},
+ {k:["نادي","نوادي","كبار السن","club","senior"], ar:"برنامج خاص لمنتسبي النوادي الرياضية ونوادي كبار السن: عرض جماعي للنادي، المدرب الافتراضي وقراءة InBody من جهاز النادي، خطة آمنة لكبار السن، ومتابعة للمدربين.", en:"A dedicated program for members of sports clubs and senior clubs: a group offer for the club, the virtual trainer and InBody reading from the club's device, a safe plan for seniors, and coach follow-up."},
+ {k:["تواصل","بريد","ايميل","email","contact","واتساب","whatsapp","رقم"], ar:"تواصل معنا عبر البريد: "+CONTACT_EMAIL, en:"Reach us by email: "+CONTACT_EMAIL},
+ {k:["طبيب","تشخيص","دواء","علاج","doctor","diagnos","prescri","medic"], ar:"المنصة لا تشخّص ولا تصف أدوية. أي نتيجة غير طبيعية تُحوّل لطبيب مرخص قبل أي توصية، ودليل الجهات يضم أطباء وعيادات مرخصة.", en:"The platform does not diagnose or prescribe. Any abnormal result is routed to a licensed doctor before any recommendation, and the directory lists licensed doctors and clinics."}
+];
+function faqAnswer(q){
+  const s=q.toLowerCase(); let best=null, score=0;
+  FAQ.forEach(f=>{ const n=f.k.filter(k=>s.includes(k.toLowerCase())).length; if(n>score){score=n;best=f;} });
+  return best ? best[lang] : T[lang].chat_unknown+" "+CONTACT_EMAIL;
+}
+let sampleFn=null, hist=[];
+const log=document.getElementById("chatLog");
+function addMsg(txt, who){ const d=document.createElement("div"); d.className="msg "+who; d.textContent=txt; log.appendChild(d); log.scrollTop=log.scrollHeight; return d; }
+document.getElementById("chatFab").onclick=async()=>{
+  const c=document.getElementById("chat"); c.hidden=!c.hidden;
+  if(!c.hidden && !log.childElementCount){
+    addMsg(T[lang].chat_hi,"a");
+    if(sampleFn===null){ try{ sampleFn = CLAUDE_RT ? await CLAUDE_RT.use("sample") : false; }catch(e){ sampleFn=false; } }
+    if(!sampleFn) addMsg(T[lang].chat_faq,"a");
+  }
+};
+document.getElementById("chatClose").onclick=()=>{ document.getElementById("chat").hidden=true; };
+async function send(){
+  const inp=document.getElementById("chatIn"); const q=inp.value.trim(); if(!q) return;
+  inp.value=""; addMsg(q,"u");
+  if(!sampleFn){ addMsg(faqAnswer(q),"a"); return; }
+  hist.push({role:"user",content:q});
+  const msgs=[{role:"user",content:KB+"\n\n(Conversation follows.)"},{role:"assistant",content:"Understood."},...hist.slice(-8)];
+  const bubble=addMsg("…","a");
+  try{
+    const r = await sampleFn(msgs,{cache:false, modelTier:"quick", onText:({text})=>{ bubble.textContent=text||"…"; log.scrollTop=log.scrollHeight; }});
+    bubble.textContent=r.text; hist.push({role:"assistant",content:r.text});
+  }catch(err){ bubble.textContent = (err && err.text) || T[lang].chat_na+" "+CONTACT_EMAIL; }
+}
+document.getElementById("chatSend").onclick=send;
+document.getElementById("chatIn").addEventListener("keydown",e=>{ if(e.key==="Enter") send(); });
+</script>
+
+</body>
+</html>
