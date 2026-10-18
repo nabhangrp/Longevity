@@ -1,6 +1,6 @@
-# Longevity — pre-launch website
+# Amad (أمد) — pre-launch website
 
-Bilingual (Arabic / English) demo site for the Longevity platform.
+Bilingual (Arabic / English) demo site for the Amad healthy-longevity platform.
 
 - `index.html` — the whole site (single file). Published with GitHub Pages.
 - Waitlist: set `FORM_ENDPOINT` inside `index.html` (e.g. a Formspree endpoint) to receive registrations.

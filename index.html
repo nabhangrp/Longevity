@@ -3,44 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Longevity — منصة ذكاء اصطناعي لإطالة العمر الصحي، مبنية في الإمارات للعالم. افهم فحوصاتك، مدرب شخصي افتراضي، برنامج انقطاع الطمث، ودليل عيادات معتمدة.">
-<meta property="og:title" content="Longevity">
-<meta property="og:description" content="افهم فحوصاتك، وعِش أطول وأنت بصحتك. Understand your lab results. Live longer, in good health.">
+<meta name="description" content="أمد | منصة العمر الصحي — منصة ذكاء اصطناعي مبنية في الإمارات للعالم. فحصك صار له معنى، وخطة تمشي عليها. Amad | Healthy Longevity.">
+<meta property="og:title" content="Amad | أمد">
+<meta property="og:description" content="فحصك صار له معنى. وخطة تمشي عليها. Your test finally makes sense. And comes with a plan.">
 <meta property="og:type" content="website">
 <style>:root{color-scheme:light}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<title>Longevity</title>
+<title>Amad</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600&family=Outfit:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Michroma&display=swap">
 <style>
-/* Layout: one calm column, sand-and-sea palette; bilingual AR/EN with RTL/LTR switch; three views routed by hash (home / report / providers). */
+/* Identity "quiet future": platinum / silver / graphite with one Life-Aqua accent; thin Alexandria/Outfit display, IBM Plex Sans Arabic body; bilingual AR/EN, views routed by hash. */
 :root{
-  --bg:#F7F6F1; --bg-2:#EEEBE2; --card:#FFFFFF;
-  --fg:#15302D; --fg-2:#4E635F; --line:#D9D4C7;
-  --accent:#176B5C; --accent-2:#0F4F44; --accent-soft:#E3EFEB;
-  --gold:#B88A3C; --gold-soft:#F3E9D3;
-  --ok:#2E7D57; --ok-soft:#E3F1E8; --warn:#B9731A; --warn-soft:#FBEBD2; --bad:#B5443A; --bad-soft:#F8E1DE;
-  --display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
-  --body:"IBM Plex Sans Arabic","Readex Pro",system-ui,-apple-system,Segoe UI,sans-serif;
-  --radius:14px;
+  --bg:#F4F5F7; --bg-2:#E9ECEF; --card:#FFFFFF;
+  --fg:#2A2D33; --fg-2:#6B727A; --fg-3:#8A9099; --line:#C9CDD3;
+  --accent:#4FD8D2; --accent-2:#1FA8A2; --accent-soft:#E4F8F6; --on-accent:#0D0F12;
+  --gold:#8A9099; --gold-soft:#E9ECEF;
+  --ok:#1E9E6A; --ok-soft:#E3F8EE; --warn:#B9821A; --warn-soft:#FDF1D8; --bad:#D1443C; --bad-soft:#FDE4E1;
+  --chrome:linear-gradient(135deg,#E9ECEF 0%,#B8BEC6 45%,#F7F8F9 100%);
+  --display:"Alexandria","Outfit","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --latin:"Outfit","Alexandria",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Alexandria",system-ui,-apple-system,Segoe UI,sans-serif;
+  --radius:16px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0F1D1B;--bg-2:#132725;--card:#17302D;--fg:#EDEAE1;--fg-2:#A9B5B1;--line:#2A423E;
-  --accent:#4FB399;--accent-2:#7ACDB7;--accent-soft:#1B3A35;--gold:#D9B06A;--gold-soft:#2C2A1E;
-  --ok:#6BC79A;--ok-soft:#1C3A2C;--warn:#E0A24E;--warn-soft:#3A2E17;--bad:#E07A70;--bad-soft:#3E201D;color-scheme:dark}}
+  --bg:#0D0F12;--bg-2:#14171C;--card:#1A1E24;--fg:#F4F5F7;--fg-2:#A7ADB5;--fg-3:#8A9099;--line:#2C3138;
+  --accent:#4FD8D2;--accent-2:#7BE6E1;--accent-soft:#12302F;--on-accent:#0D0F12;--gold:#A7ADB5;--gold-soft:#1F2329;
+  --ok:#3DDC97;--ok-soft:#14302A;--warn:#F5B84A;--warn-soft:#332A14;--bad:#F2706B;--bad-soft:#3A1E1D;
+  --chrome:linear-gradient(135deg,#2C3138 0%,#8A9099 45%,#3A3F47 100%);color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0F1D1B;--bg-2:#132725;--card:#17302D;--fg:#EDEAE1;--fg-2:#A9B5B1;--line:#2A423E;
-  --accent:#4FB399;--accent-2:#7ACDB7;--accent-soft:#1B3A35;--gold:#D9B06A;--gold-soft:#2C2A1E;
-  --ok:#6BC79A;--ok-soft:#1C3A2C;--warn:#E0A24E;--warn-soft:#3A2E17;--bad:#E07A70;--bad-soft:#3E201D;color-scheme:dark}
+  --bg:#0D0F12;--bg-2:#14171C;--card:#1A1E24;--fg:#F4F5F7;--fg-2:#A7ADB5;--fg-3:#8A9099;--line:#2C3138;
+  --accent:#4FD8D2;--accent-2:#7BE6E1;--accent-soft:#12302F;--on-accent:#0D0F12;--gold:#A7ADB5;--gold-soft:#1F2329;
+  --ok:#3DDC97;--ok-soft:#14302A;--warn:#F5B84A;--warn-soft:#332A14;--bad:#F2706B;--bad-soft:#3A1E1D;
+  --chrome:linear-gradient(135deg,#2C3138 0%,#8A9099 45%,#3A3F47 100%);color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.7;margin:0}
-h1,h2,h3,h4{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0;font-weight:600}
-h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:700}
-h2{font-size:clamp(1.5rem,3.4vw,2.2rem)}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0;font-weight:500}
+h1{font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:300;letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:400}
+[lang="en"] h1,[lang="en"] h2{font-family:var(--latin)}
 h3{font-size:1.15rem}
 h4{font-size:1rem}
 p{margin:0}
@@ -49,39 +54,40 @@ a{color:var(--accent)}
 section{padding-block:72px;scroll-margin-top:84px}
 section.tight{padding-block:40px}
 .band{background:var(--bg-2)}
-.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;font-family:var(--display)}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);font-weight:500;font-family:var(--display)}
 [dir="rtl"] .eyebrow{letter-spacing:0;font-size:.9rem}
 .lead{color:var(--fg-2);font-size:1.12rem;max-width:62ch}
 .stack{display:grid;gap:18px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .grid>*{min-width:0}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-family:var(--display);text-decoration:none;border:1.5px solid var(--accent);cursor:pointer;font-size:1rem;transition:transform .15s;background:transparent;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:500;font-family:var(--display);text-decoration:none;border:1.5px solid var(--line);cursor:pointer;font-size:1rem;transition:transform .15s,border-color .15s;background:var(--card);color:var(--fg)}
+.btn:hover{border-color:var(--accent)}
 .btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--accent);color:#fff}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .btn.small{padding:8px 16px;font-size:.92rem}
 .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
-.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .note{font-size:.88rem;color:var(--fg-2)}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:600;border:1px solid var(--line);background:var(--bg-2);color:var(--fg-2);white-space:nowrap}
 .chip.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
 .chip.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
 .chip.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
-.chip.acc{background:var(--accent-soft);color:var(--accent);border-color:transparent}
-.chip.gold{background:var(--gold-soft);color:var(--gold);border-color:transparent}
+.chip.acc{background:var(--accent-soft);color:var(--accent-2);border-color:transparent}
+.chip.gold{background:var(--bg-2);color:var(--fg-2);border-color:var(--line)}
 
 /* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
-.logo{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo .mark{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--accent) 0 72%,var(--gold) 72% 100%);position:relative}
-.logo .mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg)}
+.logo{font-family:var(--display);font-weight:300;font-size:1.55rem;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:.02em}
+.logo .mark{width:28px;height:28px;border-radius:50%;border:2.5px solid var(--accent);border-inline-end-color:transparent;transform:rotate(-30deg)}
+[lang="en"] .logo .brand{font-family:"Michroma",var(--latin);font-size:1rem;letter-spacing:.14em;font-weight:400}
 .navlinks{display:flex;gap:6px;align-items:center;font-size:.95rem;flex-wrap:wrap;justify-content:flex-end}
 .navlinks a{color:var(--fg-2);text-decoration:none;padding:6px 10px;border-radius:999px}
 .navlinks a:hover{color:var(--fg)}
-.navlinks a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.navlinks a.on{background:var(--accent-soft);color:var(--accent-2);font-weight:600}
 @media (max-width:760px){.navlinks .hide-m{display:none}}
-.lang{border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 14px;font-family:var(--display);font-weight:600;cursor:pointer}
-.demo-bar{background:var(--gold-soft);color:var(--fg);font-size:.85rem;text-align:center;padding:6px 12px;border-bottom:1px solid var(--line)}
+.lang{border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 14px;font-family:var(--latin);font-weight:500;cursor:pointer}
+.demo-bar{background:var(--bg-2);color:var(--fg-2);font-size:.85rem;text-align:center;padding:6px 12px;border-bottom:1px solid var(--line)}
 
 /* hero */
 .hero{padding-block:72px 56px;position:relative;overflow:hidden}
@@ -89,8 +95,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:co
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
 .hero-art{aspect-ratio:1/1;max-width:100%;width:100%;max-height:380px}
 .badges{display:flex;flex-wrap:wrap;gap:10px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--fg);font-size:.88rem;border:1px solid var(--line)}
-.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--card);color:var(--fg);font-size:.88rem;border:1px solid var(--line)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* cards */
@@ -98,16 +104,16 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:co
 .card p{color:var(--fg-2);font-size:.98rem}
 .card.link{text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
 .card.link:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card.link h3{color:var(--accent)}
+.card.link h3{color:var(--accent-2)}
 .steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .step{padding:22px;border-top:3px solid var(--line);display:grid;gap:8px}
 .step.active{border-top-color:var(--accent)}
-.step .k{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.step .k{font-family:var(--latin);font-weight:300;color:var(--accent-2);font-size:1.4rem;font-variant-numeric:tabular-nums}
 
 /* stats strip */
 .stats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;display:grid;gap:4px;min-width:0}
-.stat .v{font-family:var(--display);font-weight:700;font-size:1.9rem;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.1}
+.stat .v{font-family:var(--latin);font-weight:300;font-size:2.1rem;font-variant-numeric:tabular-nums;color:var(--fg);line-height:1.1}
 .stat .l{font-size:.92rem;color:var(--fg-2)}
 .stat .s{font-size:.78rem;color:var(--fg-2);opacity:.8}
 
@@ -115,14 +121,14 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:co
 .roadmap{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));position:relative}
 .rm{padding:18px 16px 0;border-top:3px solid var(--accent);display:grid;gap:6px;min-width:0}
 .rm.future{border-top-color:var(--line)}
-.rm .m{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.85rem;font-variant-numeric:tabular-nums}
+.rm .m{font-family:var(--display);font-weight:500;color:var(--accent-2);font-size:.85rem;font-variant-numeric:tabular-nums}
 .rm.future .m{color:var(--fg-2)}
 
 /* plans */
 .plans{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:12px;align-content:start;min-width:0}
 .plan.featured{border-color:var(--accent);box-shadow:0 10px 30px -18px var(--accent)}
-.price{font-family:var(--display);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums}
+.price{font-family:var(--latin);font-size:2.2rem;font-weight:300;font-variant-numeric:tabular-nums}
 .price small{font-size:.95rem;color:var(--fg-2);font-weight:400}
 .plan ul{margin:0;padding-inline-start:20px;color:var(--fg-2);font-size:.96rem;display:grid;gap:6px}
 
@@ -133,12 +139,12 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:co
 .split>*{min-width:0}
 .list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .list li{display:flex;gap:12px;align-items:flex-start}
-.list li::before{content:"";flex:0 0 10px;height:10px;margin-top:11px;border-radius:50%;background:var(--gold)}
+.list li::before{content:"";flex:0 0 10px;height:10px;margin-top:11px;border-radius:50%;border:2px solid var(--accent);background:transparent}
 
 /* founder */
 .founder{display:grid;gap:28px;grid-template-columns:140px 1fr;align-items:center}
 @media (max-width:600px){.founder{grid-template-columns:1fr}}
-.avatar{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold) 0,var(--accent) 60%,var(--accent-2) 100%);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;font-size:2.2rem}
+.avatar{width:140px;height:140px;border-radius:50%;background:var(--chrome);display:grid;place-items:center;color:var(--fg);font-family:var(--latin);font-weight:300;font-size:2.6rem;border:1px solid var(--line)}
 
 /* form */
 form{display:grid;gap:14px}
@@ -146,13 +152,13 @@ form{display:grid;gap:14px}
 @media (max-width:600px){.row{grid-template-columns:1fr}}
 label{display:grid;gap:6px;font-size:.92rem;color:var(--fg-2)}
 input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);font:inherit;font-size:1rem}
-.status{padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--line);font-size:.95rem}
+.status{padding:12px 14px;border-radius:10px;background:var(--bg-2);border:1px solid var(--line);font-size:.95rem}
 .status.ok{border-color:var(--ok)}
 .copyline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 code.sel{user-select:all;background:var(--card);border:1px solid var(--line);padding:4px 10px;border-radius:8px;font-family:var(--body)}
 
 /* owner panel */
-.owner{border:1.5px dashed var(--gold);border-radius:var(--radius);padding:20px;display:grid;gap:12px}
+.owner{border:1.5px dashed var(--accent);border-radius:var(--radius);padding:20px;display:grid;gap:12px}
 .owner table{width:100%;border-collapse:collapse;font-size:.92rem}
 .owner th,.owner td{text-align:start;padding:8px 6px;border-bottom:1px solid var(--line)}
 .tablewrap{overflow-x:auto}
@@ -161,24 +167,24 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .rep-head{display:grid;gap:20px;grid-template-columns:1fr auto;align-items:end}
 @media (max-width:700px){.rep-head{grid-template-columns:1fr}}
 .profile{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.profile .av{width:52px;height:52px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.2rem}
+.profile .av{width:52px;height:52px;border-radius:50%;background:var(--accent-soft);color:var(--accent-2);display:grid;place-items:center;font-family:var(--latin);font-weight:400;font-size:1.2rem}
 .profile .meta{font-size:.9rem;color:var(--fg-2)}
 .rep-grid{display:grid;gap:20px;grid-template-columns:320px 1fr;align-items:start}
 @media (max-width:860px){.rep-grid{grid-template-columns:1fr}}
 .rep-grid>*{min-width:0}
 .score{display:grid;gap:12px;justify-items:center;text-align:center}
 .score svg{width:100%;max-width:240px;height:auto}
-.score .big{font-family:var(--display);font-weight:700;font-size:1.05rem}
+.score .big{font-family:var(--display);font-weight:500;font-size:1.05rem}
 .kv{display:grid;gap:10px;grid-template-columns:1fr 1fr}
 .kv .stat{padding:14px 16px}
-.kv .stat .v{font-size:1.5rem}
+.kv .stat .v{font-size:1.6rem;color:var(--accent-2)}
 .chart{width:100%;height:auto;display:block}
 .chart text{font-family:var(--body);font-size:12px;fill:var(--fg-2)}
 .chart .grid line{stroke:var(--line);stroke-width:1}
 .chart .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .chart .ar{fill:var(--accent);opacity:.08}
 .chart .dot{fill:var(--accent);stroke:var(--card);stroke-width:2}
-.chart .lbl{fill:var(--fg);font-weight:600;font-family:var(--display)}
+.chart .lbl{fill:var(--fg);font-weight:500;font-family:var(--latin)}
 .markers{width:100%;border-collapse:collapse;font-size:.94rem}
 .markers th{text-align:start;font-size:.8rem;color:var(--fg-2);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 .markers td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -187,18 +193,18 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .markers td.x{color:var(--fg-2);font-size:.9rem;min-width:220px}
 .markers tr:last-child td{border-bottom:none}
 .doc-banner{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius);background:var(--warn-soft);border:1px solid var(--warn)}
-.doc-banner .ic{flex:0 0 36px;height:36px;border-radius:50%;background:var(--warn);color:#fff;display:grid;place-items:center;font-weight:700;font-family:var(--display)}
+.doc-banner .ic{flex:0 0 36px;height:36px;border-radius:50%;background:var(--warn);color:#fff;display:grid;place-items:center;font-weight:600;font-family:var(--latin)}
 .cuisine{display:flex;gap:8px;flex-wrap:wrap}
 .cuisine button{border:1.5px solid var(--line);background:var(--card);color:var(--fg-2);border-radius:999px;padding:7px 14px;font-family:var(--display);font-weight:600;cursor:pointer;font-size:.9rem}
-.cuisine button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.cuisine button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .meals{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .meal{background:var(--bg-2);border-radius:12px;padding:14px 16px;display:grid;gap:4px;min-width:0}
-.meal .t{font-size:.8rem;color:var(--gold);font-weight:600;font-family:var(--display)}
+.meal .t{font-size:.8rem;color:var(--accent-2);font-weight:500;font-family:var(--display)}
 .meal .d{font-size:.95rem}
 .meal .w{font-size:.82rem;color:var(--fg-2)}
 .week{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .week .card{padding:16px 18px;gap:6px}
-.week .card h4{color:var(--accent)}
+.week .card h4{color:var(--accent-2)}
 .week .card p{font-size:.92rem}
 .next{display:grid;gap:10px}
 .next div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
@@ -211,7 +217,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .filters input{flex:1 1 200px}
 .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
 .seg button{border:none;background:transparent;color:var(--fg-2);padding:9px 16px;font-family:var(--display);font-weight:600;cursor:pointer;font-size:.9rem}
-.seg button.on{background:var(--accent);color:#fff}
+.seg button.on{background:var(--accent);color:var(--on-accent)}
 .seg button[disabled]{opacity:.4;cursor:not-allowed}
 .prov{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
@@ -224,7 +230,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85rem;color:var(--fg-2)}
 
 /* chat */
-.chat-fab{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(20px + env(safe-area-inset-right,0px));z-index:30;border:none;background:var(--accent);color:#fff;border-radius:999px;padding:14px 20px;font-family:var(--display);font-weight:600;box-shadow:0 12px 30px -10px var(--accent-2);cursor:pointer;font-size:1rem}
+.chat-fab{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(20px + env(safe-area-inset-right,0px));z-index:30;border:none;background:var(--accent);color:var(--on-accent);border-radius:999px;padding:14px 20px;font-family:var(--display);font-weight:500;box-shadow:0 12px 30px -10px rgba(79,216,210,.7);cursor:pointer;font-size:1rem}
 [dir="rtl"] .chat-fab{inset-inline-end:calc(20px + env(safe-area-inset-left,0px))}
 .chat{position:fixed;bottom:calc(80px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(20px + env(safe-area-inset-right,0px));width:min(380px,calc(100vw - 32px));max-height:min(560px,70vh);z-index:31;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.5);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden}
 [dir="rtl"] .chat{inset-inline-end:calc(20px + env(safe-area-inset-left,0px))}
@@ -232,11 +238,11 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .chat-h button{background:none;border:none;color:var(--fg-2);font-size:1.3rem;cursor:pointer}
 .chat-log{overflow-y:auto;padding:14px;display:grid;gap:10px;align-content:start;min-height:160px}
 .msg{padding:10px 14px;border-radius:14px;max-width:88%;font-size:.95rem;white-space:pre-wrap}
-.msg.u{background:var(--accent);color:#fff;justify-self:end}
+.msg.u{background:var(--accent);color:var(--on-accent);justify-self:end}
 .msg.a{background:var(--bg-2);justify-self:start}
 .chat-in{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
 .chat-in input{flex:1;min-width:0}
-.chat-in button{border:none;background:var(--accent);color:#fff;border-radius:10px;padding:0 16px;font-weight:600;cursor:pointer}
+.chat-in button{border:none;background:var(--accent);color:var(--on-accent);border-radius:10px;padding:0 16px;font-weight:600;cursor:pointer}
 .chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
 .chips button{border:1px solid var(--line);background:var(--card);color:var(--fg-2);border-radius:999px;padding:4px 10px;font-size:.82rem;cursor:pointer;font-family:inherit}
 
@@ -247,7 +253,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .drop{border:2px dashed var(--line);border-radius:var(--radius);padding:24px;text-align:center;display:grid;gap:6px;justify-items:center;background:var(--bg-2);cursor:pointer}
 .drop.on{border-color:var(--accent);background:var(--accent-soft)}
 .drop input{display:none}
-.drop .ic{width:44px;height:44px;border-radius:50%;background:var(--card);color:var(--accent);display:grid;place-items:center;font-size:1.4rem;font-weight:700;font-family:var(--display);border:1px solid var(--line)}
+.drop .ic{width:44px;height:44px;border-radius:50%;background:var(--card);color:var(--accent-2);display:grid;place-items:center;font-size:1.4rem;font-weight:500;font-family:var(--latin);border:1px solid var(--line)}
 .comp{display:grid;gap:12px}
 .comp .r{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;font-size:.94rem}
 .comp .r .x{grid-column:1/-1;font-size:.84rem;color:var(--fg-2)}
@@ -258,7 +264,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .comp .v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
 .segbody{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center;font-size:.78rem;color:var(--fg-2)}
 .segbody div{background:var(--bg-2);border-radius:10px;padding:8px 4px}
-.segbody b{display:block;font-size:1rem;color:var(--fg);font-variant-numeric:tabular-nums;font-family:var(--display)}
+.segbody b{display:block;font-size:1rem;color:var(--fg);font-variant-numeric:tabular-nums;font-family:var(--latin)}
 .segbody b.low{color:var(--warn)}
 /* ---------- trainer ---------- */
 .tr-controls{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
@@ -267,25 +273,25 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .days{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0;display:grid;align-content:start}
 .day .dh{padding:12px 18px;background:var(--accent-soft);display:flex;justify-content:space-between;align-items:center;gap:10px}
-.day .dh h3{color:var(--accent);font-size:1rem}
+.day .dh h3{color:var(--accent-2);font-size:1rem}
 .day .dh span{font-size:.82rem;color:var(--fg-2)}
 .ex{display:grid;grid-template-columns:68px 1fr;gap:12px;padding:12px 18px;border-top:1px solid var(--line);align-items:center}
 .ex .pic{width:68px;height:68px;border-radius:12px;background:var(--bg-2);color:var(--fg);display:grid;place-items:center}
 .ex .pic svg{width:60px;height:60px}
 .ex .nm{font-weight:600;font-size:.95rem}
-.ex .sr{font-size:.86rem;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.ex .sr{font-size:.86rem;color:var(--accent-2);font-weight:600;font-variant-numeric:tabular-nums}
 .ex .cue{font-size:.8rem;color:var(--fg-2)}
 .day .ft{padding:10px 18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--fg-2);background:var(--bg-2)}
 .phases{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .phase{padding:18px 16px 0;border-top:3px solid var(--accent);display:grid;gap:6px;min-width:0}
-.phase .w{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.85rem}
+.phase .w{font-family:var(--display);font-weight:500;color:var(--accent-2);font-size:.85rem}
 .exlib{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 .exlib .it{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:4px;justify-items:center;text-align:center;font-size:.85rem;min-width:0}
 .exlib .it svg{width:76px;height:76px;color:var(--fg)}
 .exlib .it .m{font-size:.75rem;color:var(--fg-2)}
 .rules{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .rules .card{padding:16px 18px;gap:6px}
-.rules .card h4{color:var(--accent)}
+.rules .card h4{color:var(--accent-2)}
 .rules .card p{font-size:.9rem}
 /* ---------- women ---------- */
 .sym{display:flex;gap:8px;flex-wrap:wrap}
@@ -295,7 +301,7 @@ code.sel{user-select:all;background:var(--card);border:1px solid var(--line);pad
 .snap>*{min-width:0}
 .mini{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
 .mini .stat{padding:12px 14px}
-.mini .stat .v{font-size:1.35rem}
+.mini .stat .v{font-size:1.4rem;color:var(--accent-2)}
 .mini .stat .v small{font-size:.8rem;color:var(--fg-2);font-weight:400}
 footer{padding-block:40px;border-top:1px solid var(--line);color:var(--fg-2);font-size:.9rem}
 footer .wrap{display:grid;gap:12px}
@@ -307,7 +313,7 @@ footer nav a{text-decoration:none}
 <div class="demo-bar" data-i="demo_bar"></div>
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#home"><span class="mark"></span><span>Longevity</span></a>
+    <a class="logo" href="#home"><span class="mark"></span><span class="brand" data-i="brand"></span></a>
     <nav class="navlinks">
       <a href="#home" data-view="home" data-i="nav_home"></a>
       <a href="#report" data-view="report" data-i="nav_report"></a>
@@ -340,12 +346,12 @@ footer nav a{text-decoration:none}
       </div>
     </div>
     <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="Health score ring">
-      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#176B5C"/><stop offset="1" stop-color="#B88A3C"/></linearGradient></defs>
-      <circle cx="200" cy="200" r="150" fill="none" stroke="var(--line)" stroke-width="22"/>
-      <circle cx="200" cy="200" r="150" fill="none" stroke="url(#g1)" stroke-width="22" stroke-linecap="round" stroke-dasharray="942" stroke-dashoffset="245" transform="rotate(-90 200 200)"/>
-      <text x="200" y="185" text-anchor="middle" font-family="Readex Pro,sans-serif" font-size="72" font-weight="700" fill="var(--fg)">74</text>
-      <text x="200" y="222" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="18" fill="var(--fg-2)" data-i="art_score"></text>
-      <text x="200" y="262" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="15" fill="var(--accent)" data-i="art_bio"></text>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9ECEF"/><stop offset=".5" stop-color="#B8BEC6"/><stop offset="1" stop-color="#F7F8F9"/></linearGradient></defs>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="url(#g1)" stroke-width="14"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-dasharray="942" stroke-dashoffset="245" transform="rotate(-90 200 200)"/>
+      <text x="200" y="190" text-anchor="middle" font-family="Outfit,Alexandria,sans-serif" font-size="88" font-weight="200" fill="var(--fg)">74</text>
+      <text x="200" y="226" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="18" fill="var(--fg-2)" data-i="art_score"></text>
+      <text x="200" y="262" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="15" fill="var(--accent-2)" data-i="art_bio"></text>
       <g font-family="IBM Plex Sans Arabic,sans-serif" font-size="13" fill="var(--fg-2)">
         <rect x="40" y="330" width="320" height="44" rx="12" fill="var(--card)" stroke="var(--line)"/>
         <text x="200" y="357" text-anchor="middle" data-i="art_example"></text>
@@ -424,6 +430,7 @@ footer nav a{text-decoration:none}
         <h3 data-i="p2_h"></h3>
         <div class="price">79 <small data-i="aed_m"></small></div>
         <p class="note" data-i="p2_y"></p>
+        <span class="chip acc" data-i="p2_founders"></span>
         <ul><li data-i="p2_1"></li><li data-i="p2_2"></li><li data-i="p2_5"></li><li data-i="p2_3"></li><li data-i="p2_4"></li><li data-i="p2_6"></li></ul>
       </div>
       <div class="plan">
@@ -431,7 +438,14 @@ footer nav a{text-decoration:none}
         <div class="price">1,499 <small data-i="aed_y"></small></div>
         <ul><li data-i="p3_1"></li><li data-i="p3_2"></li></ul>
       </div>
+      <div class="plan">
+        <h3 data-i="p4_h"></h3>
+        <div class="price">1,099 <small data-i="aed_y"></small></div>
+        <p class="note" data-i="p4_y"></p>
+        <ul><li data-i="p4_1"></li><li data-i="p4_2"></li><li data-i="p4_3"></li></ul>
+      </div>
     </div>
+    <p class="note" data-i="plans_founders"></p>
     <p class="note" data-i="plans_note"></p>
   </div>
 </section>
@@ -465,10 +479,10 @@ footer nav a{text-decoration:none}
     <span class="eyebrow" data-i="why_eyebrow"></span>
     <h2 data-i="why_h2"></h2>
     <div class="stats">
-      <div class="stat"><span class="v">$32B</span><span class="l" data-i="st1_l"></span><span class="s" data-i="st1_s"></span></div>
+      <div class="stat"><span class="v">AED 35B</span><span class="l" data-i="st1_l"></span><span class="s" data-i="st1_s"></span></div>
       <div class="stat"><span class="v">$69B</span><span class="l" data-i="st2_l"></span><span class="s" data-i="st2_s"></span></div>
       <div class="stat"><span class="v">10–11</span><span class="l" data-i="st3_l"></span><span class="s" data-i="st3_s"></span></div>
-      <div class="stat"><span class="v">2026</span><span class="l" data-i="st4_l"></span><span class="s" data-i="st4_s"></span></div>
+      <div class="stat"><span class="v">31%</span><span class="l" data-i="st4_l"></span><span class="s" data-i="st4_s"></span></div>
     </div>
     <div class="split">
       <ul class="list"><li data-i="why_1"></li><li data-i="why_2"></li><li data-i="why_3"></li><li data-i="why_4"></li></ul>
@@ -489,6 +503,8 @@ footer nav a{text-decoration:none}
       <div class="rm"><span class="m" data-i="rm1_m"></span><h4 data-i="rm1_h"></h4><p class="note" data-i="rm1_p"></p></div>
       <div class="rm future"><span class="m" data-i="rm2_m"></span><h4 data-i="rm2_h"></h4><p class="note" data-i="rm2_p"></p></div>
       <div class="rm future"><span class="m" data-i="rm3_m"></span><h4 data-i="rm3_h"></h4><p class="note" data-i="rm3_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm3b_m"></span><h4 data-i="rm3b_h"></h4><p class="note" data-i="rm3b_p"></p></div>
+      <div class="rm future"><span class="m" data-i="rm3c_m"></span><h4 data-i="rm3c_h"></h4><p class="note" data-i="rm3c_p"></p></div>
       <div class="rm future"><span class="m" data-i="rm4_m"></span><h4 data-i="rm4_h"></h4><p class="note" data-i="rm4_p"></p></div>
       <div class="rm future"><span class="m" data-i="rm5_m"></span><h4 data-i="rm5_h"></h4><p class="note" data-i="rm5_p"></p></div>
     </div>
@@ -568,9 +584,9 @@ footer nav a{text-decoration:none}
     <div class="card score">
       <span class="eyebrow" data-i="rp_score_e"></span>
       <svg viewBox="0 0 200 200" role="img" aria-label="Health score 74 of 100">
-        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--line)" stroke-width="14"/>
-        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="502.6" stroke-dashoffset="130.7" transform="rotate(-90 100 100)"/>
-        <text x="100" y="96" text-anchor="middle" font-family="Readex Pro,sans-serif" font-size="52" font-weight="700" fill="var(--fg)">74</text>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--bg-2)" stroke-width="10"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" stroke-dasharray="502.6" stroke-dashoffset="130.7" transform="rotate(-90 100 100)"/>
+        <text x="100" y="100" text-anchor="middle" font-family="Outfit,Alexandria,sans-serif" font-size="60" font-weight="200" fill="var(--fg)">74</text>
         <text x="100" y="124" text-anchor="middle" font-family="IBM Plex Sans Arabic,sans-serif" font-size="13" fill="var(--fg-2)" data-i="rp_of100"></text>
       </svg>
       <div class="big" data-i="rp_score_msg"></div>
@@ -926,11 +942,12 @@ footer nav a{text-decoration:none}
 
 <footer>
   <div class="wrap">
-    <strong>Longevity</strong>
+    <strong class="brand" data-i="brand"></strong>
     <nav><a href="#home" data-i="nav_home"></a><a href="#report" data-i="nav_report"></a><a href="#providers" data-i="nav_providers"></a><a href="#trainer" data-i="nav_trainer"></a><a href="#women" data-i="nav_women"></a><a href="#join" data-i="nav_join"></a></nav>
     <p data-i="ft_1"></p>
     <p data-i="ft_2"></p>
-    <p>© 2026 Longevity · Dubai, UAE</p>
+    <p data-i="ft_slogan"></p>
+    <p>© 2026 Amad · Dubai, UAE</p>
   </div>
 </footer>
 
@@ -946,16 +963,17 @@ footer nav a{text-decoration:none}
 /* ============ i18n ============ */
 const T = {
 ar:{
+ brand:"أمــد", ft_slogan:"أمد. عِش أطول، وأنت بصحتك.",
  demo_bar:"نسخة تجريبية للعرض. البيانات في صفحة التقرير توضيحية وليست لشخص حقيقي.",
- nav_home:"الرئيسية", nav_report:"نموذج التقرير", nav_providers:"دليل الجهات", nav_plans:"الباقات", nav_join:"سجّل مبكراً",
- hero_eyebrow:"قريباً في الإمارات", hero_h1:"افهم فحوصاتك، وعِش أطول وأنت بصحتك",
- hero_lead:"Longevity منصة ذكاء اصطناعي مبنية في الإمارات للعالم. تقرأ نتائج فحوصاتك، وتحوّلها إلى خطة يومية بسيطة لإطالة العمر الصحي، وتوصلك بالعيادات والمختبرات الموثوقة. بالعربية والإنجليزية.",
+ nav_home:"الرئيسية", nav_report:"تقرير أمد", nav_providers:"شبكة أمد", nav_plans:"الباقات", nav_join:"سجّل مبكراً",
+ hero_eyebrow:"أمد | منصة العمر الصحي · قريباً في الإمارات", hero_h1:"فحصك صار له معنى. وخطة تمشي عليها.",
+ hero_lead:"أمد منصة ذكاء اصطناعي للعمر الصحي، مبنية في الإمارات للعالم. تقرأ فحوصاتك وتقرير InBody، تعطيك رقماً واحداً اسمه \"مدى\" وخطة يومية تناسب حياتك، وتتابعك بإشراف أطباء مرخصين. بالعربية والإنجليزية.",
  hero_cta:"انضم لقائمة الانتظار", hero_cta2:"شاهد نموذج التقرير",
  badge1:"بياناتك داخل الإمارات", badge2:"بالعربية والإنجليزية", badge3:"مراجعة طبيب مرخص",
- art_score:"الدرجة الصحية", art_bio:"العمر البيولوجي: 41 سنة", art_example:"مثال توضيحي لواجهة المنصة",
- qk1_e:"المنتج", qk1_h:"كيف سيبدو تقريرك", qk1_p:"درجة صحية، عمر بيولوجي، شرح كل مؤشر، وخطة أسبوعية. نموذج كامل ببيانات توضيحية.",
- qk2_e:"الشبكة", qk2_h:"دليل العيادات والمستشفيات", qk2_p:"جهات داخل الإمارات وخارجها، مرشّحة للإدراج في الدليل المحايد.",
- qk3_e:"الشراكات", qk3_h:"للشركات والنوادي", qk3_p:"برامج صحة الموظفين مع بطولات وجوائز، وبرنامج خاص لمنتسبي النوادي.",
+ art_score:"مداك اليوم", art_bio:"عمرك الحقيقي: 41 سنة", art_example:"مثال توضيحي لواجهة المنصة",
+ qk1_e:"تقرير أمد", qk1_h:"كيف سيبدو تقريرك", qk1_p:"مدى، عمرك الحقيقي، شرح كل مؤشر، وخطة أسبوعية. نموذج كامل ببيانات توضيحية.",
+ qk2_e:"شبكة أمد", qk2_h:"دليل العيادات والمستشفيات", qk2_p:"جهات داخل الإمارات وخارجها، مرشّحة للإدراج في الدليل المحايد.",
+ qk3_e:"أمد للأعمال", qk3_h:"للشركات والنوادي", qk3_p:"برامج صحة الموظفين مع بطولات وجوائز، وبرنامج خاص لمنتسبي النوادي.",
  prob_eyebrow:"المشكلة", prob_h2:"الفحص صار سهلاً. فهمه ما زال صعباً.",
  prob1_h:"أرقام بلا تفسير", prob1_p:"نتيجة المختبر تصلك كجدول أرقام، بدون شرح مفهوم ولا خطوة عملية تبدأ بها.",
  prob2_h:"خدمات متفرقة", prob2_p:"عيادات، مختبرات، تغذية، رياضة، نوم. كل جهة لوحدها، ولا أحد يجمعها ويرشدك للمناسب لك.",
@@ -964,63 +982,66 @@ ar:{
  what_lead:"نركّز على ما يحتاجه الشخص فعلاً: يفهم، يلتزم، ويتابع تحسّنه.",
  f1_h:"الملف الصحي وتكوين الجسم", f1_p:"استبيان ذكي عن نمط حياتك وأهدافك، مع رفع تقرير InBody لقراءة الكتلة العضلية والدهون وتوازن الأطراف.",
  f2_h:"قارئ الفحوصات", f2_p:"ارفع صورة أو PDF لنتيجة أي مختبر. النظام يستخرج الأرقام ويشرحها بلغتك: الطبيعي، المثالي، والمقلق.",
- f3_h:"الدرجة الصحية والعمر البيولوجي", f3_p:"رقم واحد سهل تتابعه، ويتحسن مع التزامك بالخطة.",
+ f3_h:"مدى وعمرك الحقيقي", f3_p:"\"مدى\" رقم واحد من 100 تتابعه كل أسبوع، و\"عمرك الحقيقي\" يقارن جسمك بعمرك. يتحسنان مع التزامك بالخطة.",
  f4_h:"الخطة اليومية", f4_p:"أكل، حركة، نوم، وتوتر، في خطوات صغيرة أسبوعية مع تذكيرات. أنت تختار مطبخك: عالمي، عربي، آسيوي، إماراتي وخليجي، أو إيطالي.",
- f5_h:"دليل مقدمي الخدمة", f5_p:"مختبرات وعيادات إطالة عمر وأخصائيو تغذية ومدربون معتمدون في الإمارات وحول العالم، مع حجز مباشر وتقييمات موثقة.",
+ f5_h:"شبكة أمد: دليل مقدمي الخدمة", f5_p:"مختبرات وعيادات إطالة عمر وأخصائيو تغذية ومدربون معتمدون في الإمارات وحول العالم، مع حجز مباشر وتقييمات موثقة.",
  f6_h:"مراجعة الطبيب", f6_p:"أي نتيجة غير طبيعية تُحوّل تلقائياً لطبيب مرخص قبل أي توصية. النظام لا يشخّص.",
  what_not:"ما لا تفعله المنصة: لا تشخّص، ولا تصف أدوية، ولا تبيع علاجات غير مثبتة علمياً.",
  how_eyebrow:"كيف تعمل", how_h2:"أربع خطوات من الفحص إلى الخطة",
  s1_h:"أنشئ ملفك", s1_p:"دقائق قليلة تجاوب فيها عن نمط حياتك وأهدافك.",
  s2_h:"ارفع فحوصاتك", s2_p:"نتائجك الحالية من أي مختبر، أو احجز فحصاً من شريك معتمد.",
- s3_h:"افهم واستلم خطتك", s3_p:"شرح مبسّط بلغتك، ودرجة صحية، وخطة أسبوعية قابلة للتنفيذ.",
+ s3_h:"افهم واستلم خطتك", s3_p:"شرح مبسّط بلغتك، ورقم \"مدى\"، وخطة أسبوعية قابلة للتنفيذ.",
  s4_h:"تابع تحسّنك", s4_p:"مؤشراتك تتحسن مع الوقت، وتنبيه بموعد الفحص القادم.",
  how_cta:"شاهد كيف يبدو التقرير",
- plans_eyebrow:"الباقات", plans_h2:"أسعار مقترحة عند الإطلاق", plans_lead:"أقل من خدمات المستشفيات المحلية، وقريبة من المنصات العالمية. المسجّلون مبكراً يحصلون على أفضل سعر.",
+ plans_eyebrow:"الباقات", plans_h2:"أسعار مقترحة عند الإطلاق", plans_lead:"أقل من خدمات المستشفيات المحلية، وقريبة من المنصات العالمية. المسجّلون مبكراً يحصلون على سعر المؤسسين.",
  aed_m:"درهم / شهرياً", aed_y:"درهم / سنوياً",
  p1_h:"مجاني", p1_1:"ملف صحي شخصي", p1_2:"قراءة فحص واحد", p1_3:"دليل الجهات",
- p2_h:"مميز", p2_y:"أو 699 درهم سنوياً", p2_1:"قراءة فحوصات بلا حد", p2_2:"خطة يومية كاملة", p2_3:"متابعة مستمرة", p2_4:"مساعد محادثة ذكي",
+ p2_h:"مميز", p2_y:"أو 699 درهم سنوياً", p2_founders:"سعر المؤسسين: 499 درهم سنوياً لأول 1,000 مشترك", p2_1:"قراءة فحوصات بلا حد", p2_2:"خطة يومية كاملة", p2_3:"متابعة مستمرة", p2_4:"مساعد محادثة ذكي",
  p3_h:"مميز مع طبيب", p3_1:"كل مزايا الباقة المميزة", p3_2:"مراجعة طبيب مرخص مرتين في السنة",
- plans_note:"الأسعار تقديرية وقابلة للتغيير قبل الإطلاق الرسمي.",
- part_eyebrow:"الشركاء", part_h2:"للعيادات والشركات والنوادي",
- pa_h:"العيادات والمختبرات", pa_1:"عملاء مؤهلون يصلونك من خلال المنصة", pa_2:"إدراج في دليل محايد يعتمد مقدمي خدمة موثوقين فقط", pa_3:"حجز مباشر بعمولة واضحة، وإدراج مميز اختياري", pa_cta:"سجّل كمقدم خدمة",
+ p4_h:"فحص + خطة", p4_y:"يشمل فحصاً شاملاً من مختبر شريك", p4_1:"فحص 70+ مؤشراً مرة في السنة عبر مختبر معتمد", p4_2:"كل مزايا الباقة المميزة", p4_3:"إعادة فحص مخفضة بعد 6 أشهر", plans_founders:"الفحص يُجرى لدى مختبر شريك مرخص؛ أمد لا يسحب عينات. الأسعار تقديرية وقابلة للتغيير قبل الإطلاق الرسمي.",
+ plans_note:"",
+ part_eyebrow:"أمد للأعمال وشبكة أمد", part_h2:"للعيادات والشركات والنوادي",
+ pa_h:"العيادات والمختبرات", pa_1:"عملاء مؤهلون يصلونك من خلال المنصة", pa_2:"إدراج في دليل محايد يعتمد مقدمي خدمة موثوقين فقط", pa_3:"أول 20 جهة: صفة \"شريك مؤسس\" مجاناً لستة أشهر، ثم حجز بعمولة واضحة", pa_cta:"سجّل كمقدم خدمة",
  pb_h:"برامج صحة الموظفين", pb_1:"اشتراك مميز لكل الموظفين، مع لوحة تقارير مجمّعة وبدون أسماء", pb_2:"بطولة داخلية ومسابقات بين الموظفين والأقسام", pb_3:"جوائز وحوافز داخل البرنامج تكافئ الالتزام والتحسّن", pb_cta:"اطلب عرضاً للشركات",
  pc_h:"النوادي الرياضية ونوادي كبار السن", pc_1:"برنامج خاص لمنتسبي النوادي الرياضية في الدولة", pc_2:"خدمة مصممة لأعضاء نوادي كبار السن: متابعة أبسط وخطة آمنة", pc_3:"عرض جماعي للنادي، ومتابعة للمدربين", pc_cta:"سجّل ناديك",
  why_eyebrow:"لماذا الآن", why_h2:"الإمارات تبني قطاع إطالة العمر. ونحن نبني منصته للعالم.",
- st1_l:"سوق إطالة العمر في الإمارات (متوقع 2026)", st1_s:"المصدر: وام",
+ st1_l:"مستهدف استراتيجية هيئة دبي لإطالة العمر خلال 10 سنوات", st1_s:"اعتمدها سمو الشيخ حمدان، سبتمبر 2026",
  st2_l:"السوق العالمي بحلول 2032، بنمو سنوي 16.8٪", st2_s:"المصدر: MarkNtel",
  st3_l:"سنة فرق بين متوسط العمر والعمر الصحي في الإمارات", st3_s:"78 سنة عمر، 67 سنة صحية",
- st4_l:"تأسيس هيئة دبي لإطالة العمر", st4_s:"القانون رقم 17 لسنة 2026",
+ st4_l:"نمو سنوي متوقع لقطاع إطالة العمر في دبي", st4_s:"هيئة دبي لإطالة العمر، القانون 17 لسنة 2026",
  why_1:"دبي أنشأت في 2026 هيئة متخصصة لتنظيم قطاع إطالة العمر، واعتمدت استراتيجيتها في سبتمبر 2026.",
  why_2:"الفحوصات الشاملة صارت متوفرة وبأسعار معقولة، لكن تحويلها إلى خطة يومية مفهومة ما زال غائباً.",
  why_3:"المنصة محايدة: تجمع عدة مختبرات وعيادات، ولا تتبع مستشفى واحداً.",
  why_4:"الخطة تتكيف مع حياتك: المطبخ الذي تختاره، رمضان والصيام، المناخ، ونمط نومك.",
  trust_h:"ثقة وحوكمة", trust_p:"كل البيانات الصحية تُخزّن وتُعالج داخل دولة الإمارات، مع موافقة واضحة منك وحق حذف بياناتك في أي وقت.",
  trust_p2:"نطلق بعد الحصول على التصاريح اللازمة من الجهات المختصة في دبي.",
- rm_eyebrow:"خارطة الطريق", rm_h2:"من الفكرة إلى 3,000 مشترك في 18 شهراً",
+ rm_eyebrow:"خارطة الطريق", rm_h2:"إطلاق على موجات: النواة أولاً، ثم مدرب أمد، ثم أمد لها",
  rm1_m:"الآن", rm1_h:"قائمة الانتظار", rm1_p:"الهدف 5,000 مسجّل، وبناء شبكة الجهات.",
  rm2_m:"الشهر 6", rm2_h:"النسخة التجريبية", rm2_p:"200 مستخدم، فحص مخفض مع مختبر شريك.",
- rm3_m:"الشهر 7", rm3_h:"الإطلاق الرسمي", rm3_p:"بعد الفحص الأمني والتصاريح.",
+ rm3_m:"الشهر 7", rm3_h:"الإطلاق: النواة", rm3_p:"تقرير أمد + مدى + الخطة + مراجعة الطبيب، بعد التصاريح والفحص الأمني.",
+ rm3b_m:"الشهر 9", rm3b_h:"مدرب أمد", rm3b_p:"المدرب الافتراضي وقراءة InBody للمشتركين وأعضاء النوادي.",
+ rm3c_m:"الشهر 11", rm3c_h:"أمد لها", rm3c_p:"برنامج انقطاع الطمث مع مسار الشركات.",
  rm4_m:"الشهر 12", rm4_h:"1,000 مشترك مدفوع", rm4_p:"و20 جهة في الدليل.",
  rm5_m:"الشهر 18", rm5_h:"3,000 مشترك", rm5_p:"و5 شركات ونوادٍ في البرامج الجماعية.",
  fo_eyebrow:"المؤسس", fo_h2:"نبهان إبراهيم",
- fo_p:"رائد أعمال إماراتي مهتم بالصحة، وصاحب أول مشروع تدريب شخصي في دبي. مؤسس Health Road، وبمهمة واحدة: صحة أطول للإنسان، بخطة تفهمها وتقدر تلتزم بها.",
- join_eyebrow:"التسجيل المبكر", join_h2:"كن من أول 5,000 مستخدم",
+ fo_p:"رائد أعمال إماراتي مهتم بالصحة، وصاحب أول مشروع تدريب شخصي في دبي، ومؤسس Health Road. أمد شركة مستقلة بمهمة واحدة: صحة أطول للإنسان، بخطة تفهمها وتقدر تلتزم بها.",
+ join_eyebrow:"التسجيل المبكر", join_h2:"كن من أول 5,000 مستخدم لأمد",
  join_lead:"سجّل الآن وستصلك دعوة للنسخة التجريبية قبل الإطلاق الرسمي.",
- join_1:"أولوية الدخول للنسخة التجريبية", join_2:"فحص مخفض مع مختبر شريك", join_3:"أفضل سعر للاشتراك السنوي",
+ join_1:"أولوية الدخول للنسخة التجريبية", join_2:"فحص مخفض مع مختبر شريك", join_3:"سعر المؤسسين: 499 بدل 699 درهم سنوياً",
  l_name:"الاسم", l_email:"البريد الإلكتروني", l_phone:"رقم الجوال", l_type:"أنا", t_ind:"فرد مهتم بالصحة الوقائية", t_clinic:"عيادة أو مختبر", t_company:"شركة (برنامج موظفين)", t_club:"نادٍ رياضي أو نادي كبار السن", t_inv:"مستثمر", l_city:"المدينة", l_submit:"سجّلني في قائمة الانتظار",
  l_privacy:"نستخدم بياناتك فقط للتواصل معك بخصوص الإطلاق. لا نشاركها مع أي جهة.",
  st_need:"اكتب اسمك وأحد وسيلتي التواصل (بريد أو جوال).", st_saving:"جارٍ الحفظ…", st_ok:"تم التسجيل. سنتواصل معك قبل الإطلاق.",
  st_nodb:"التسجيل المباشر غير متاح في هذه النسخة بعد. تواصل معنا عبر البريد:", st_err:"لم يكتمل الحفظ. حاول مرة أخرى أو تواصل عبر البريد:",
  own_h:"لوحة المالك: المسجّلون في قائمة الانتظار", own_count:"عدد المسجّلين: ",
- ft_1:"Longevity منصة عافية رقمية. لا تقدم تشخيصاً طبياً ولا تصف أدوية. أي نتيجة غير طبيعية تُحوّل لطبيب مرخص.",
+ ft_1:"أمد منصة عافية رقمية ونمط حياة. لا تقدم تشخيصاً طبياً ولا تصف أدوية. أي نتيجة غير طبيعية تُحوّل لطبيب مرخص.",
  ft_2:"الموقع في مرحلة ما قبل الإطلاق. المعلومات والأسعار تقديرية. أسماء الجهات في الدليل مرشّحة للإدراج ولا تعني شراكة قائمة.",
  /* report */
- rp_eyebrow:"نموذج التقرير", rp_h1:"هكذا سيبدو تقريرك", rp_lead:"رقم واحد تتابعه، شرح لكل مؤشر بلغتك، وخطة أسبوعية تبدأ بها اليوم. هذا نموذج ببيانات توضيحية لشخص افتراضي.",
+ rp_eyebrow:"تقرير أمد", rp_h1:"هكذا سيبدو تقرير أمد", rp_lead:"رقم واحد اسمه \"مدى\" تتابعه، شرح لكل مؤشر بلغتك، وخطة أسبوعية تبدأ بها اليوم. هذا نموذج ببيانات توضيحية لشخص افتراضي.",
  rp_name:"أحمد (مثال افتراضي)", rp_meta:"42 سنة · دبي · آخر فحص: 3 أكتوبر 2026", rp_demo:"بيانات توضيحية",
- rp_score_e:"الدرجة الصحية", rp_of100:"من 100", rp_score_msg:"تحسّن 13 نقطة خلال 6 أشهر",
- rp_bio:"العمر البيولوجي (تقديري)", rp_chrono:"العمر الفعلي",
- rp_score_note:"الدرجة تجمع نتائج الفحوصات والنوم والنشاط والتغذية في رقم واحد. ترتفع مع الالتزام بالخطة.",
- rp_trend_e:"التقدّم", rp_trend_h:"الدرجة الصحية خلال 6 أشهر",
+ rp_score_e:"مدى", rp_of100:"مداك من 100", rp_score_msg:"ارتفع مداك 13 نقطة خلال 6 أشهر",
+ rp_bio:"عمرك الحقيقي (تقديري)", rp_chrono:"عمرك بالسنوات",
+ rp_score_note:"مدى يجمع نتائج الفحوصات والنوم والنشاط والتغذية في رقم واحد. يرتفع مع الالتزام بالخطة.",
+ rp_trend_e:"التقدّم", rp_trend_h:"مدى خلال 6 أشهر",
  m1:"مايو", m2:"يونيو", m3:"يوليو", m4:"أغسطس", m5:"سبتمبر", m6:"أكتوبر",
  rp_trend_note:"أكبر قفزة جاءت بعد إضافة المشي اليومي وتعديل الفطور في أغسطس.",
  rp_doc_h:"مؤشران حُوِّلا لمراجعة طبيب مرخص", rp_doc_p:"السكر التراكمي والكوليسترول الضار خارج النطاق المثالي. لا تُعطى أي توصية علاجية قبل مراجعة الطبيب. موعد المراجعة: خلال 48 ساعة.",
@@ -1043,17 +1064,17 @@ ar:{
  rp_book_cta:"تصفح دليل الجهات", rp_join_cta:"سجّل للنسخة التجريبية",
  rp_disclaimer:"هذا النموذج توضيحي لشخص افتراضي. المنصة لا تشخّص ولا تصف أدوية، وأي نتيجة غير طبيعية تُحوّل لطبيب مرخص.",
  /* providers */
- pv_eyebrow:"دليل الجهات", pv_h1:"عيادات ومستشفيات ومختبرات داخل الإمارات وخارجها", pv_lead:"دليل محايد يعتمد مقدمي خدمة موثوقين فقط، مع حجز مباشر عند الإطلاق. الجهات أدناه مرشّحة للإدراج.",
+ pv_eyebrow:"شبكة أمد", pv_h1:"عيادات ومستشفيات ومختبرات داخل الإمارات وخارجها", pv_lead:"دليل محايد يعتمد مقدمي خدمة موثوقين فقط، مع حجز مباشر عند الإطلاق. الجهات أدناه مرشّحة للإدراج.",
  pv_all:"الكل", pv_uae:"داخل الإمارات", pv_abroad:"خارج الإمارات",
  pt_all:"كل الأنواع", pt_hospital:"مستشفيات", pt_longevity:"عيادات إطالة العمر", pt_lab:"مختبرات", pt_wellness:"منتجعات صحية", pt_fitness:"نوادٍ رياضية", pt_senior:"نوادي كبار السن",
  pv_search:"ابحث باسم الجهة أو المدينة", pv_count_1:"جهة", pv_count_n:"جهة مرشّحة",
- pv_status:"مرشّح للإدراج", pv_book:"الحجز عند الإطلاق", pv_none:"لا توجد نتائج مطابقة.",
+ pv_status:"مرشّح للإدراج، لا اتفاق بعد", pv_book:"الحجز عند الإطلاق", pv_none:"لا توجد نتائج مطابقة.",
  pv_note:"الأسماء أعلاه لجهات قائمة ومعروفة، مدرجة كمرشّحين للدليل. لا يوجد اتفاق شراكة قائم مع أي منها حتى الآن، والإدراج النهائي بعد التحقق من الترخيص والاعتماد.",
  pv_cta_h:"هل تمثّل عيادة أو مختبراً أو نادياً؟", pv_cta_p:"سجّل الآن لتكون من أول الجهات المعتمدة في الدليل عند الإطلاق.", pv_cta:"سجّل جهتك",
  ty:{hospital:"مستشفى",longevity:"عيادة إطالة عمر",lab:"مختبر",wellness:"منتجع صحي",fitness:"نادٍ رياضي",senior:"نادي كبار السن"},
- nav_trainer:"المدرب الافتراضي",
- qk4_e:"التدريب", qk4_h:"مدربك الشخصي الافتراضي", qk4_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصور توضيحية، يتكيف مع تقرير InBody ونتائج فحوصاتك.",
- f7_h:"المدرب الشخصي الافتراضي", f7_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصورة توضيحية لكل تمرين، يتكيف أسبوعياً مع تقدمك وتقرير InBody وفحوصاتك.",
+ nav_trainer:"مدرب أمد",
+ qk4_e:"مدرب أمد", qk4_h:"مدربك الشخصي الافتراضي", qk4_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصور توضيحية، يتكيف مع تقرير InBody ونتائج فحوصاتك.",
+ f7_h:"مدرب أمد: مدربك الشخصي الافتراضي", f7_p:"برنامج حديد ومقاومة كامل لكل منتسب، بصورة توضيحية لكل تمرين، يتكيف أسبوعياً مع تقدمك وتقرير InBody وفحوصاتك.",
  p2_5:"برنامج تدريب شخصي متكيّف",
  ib_e:"تكوين الجسم", ib_h:"قراءة تقرير InBody", ib_lead:"ارفع تقرير جهاز InBody (أو Tanita وSeca) والمنصة تقرأ الأرقام، وتربطها بفحوصاتك، وتبني عليها برنامجك التدريبي.",
  ib_drop:"ارفع تقرير InBody (صورة أو PDF)", ib_drop_s:"اسحب الملف هنا أو اضغط للاختيار", ib_got:"تم استلام الملف: ", ib_got_s:" القراءة الآلية تعمل عند الإطلاق. أدناه نموذج القراءة لأحمد.",
@@ -1068,7 +1089,7 @@ ar:{
  seg_ra:"ذراع يمنى", seg_la:"ذراع يسرى", seg_tr:"جذع", seg_rl:"رجل يمنى", seg_ll:"رجل يسرى",
  ib_action_h:"ما نفعله", ib_action:"برنامج مقاومة 3 أيام بتركيز على الأرجل، بروتين 1.6 غ لكل كجم (≈ 140 غ يومياً)، مشي بعد الوجبات، وإعادة قياس InBody بعد 8 أسابيع.",
  ib_cta:"شاهد برنامج أحمد التدريبي",
- tr_eyebrow:"المدرب الشخصي الافتراضي", tr_h1:"برنامج حديد ومقاومة كامل، لكل منتسب", tr_lead:"المدرب الافتراضي يبني برنامجك من تقرير InBody وفحوصاتك وهدفك وأيامك ومكان تدريبك، ويعدّله كل أسبوع حسب تقدمك. غيّر الخيارات وشاهد البرنامج يتغير.",
+ tr_eyebrow:"مدرب أمد", tr_h1:"مدرب أمد: برنامج حديد ومقاومة كامل، لكل منتسب", tr_lead:"المدرب الافتراضي يبني برنامجك من تقرير InBody وفحوصاتك وهدفك وأيامك ومكان تدريبك، ويعدّله كل أسبوع حسب تقدمك. غيّر الخيارات وشاهد البرنامج يتغير.",
  tr_goal:"الهدف", g_fat:"خسارة دهون", g_muscle:"بناء عضل", g_health:"صحة عامة", g_senior:"كبار السن (آمن)",
  tr_days:"أيام في الأسبوع", tr_place:"المكان", pl_gym:"نادٍ رياضي", pl_home:"المنزل",
  tr_ahmed:"نموذج أحمد: دهون 28.7٪، دهون حشوية 12، أرجل أقل من المتوسط ← الإعداد المقترح: خسارة دهون، 3 أيام، نادٍ رياضي.",
@@ -1089,14 +1110,14 @@ ar:{
  tr_lib_e:"مكتبة التمارين", tr_lib_h:"صورة توضيحية لكل تمرين", tr_lib_p:"كل تمرين في البرنامج يأتي بصورة توضيحية وتلميح أداء، وفيديو قصير عند الإطلاق.",
  tr_cta_h:"جرّب مدربك في النسخة التجريبية", tr_cta_p:"سجّل في قائمة الانتظار وستصلك دعوة مع فتح النسخة التجريبية.",
  tr_disc:"البرنامج نموذج توضيحي وليس وصفة تدريب لشخص بعينه. استشر طبيباً قبل البدء إذا كان لديك ضغط مرتفع أو مشكلة قلبية أو إصابة.",
- nav_women:"صحة المرأة",
- qk5_e:"للنساء", qk5_h:"برنامج انقطاع الطمث", qk5_p:"متتبّع أعراض، فحوصات هذه المرحلة، تدريب للعظام والعضل، نوم وهبّات ساخنة، وطبيبتك على بُعد خطوة.",
- f8_h:"برامج صحة المرأة: انقطاع الطمث", f8_p:"برنامج كامل لما قبل وبعد انقطاع الطمث: تتبّع الأعراض والمحفزات، قراءة الفحوصات وكثافة العظام، تدريب مقاومة للعظام، تغذية ونوم، وملخص جاهز لطبيبة النساء.",
+ nav_women:"أمد لها",
+ qk5_e:"أمد لها", qk5_h:"برنامج انقطاع الطمث", qk5_p:"متتبّع أعراض، فحوصات هذه المرحلة، تدريب للعظام والعضل، نوم وهبّات ساخنة، وطبيبتك على بُعد خطوة.",
+ f8_h:"أمد لها: برنامج انقطاع الطمث", f8_p:"برنامج كامل لما قبل وبعد انقطاع الطمث: تتبّع الأعراض والمحفزات، قراءة الفحوصات وكثافة العظام، تدريب مقاومة للعظام، تغذية ونوم، وملخص جاهز لطبيبة النساء.",
  p2_6:"برنامج انقطاع الطمث للنساء",
  t_women:"امرأة مهتمة ببرنامج انقطاع الطمث",
  g_meno:"انقطاع الطمث", fin_meno:"الختام: 3 دقائق قفز خفيف وتوازن، وتمارين قاع الحوض.",
- wm_eyebrow:"صحة المرأة", wm_h1:"برنامج انقطاع الطمث: خطة واضحة لمرحلة يتجاهلها الجميع",
- wm_lead:"ما قبل انقطاع الطمث (Perimenopause) وما بعده يغيّران النوم والوزن والعظام والمزاج لسنوات. Longevity يعطي المرأة خطة يومية مبنية على أعراضها وفحوصاتها، ويوصلها بطبيبة مرخصة عندما تحتاج قراراً طبياً.",
+ wm_eyebrow:"أمد لها", wm_h1:"أمد لها: خطة واضحة لمرحلة يتجاهلها الجميع",
+ wm_lead:"ما قبل انقطاع الطمث (Perimenopause) وما بعده يغيّران النوم والوزن والعظام والمزاج لسنوات. أمد يعطي المرأة خطة يومية مبنية على أعراضها وفحوصاتها، ويوصلها بطبيبة مرخصة عندما تحتاج قراراً طبياً.",
  ws1_l:"من النساء يعانين هبّات ساخنة وتعرّقاً ليلياً", ws1_s:"تقديرات الدراسات الكبرى",
  ws2_l:"سنوات متوسط استمرار الأعراض", ws2_s:"دراسة SWAN الأمريكية",
  ws3_l:"فقد محتمل في كثافة العظام خلال 5–7 سنوات بعد الانقطاع", ws3_s:"مؤسسة صحة العظام وهشاشة العظام",
@@ -1121,28 +1142,29 @@ ar:{
  wm_action:"مقاومة 3 أيام للعظام، بروتين وكالسيوم في الخطة، ملخص لطبيبة النساء خلال أسبوعين، وإعادة فحص فيتامين د بعد 8 أسابيع وDEXA بعد سنة.",
  wm_tr_cta:"برنامج التدريب لهذه المرحلة", wm_dir_cta:"أطباء النساء في الدليل",
  wm_priv_h:"خصوصية وراحة", wp1:"مدربات وأخصائيات نساء عند الطلب", wp2:"مجتمع نساء خاص داخل المنصة، بلا أسماء", wp3:"بياناتك داخل الإمارات، وحذفها بيدك في أي وقت",
- wm_corp_h:"للشركات: مسار صحة المرأة", wc1:"دعم الموظفات في مرحلة انقطاع الطمث يقلل الغياب ويرفع الاحتفاظ بالكفاءات", wc2:"يُضاف إلى برنامج صحة الموظفين بدون تكلفة إضافية لكل موظفة", wc3:"تقارير مجمّعة وبدون أسماء للموارد البشرية",
+ wm_corp_h:"أمد للأعمال: مسار صحة المرأة", wc1:"دعم الموظفات في مرحلة انقطاع الطمث يقلل الغياب ويرفع الاحتفاظ بالكفاءات", wc2:"يُضاف إلى برنامج صحة الموظفين بدون تكلفة إضافية لكل موظفة", wc3:"تقارير مجمّعة وبدون أسماء للموارد البشرية",
  wm_cta_h:"انضمي للنسخة التجريبية", wm_cta_p:"أول 500 امرأة في قائمة الانتظار يحصلن على البرنامج مجاناً خلال التجربة.",
  wm_disc:"هذا النموذج توضيحي لشخصية افتراضية. المحتوى الطبي يراجعه طبيب نساء مرخص قبل الإطلاق، والمنصة لا تصف علاجاً.",
- chat_fab:"اسأل Longevity", chat_h:"مساعد Longevity", chat_send:"إرسال",
+ chat_fab:"اسأل أمد", chat_h:"مساعد أمد", chat_send:"إرسال",
  chat_hi:"أهلاً. أجاوبك عن المنصة والباقات والشراكات والدليل. لا أحلل فحوصات شخصية في هذه المرحلة.",
- chat_na:"المساعد الذكي يعمل للمستخدمين المسجّلين في claude.ai حالياً. راسلنا على البريد أدناه.",
+ chat_na:"المساعد الكامل يُفعّل عند الإطلاق. راسلنا على البريد أدناه.",
  chat_faq:"هذه نسخة تجريبية من المساعد تجيب عن الأسئلة الشائعة. المساعد الكامل بالذكاء الاصطناعي يعمل عند الإطلاق.",
  chat_unknown:"ما عندي إجابة دقيقة عن هذا السؤال في النسخة التجريبية. راسلنا:",
  chips:["ما هي المنصة؟","كيف يعمل المدرب الافتراضي؟","كم سعر الاشتراك؟","كيف أنضم كعيادة؟"],
  copy:"نسخ", copied:"تم النسخ"
 },
 en:{
+ brand:"AMAD", ft_slogan:"Amad. Live longer, well.",
  demo_bar:"Demo build for presentation. Data on the report page is illustrative, not a real person.",
- nav_home:"Home", nav_report:"Sample report", nav_providers:"Provider directory", nav_plans:"Plans", nav_join:"Join early",
- hero_eyebrow:"Coming soon in the UAE", hero_h1:"Understand your lab results. Live longer, in good health.",
- hero_lead:"Longevity is an AI platform built in the UAE for the world. It reads your lab results, turns them into a simple daily plan for a longer healthy life, and connects you with trusted clinics and labs. In Arabic and English.",
+ nav_home:"Home", nav_report:"Amad Report", nav_providers:"Amad Network", nav_plans:"Plans", nav_join:"Join early",
+ hero_eyebrow:"Amad | Healthy Longevity · Coming soon in the UAE", hero_h1:"Your test finally makes sense. And comes with a plan.",
+ hero_lead:"Amad is an AI healthy-longevity platform built in the UAE for the world. It reads your labs and InBody report, gives you one number called Mada and a daily plan that fits your life, and follows up under licensed doctors. In Arabic and English.",
  hero_cta:"Join the waitlist", hero_cta2:"See the sample report",
  badge1:"Your data stays in the UAE", badge2:"Arabic and English", badge3:"Licensed doctor review",
- art_score:"Health score", art_bio:"Biological age: 41", art_example:"Illustrative example of the platform",
- qk1_e:"Product", qk1_h:"What your report looks like", qk1_p:"Health score, biological age, every marker explained, and a weekly plan. A full sample with illustrative data.",
- qk2_e:"Network", qk2_h:"Clinics and hospitals directory", qk2_p:"Providers in the UAE and abroad, shortlisted for the neutral directory.",
- qk3_e:"Partnerships", qk3_h:"For companies and clubs", qk3_p:"Employee wellness programs with championships and prizes, and a dedicated program for club members.",
+ art_score:"Your Mada today", art_bio:"True Age: 41", art_example:"Illustrative example of the platform",
+ qk1_e:"Amad Report", qk1_h:"What your report looks like", qk1_p:"Mada, True Age, every marker explained, and a weekly plan. A full sample with illustrative data.",
+ qk2_e:"Amad Network", qk2_h:"Clinics and hospitals directory", qk2_p:"Providers in the UAE and abroad, shortlisted for the neutral directory.",
+ qk3_e:"Amad for Teams", qk3_h:"For companies and clubs", qk3_p:"Employee wellness programs with championships and prizes, and a dedicated program for club members.",
  prob_eyebrow:"The problem", prob_h2:"Testing got easy. Understanding it did not.",
  prob1_h:"Numbers without meaning", prob1_p:"Lab results arrive as a table of figures, with no plain explanation and no first step to take.",
  prob2_h:"Scattered services", prob2_p:"Clinics, labs, nutrition, fitness, sleep. Each on its own, with nobody connecting them or guiding you to the right one.",
@@ -1151,62 +1173,65 @@ en:{
  what_lead:"We focus on what a person actually needs: understand, commit, and track progress.",
  f1_h:"Health profile and body composition", f1_p:"A smart questionnaire on your lifestyle and goals, plus an InBody report upload to read muscle mass, fat and limb balance.",
  f2_h:"Lab report reader", f2_p:"Upload a photo or PDF from any lab. The system extracts the numbers and explains them in your language: normal, optimal, and concerning.",
- f3_h:"Health score and biological age", f3_p:"One simple number you can follow, improving as you stick to the plan.",
+ f3_h:"Mada and True Age", f3_p:"Mada is one number out of 100 you follow every week; True Age compares your body with your years. Both improve as you stick to the plan.",
  f4_h:"Daily plan", f4_p:"Food, movement, sleep and stress in small weekly steps with reminders. You choose your cuisine: international, Arabic, Asian, Emirati and Gulf, or Italian.",
- f5_h:"Provider directory", f5_p:"Accredited labs, longevity clinics, nutritionists and coaches in the UAE and worldwide, with direct booking and verified reviews.",
+ f5_h:"Amad Network: provider directory", f5_p:"Accredited labs, longevity clinics, nutritionists and coaches in the UAE and worldwide, with direct booking and verified reviews.",
  f6_h:"Doctor review", f6_p:"Any abnormal result is routed to a licensed doctor before any recommendation. The system never diagnoses.",
  what_not:"What the platform does not do: no diagnosis, no prescriptions, no unproven treatments.",
  how_eyebrow:"How it works", how_h2:"Four steps from test to plan",
  s1_h:"Create your profile", s1_p:"A few minutes on your lifestyle and goals.",
  s2_h:"Upload your results", s2_p:"Your existing results from any lab, or book a test with an accredited partner.",
- s3_h:"Understand and get your plan", s3_p:"A plain explanation in your language, a health score, and a weekly plan you can act on.",
+ s3_h:"Understand and get your plan", s3_p:"A plain explanation in your language, your Mada number, and a weekly plan you can act on.",
  s4_h:"Track your progress", s4_p:"Your markers improve over time, with a reminder for your next test.",
  how_cta:"See what the report looks like",
- plans_eyebrow:"Plans", plans_h2:"Proposed launch pricing", plans_lead:"Below local hospital services, close to global platforms. Early members get the best price.",
+ plans_eyebrow:"Plans", plans_h2:"Proposed launch pricing", plans_lead:"Below local hospital services, close to global platforms. Early members get the founders' price.",
  aed_m:"AED / month", aed_y:"AED / year",
  p1_h:"Free", p1_1:"Personal health profile", p1_2:"One lab report reading", p1_3:"Provider directory",
- p2_h:"Premium", p2_y:"or AED 699 / year", p2_1:"Unlimited report readings", p2_2:"Full daily plan", p2_3:"Ongoing tracking", p2_4:"Smart chat assistant",
+ p2_h:"Premium", p2_y:"or AED 699 / year", p2_founders:"Founders' price: AED 499 a year for the first 1,000 members", p2_1:"Unlimited report readings", p2_2:"Full daily plan", p2_3:"Ongoing tracking", p2_4:"Smart chat assistant",
  p3_h:"Premium + Doctor", p3_1:"Everything in Premium", p3_2:"Licensed doctor review twice a year",
- plans_note:"Prices are indicative and may change before the official launch.",
- part_eyebrow:"Partners", part_h2:"For clinics, companies and clubs",
- pa_h:"Clinics and labs", pa_1:"Qualified clients reach you through the platform", pa_2:"Listing in a neutral directory that accredits trusted providers only", pa_3:"Direct booking with a clear commission, optional featured listing", pa_cta:"Register as a provider",
+ p4_h:"Test + Plan", p4_y:"Includes a full panel from a partner lab", p4_1:"70+ biomarker test once a year at an accredited lab", p4_2:"Everything in Premium", p4_3:"Discounted re-test after 6 months", plans_founders:"Tests are performed by licensed partner labs; Amad does not collect samples. Prices are indicative and may change before launch.",
+ plans_note:"",
+ part_eyebrow:"Amad for Teams and Amad Network", part_h2:"For clinics, companies and clubs",
+ pa_h:"Clinics and labs", pa_1:"Qualified clients reach you through the platform", pa_2:"Listing in a neutral directory that accredits trusted providers only", pa_3:"First 20 providers: free \"founding partner\" status for six months, then booking with a clear commission", pa_cta:"Register as a provider",
  pb_h:"Employee wellness programs", pb_1:"Premium subscription for every employee, with an aggregated anonymous dashboard", pb_2:"In-house championship and competitions between employees and departments", pb_3:"Prizes and incentives inside the program that reward consistency and progress", pb_cta:"Request a corporate offer",
  pc_h:"Sports clubs and senior clubs", pc_1:"A dedicated program for members of sports clubs across the country", pc_2:"A service designed for senior club members: simpler tracking and a safe plan", pc_3:"Group offer for the club, with coach follow-up", pc_cta:"Register your club",
  why_eyebrow:"Why now", why_h2:"The UAE is building the longevity sector. We are building its platform for the world.",
- st1_l:"UAE longevity market (projected 2026)", st1_s:"Source: WAM",
+ st1_l:"Dubai Longevity Authority strategy target over 10 years", st1_s:"Approved by Sheikh Hamdan, September 2026",
  st2_l:"Global market by 2032, growing 16.8% a year", st2_s:"Source: MarkNtel",
  st3_l:"years between life expectancy and healthy life in the UAE", st3_s:"78 years lived, 67 healthy",
- st4_l:"Dubai Longevity Authority established", st4_s:"Law No. 17 of 2026",
+ st4_l:"expected annual growth of Dubai's longevity sector", st4_s:"Dubai Longevity Authority, Law No. 17 of 2026",
  why_1:"Dubai established a dedicated authority to regulate the longevity sector in 2026 and approved its strategy in September 2026.",
  why_2:"Comprehensive testing is now available and affordable, but turning it into a clear daily plan is still missing.",
  why_3:"The platform is neutral: it brings together several labs and clinics and belongs to no single hospital.",
  why_4:"The plan adapts to your life: the cuisine you choose, Ramadan and fasting, the climate, and your sleep pattern.",
  trust_h:"Trust and governance", trust_p:"All health data is stored and processed inside the UAE, with your clear consent and the right to delete your data at any time.",
  trust_p2:"We launch after obtaining the required permits from the competent authorities in Dubai.",
- rm_eyebrow:"Roadmap", rm_h2:"From idea to 3,000 subscribers in 18 months",
+ rm_eyebrow:"Roadmap", rm_h2:"Launch in waves: the core first, then Amad Coach, then Amad Her",
  rm1_m:"Now", rm1_h:"Waitlist", rm1_p:"Target 5,000 sign-ups and building the provider network.",
  rm2_m:"Month 6", rm2_h:"Beta", rm2_p:"200 users, discounted test with a partner lab.",
- rm3_m:"Month 7", rm3_h:"Official launch", rm3_p:"After the security audit and permits.",
+ rm3_m:"Month 7", rm3_h:"Launch: the core", rm3_p:"Amad Report + Mada + the plan + doctor review, after permits and the security audit.",
+ rm3b_m:"Month 9", rm3b_h:"Amad Coach", rm3b_p:"The virtual trainer and InBody reading for members and club users.",
+ rm3c_m:"Month 11", rm3c_h:"Amad Her", rm3c_p:"The menopause program with the corporate track.",
  rm4_m:"Month 12", rm4_h:"1,000 paid subscribers", rm4_p:"and 20 providers in the directory.",
  rm5_m:"Month 18", rm5_h:"3,000 subscribers", rm5_p:"and 5 companies and clubs in group programs.",
  fo_eyebrow:"Founder", fo_h2:"Nabhan Ibrahim",
- fo_p:"Emirati entrepreneur with a passion for health, and founder of the first personal training business in Dubai. Founder of Health Road, with one mission: a longer healthy life, through a plan you understand and can stick to.",
- join_eyebrow:"Early access", join_h2:"Be among the first 5,000 members",
+ fo_p:"Emirati entrepreneur with a passion for health, founder of the first personal training business in Dubai, and founder of Health Road. Amad is an independent company with one mission: a longer healthy life, through a plan you understand and can stick to.",
+ join_eyebrow:"Early access", join_h2:"Be among Amad's first 5,000 members",
  join_lead:"Register now and receive an invitation to the beta before the official launch.",
- join_1:"Priority access to the beta", join_2:"Discounted test with a partner lab", join_3:"Best price on the annual plan",
+ join_1:"Priority access to the beta", join_2:"Discounted test with a partner lab", join_3:"Founders' price: AED 499 instead of 699 a year",
  l_name:"Name", l_email:"Email", l_phone:"Mobile", l_type:"I am", t_ind:"An individual interested in preventive health", t_clinic:"A clinic or lab", t_company:"A company (employee program)", t_club:"A sports club or senior club", t_inv:"An investor", l_city:"City", l_submit:"Add me to the waitlist",
  l_privacy:"We use your details only to contact you about the launch. We never share them.",
  st_need:"Enter your name and an email or mobile number.", st_saving:"Saving…", st_ok:"You are on the list. We will contact you before launch.",
  st_nodb:"Direct registration is not available in this version yet. Reach us by email:", st_err:"Could not save. Try again or email us:",
  own_h:"Owner panel: waitlist registrations", own_count:"Registered: ",
- ft_1:"Longevity is a digital wellness platform. It does not provide medical diagnosis or prescribe medication. Abnormal results are routed to a licensed doctor.",
+ ft_1:"Amad is a digital wellness and lifestyle platform. It does not provide medical diagnosis or prescribe medication. Abnormal results are routed to a licensed doctor.",
  ft_2:"This site is in pre-launch. Information and prices are indicative. Provider names in the directory are shortlisted candidates and do not imply an existing partnership.",
- rp_eyebrow:"Sample report", rp_h1:"This is what your report looks like", rp_lead:"One number to follow, every marker explained in your language, and a weekly plan you can start today. A sample with illustrative data for a fictional person.",
+ rp_eyebrow:"Amad Report", rp_h1:"This is what your Amad Report looks like", rp_lead:"One number called Mada to follow, every marker explained in your language, and a weekly plan you can start today. A sample with illustrative data for a fictional person.",
  rp_name:"Ahmed (fictional example)", rp_meta:"42 · Dubai · Last test: 3 Oct 2026", rp_demo:"Illustrative data",
- rp_score_e:"Health score", rp_of100:"out of 100", rp_score_msg:"Up 13 points in 6 months",
- rp_bio:"Biological age (estimated)", rp_chrono:"Actual age",
- rp_score_note:"The score combines lab results, sleep, activity and nutrition into one number. It rises as you follow the plan.",
- rp_trend_e:"Progress", rp_trend_h:"Health score over 6 months",
+ rp_score_e:"Mada", rp_of100:"your Mada out of 100", rp_score_msg:"Your Mada is up 13 points in 6 months",
+ rp_bio:"True Age (estimated)", rp_chrono:"Age in years",
+ rp_score_note:"Mada combines lab results, sleep, activity and nutrition into one number. It rises as you follow the plan.",
+ rp_trend_e:"Progress", rp_trend_h:"Mada over 6 months",
  m1:"May", m2:"Jun", m3:"Jul", m4:"Aug", m5:"Sep", m6:"Oct",
  rp_trend_note:"The biggest jump came after adding a daily walk and changing breakfast in August.",
  rp_doc_h:"Two markers routed to a licensed doctor", rp_doc_p:"HbA1c and LDL cholesterol are outside the optimal range. No treatment advice is given before the doctor's review. Review due within 48 hours.",
@@ -1228,17 +1253,17 @@ en:{
  rp_book_e:"Booking", rp_book_h:"Book from inside the report", rp_book_p:"Accredited labs and clinics appear here with price and next available slot. Booking opens at launch.",
  rp_book_cta:"Browse the directory", rp_join_cta:"Register for the beta",
  rp_disclaimer:"This sample is illustrative, for a fictional person. The platform does not diagnose or prescribe; any abnormal result is routed to a licensed doctor.",
- pv_eyebrow:"Provider directory", pv_h1:"Clinics, hospitals and labs in the UAE and abroad", pv_lead:"A neutral directory that accredits trusted providers only, with direct booking at launch. The providers below are shortlisted candidates.",
+ pv_eyebrow:"Amad Network", pv_h1:"Clinics, hospitals and labs in the UAE and abroad", pv_lead:"A neutral directory that accredits trusted providers only, with direct booking at launch. The providers below are shortlisted candidates.",
  pv_all:"All", pv_uae:"In the UAE", pv_abroad:"Outside the UAE",
  pt_all:"All types", pt_hospital:"Hospitals", pt_longevity:"Longevity clinics", pt_lab:"Labs", pt_wellness:"Wellness retreats", pt_fitness:"Sports clubs", pt_senior:"Senior clubs",
  pv_search:"Search by name or city", pv_count_1:"provider", pv_count_n:"shortlisted providers",
- pv_status:"Shortlisted", pv_book:"Booking at launch", pv_none:"No matching results.",
+ pv_status:"Shortlisted, no agreement yet", pv_book:"Booking at launch", pv_none:"No matching results.",
  pv_note:"The names above are real, established institutions listed as candidates for the directory. No partnership agreement exists with any of them yet; final listing follows license and accreditation checks.",
  pv_cta_h:"Do you represent a clinic, lab or club?", pv_cta_p:"Register now to be among the first accredited providers in the directory at launch.", pv_cta:"Register your organization",
  ty:{hospital:"Hospital",longevity:"Longevity clinic",lab:"Laboratory",wellness:"Wellness retreat",fitness:"Sports club",senior:"Senior club"},
- nav_trainer:"Virtual trainer",
- qk4_e:"Training", qk4_h:"Your virtual personal trainer", qk4_p:"A complete strength and resistance program for every member, with illustrations, adapted to your InBody report and lab results.",
- f7_h:"Virtual personal trainer", f7_p:"A complete strength and resistance program for every member, with an illustration for every exercise, adapting weekly to your progress, InBody report and labs.",
+ nav_trainer:"Amad Coach",
+ qk4_e:"Amad Coach", qk4_h:"Your virtual personal trainer", qk4_p:"A complete strength and resistance program for every member, with illustrations, adapted to your InBody report and lab results.",
+ f7_h:"Amad Coach: virtual personal trainer", f7_p:"A complete strength and resistance program for every member, with an illustration for every exercise, adapting weekly to your progress, InBody report and labs.",
  p2_5:"Adaptive personal training program",
  ib_e:"Body composition", ib_h:"InBody report reading", ib_lead:"Upload your InBody report (or Tanita and Seca) and the platform reads the numbers, links them to your labs, and builds your training program on them.",
  ib_drop:"Upload your InBody report (image or PDF)", ib_drop_s:"Drag the file here or click to choose", ib_got:"File received: ", ib_got_s:" Automatic reading goes live at launch. Below is the sample reading for Ahmed.",
@@ -1253,7 +1278,7 @@ en:{
  seg_ra:"Right arm", seg_la:"Left arm", seg_tr:"Trunk", seg_rl:"Right leg", seg_ll:"Left leg",
  ib_action_h:"What we do", ib_action:"A 3-day resistance program with a leg focus, protein at 1.6 g per kg (≈ 140 g a day), a walk after meals, and an InBody re-test in 8 weeks.",
  ib_cta:"See Ahmed's training program",
- tr_eyebrow:"Virtual personal trainer", tr_h1:"A complete strength and resistance program, for every member", tr_lead:"The virtual trainer builds your program from your InBody report, labs, goal, available days and training location, and adjusts it every week based on your progress. Change the options and watch the program change.",
+ tr_eyebrow:"Amad Coach", tr_h1:"Amad Coach: a complete strength and resistance program, for every member", tr_lead:"The virtual trainer builds your program from your InBody report, labs, goal, available days and training location, and adjusts it every week based on your progress. Change the options and watch the program change.",
  tr_goal:"Goal", g_fat:"Fat loss", g_muscle:"Build muscle", g_health:"General health", g_senior:"Seniors (safe)",
  tr_days:"Days per week", tr_place:"Location", pl_gym:"Gym", pl_home:"Home",
  tr_ahmed:"Ahmed's sample: 28.7% fat, visceral fat 12, legs below average ← suggested setup: fat loss, 3 days, gym.",
@@ -1274,14 +1299,14 @@ en:{
  tr_lib_e:"Exercise library", tr_lib_h:"An illustration for every exercise", tr_lib_p:"Every exercise in the program comes with an illustration and a form cue, and a short video at launch.",
  tr_cta_h:"Try your trainer in the beta", tr_cta_p:"Join the waitlist and you will receive an invitation when the beta opens.",
  tr_disc:"The program is an illustrative sample, not a prescription for a specific person. Consult a doctor before starting if you have high blood pressure, a heart condition or an injury.",
- nav_women:"Women's health",
- qk5_e:"For women", qk5_h:"Menopause program", qk5_p:"Symptom tracker, labs for this stage, training for bone and muscle, sleep and hot flashes, and your doctor one step away.",
- f8_h:"Women's health programs: menopause", f8_p:"A complete program for perimenopause and after: symptom and trigger tracking, labs and bone density reading, resistance training for bone, nutrition and sleep, and a ready summary for your gynecologist.",
+ nav_women:"Amad Her",
+ qk5_e:"Amad Her", qk5_h:"Menopause program", qk5_p:"Symptom tracker, labs for this stage, training for bone and muscle, sleep and hot flashes, and your doctor one step away.",
+ f8_h:"Amad Her: menopause program", f8_p:"A complete program for perimenopause and after: symptom and trigger tracking, labs and bone density reading, resistance training for bone, nutrition and sleep, and a ready summary for your gynecologist.",
  p2_6:"Menopause program for women",
  t_women:"A woman interested in the menopause program",
  g_meno:"Menopause", fin_meno:"Finisher: 3 minutes of light impact and balance, plus pelvic floor exercises.",
- wm_eyebrow:"Women's health", wm_h1:"Menopause program: a clear plan for a stage everyone ignores",
- wm_lead:"Perimenopause and the years after change sleep, weight, bone and mood for years. Longevity gives a woman a daily plan built on her symptoms and labs, and connects her with a licensed doctor when a medical decision is needed.",
+ wm_eyebrow:"Amad Her", wm_h1:"Amad Her: a clear plan for a stage everyone ignores",
+ wm_lead:"Perimenopause and the years after change sleep, weight, bone and mood for years. Amad gives a woman a daily plan built on her symptoms and labs, and connects her with a licensed doctor when a medical decision is needed.",
  ws1_l:"of women experience hot flashes and night sweats", ws1_s:"Estimates from large studies",
  ws2_l:"years: median duration of symptoms", ws2_s:"SWAN study (USA)",
  ws3_l:"possible bone density loss in the 5–7 years after menopause", ws3_s:"Bone Health & Osteoporosis Foundation",
@@ -1306,18 +1331,18 @@ en:{
  wm_action:"3-day resistance program for bone, protein and calcium in the plan, a summary for her gynecologist within two weeks, vitamin D re-test in 8 weeks and DEXA in a year.",
  wm_tr_cta:"Training program for this stage", wm_dir_cta:"Gynecologists in the directory",
  wm_priv_h:"Privacy and comfort", wp1:"Female coaches and specialists on request", wp2:"A private women's community inside the platform, no names", wp3:"Your data stays in the UAE, and you can delete it any time",
- wm_corp_h:"For companies: a women's health track", wc1:"Supporting employees through menopause reduces absence and keeps experienced talent", wc2:"Added to the employee wellness program at no extra cost per employee", wc3:"Aggregated, anonymous reports for HR",
+ wm_corp_h:"Amad for Teams: a women's health track", wc1:"Supporting employees through menopause reduces absence and keeps experienced talent", wc2:"Added to the employee wellness program at no extra cost per employee", wc3:"Aggregated, anonymous reports for HR",
  wm_cta_h:"Join the beta", wm_cta_p:"The first 500 women on the waitlist get the program free during the trial.",
  wm_disc:"This sample is illustrative, for a fictional person. Medical content is reviewed by a licensed gynecologist before launch, and the platform does not prescribe.",
- chat_fab:"Ask Longevity", chat_h:"Longevity assistant", chat_send:"Send",
+ chat_fab:"Ask Amad", chat_h:"Amad assistant", chat_send:"Send",
  chat_hi:"Hi. I can answer questions about the platform, plans, partnerships and the directory. I do not analyze personal lab results at this stage.",
- chat_na:"The AI assistant currently works for signed-in claude.ai users. Email us at the address below.",
+ chat_na:"The full assistant goes live at launch. Email us at the address below.",
  chat_faq:"This is a demo assistant that answers common questions. The full AI assistant goes live at launch.",
  chat_unknown:"I don't have a precise answer for that in the demo. Email us:",
  chips:["What is the platform?","How does the virtual trainer work?","How much is it?","How do I join as a clinic?"],
  copy:"Copy", copied:"Copied"
 }};
-const CONTACT_EMAIL = "hello@longevity.ae";
+const CONTACT_EMAIL = "hello@amad.ae";
 const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxx" — when set, the waitlist posts there on the public site
 const CLAUDE_RT = (typeof claude!=="undefined" && claude && typeof claude.use==="function") ? claude : null;
 let lang = "ar";
@@ -1390,7 +1415,7 @@ const PROVIDERS = [
  {n:"Apollo Hospitals", ar:"مستشفيات أبولو", city:{ar:"تشيناي",en:"Chennai"}, country:{ar:"الهند",en:"India"}, r:"abroad", t:"hospital", tags:{ar:["سياحة علاجية","فحص شامل"],en:["Medical travel","Health check"]}},
  {n:"Samsung Medical Center", ar:"مركز سامسونغ الطبي", city:{ar:"سيول",en:"Seoul"}, country:{ar:"كوريا الجنوبية",en:"South Korea"}, r:"abroad", t:"hospital", tags:{ar:["فحص شامل","تشخيص متقدم"],en:["Health check","Advanced diagnostics"]}},
  {n:"Acıbadem Healthcare Group", ar:"مجموعة أجيبادم", city:{ar:"إسطنبول",en:"Istanbul"}, country:{ar:"تركيا",en:"Türkiye"}, r:"abroad", t:"hospital", tags:{ar:["سياحة علاجية"],en:["Medical travel"]}},
- {n:"Clinique La Prairie", ar:"كلينيك لا بريري", city:{ar:"مونترو",en:"Montreux"}, country:{ar:"سويسرا",en:"Switzerland"}, r:"abroad", t:"longevity", tags:{ar:["إطالة عمر","إقامة"],en:["Longevity","Residential"]}},
+ {n:"Clinique La Prairie", ar:"كلينيك لا بريري", city:{ar:"مونترو",en:"Montreux"}, country:{ar:"سويسرا",en:"Switzerland"}, r:"abroad", t:"longevity", tags:{ar:["إطالة عمر","إقامة"],en:["Amad","Residential"]}},
  {n:"SHA Wellness Clinic", ar:"عيادة شا للعافية", city:{ar:"أليكانتي",en:"Alicante"}, country:{ar:"إسبانيا",en:"Spain"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","تغذية"],en:["Wellness retreat","Nutrition"]}},
  {n:"Lanserhof", ar:"لانزرهوف", city:{ar:"تيغرنزيه",en:"Tegernsee"}, country:{ar:"ألمانيا",en:"Germany"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","طب وقائي"],en:["Wellness retreat","Preventive medicine"]}},
  {n:"Chenot Palace Weggis", ar:"شينو بالاس",  city:{ar:"فيغيس",en:"Weggis"}, country:{ar:"سويسرا",en:"Switzerland"}, r:"abroad", t:"wellness", tags:{ar:["منتجع صحي","ديتوكس"],en:["Wellness retreat","Detox"]}}
@@ -1630,7 +1655,7 @@ document.getElementById("wl").addEventListener("submit", async e=>{
 })();
 
 /* ============ AI assistant (sample) ============ */
-const KB = `You are the assistant on the pre-launch website of "Longevity", a bilingual (Arabic/English) AI longevity platform built in Dubai, UAE, for users worldwide, founded by Emirati entrepreneur Nabhan Ibrahim (founder of Health Road and of the first personal training business in Dubai).
+const KB = `You are the assistant on the pre-launch website of "Amad" (Arabic: أمد, meaning the span of life; tagline "Amad | Healthy Longevity"), a bilingual (Arabic/English) AI healthy-longevity platform built in Dubai, UAE, for users worldwide. Product names: the health score is "Mada" (مدى, out of 100), biological age is "True Age" (عمرك الحقيقي), the report is "Amad Report", the virtual trainer is "Amad Coach", the women's menopause program is "Amad Her", corporate programs are "Amad for Teams", and the provider directory is "Amad Network". Amad is an independent company; Health Road (the founder's healthy-meal company) is a separate business whose customers may receive Amad offers, founded by Emirati entrepreneur Nabhan Ibrahim (founder of Health Road and of the first personal training business in Dubai).
 Answer in the same language the user writes (Arabic or English), briefly and plainly. Facts you may use:
 - What it does (first release): personal health profile; lab report reader (upload photo/PDF from any lab, numbers explained in Arabic or English: normal/optimal/concerning); health score and biological age; daily plan (food, movement, sleep, stress) where the user chooses their cuisine (international, Arabic, Asian, Emirati & Gulf, Italian), Ramadan mode later; directory of accredited labs, clinics, nutritionists, coaches in the UAE and worldwide with direct booking; licensed doctor review of any abnormal result.
 - Body composition: members upload an InBody (or Tanita/Seca) report; the platform reads skeletal muscle mass, body fat %, visceral fat level, BMR, limb balance, and links them to labs and to the training program; re-test every 8 weeks.
@@ -1640,18 +1665,18 @@ Answer in the same language the user writes (Arabic or English), briefly and pla
 - It does NOT diagnose, prescribe medication, or sell unproven treatments.
 - Data: all health data stored and processed inside the UAE; clear consent; user can delete data anytime.
 - Status: pre-launch, collecting a waitlist (target first 5,000). Launch after required permits from Dubai authorities. Roadmap: beta month 6 (200 users), launch month 7, 1,000 paid subscribers month 12, 3,000 by month 18.
-- Proposed pricing (indicative): Free (profile, one report reading, directory); Premium AED 79/month or 699/year (unlimited readings, full daily plan, tracking, smart chat assistant); Premium + Doctor AED 1,499/year (doctor review twice a year). Corporate programs about AED 25 per employee per month with an aggregated anonymous dashboard, in-house championship and competitions between employees/departments, and prizes and incentives inside the program. Dedicated program for members of sports clubs and senior clubs in the UAE (group offers, coach follow-up). Clinics/labs: free directory listing after accreditation, booking commission 10-15%, optional featured listing AED 1,500/month.
+- Proposed pricing (indicative): Free (profile, one report reading, directory); Premium AED 79/month or 699/year (founders' price AED 499/year for the first 1,000 members); Test + Plan AED 1,099/year including a 70+ biomarker test at a licensed partner lab (Amad never collects samples); Premium AED 79/month or 699/year (unlimited readings, full daily plan, tracking, smart chat assistant); Premium + Doctor AED 1,499/year (doctor review twice a year). Corporate programs about AED 25 per employee per month with an aggregated anonymous dashboard, in-house championship and competitions between employees/departments, and prizes and incentives inside the program. Dedicated program for members of sports clubs and senior clubs in the UAE (group offers, coach follow-up). Clinics/labs: free directory listing after accreditation; the first 20 providers get free 'founding partner' status for six months; booking commission 10-15% afterwards.
 - Early members get: priority beta access, discounted test with a partner lab, best annual price.
 - Audience: individuals 30-60 in the UAE and worldwide, companies, clinics and labs, sports clubs and senior clubs.
 - Never claim it is the "first" Arabic or regional platform.
 - To join: fill the waitlist form on the home page (name + email or mobile, and whether individual/clinic/company/club/investor). Contact email: ${CONTACT_EMAIL}.
 Rules: never interpret a user's personal lab values, symptoms or medications; say the platform is not live yet and suggest consulting a licensed doctor. Do not invent features, dates or prices beyond the above. If unsure, say you don't know and point to the contact email. Keep answers under 120 words.`;
 const FAQ = [
- {k:["ما هي","what is","المنصة","platform","longevity","ايش","وش"], ar:"Longevity منصة ذكاء اصطناعي مبنية في الإمارات للعالم، بالعربية والإنجليزية: تقرأ فحوصاتك وتقرير InBody، تعطيك درجة صحية وخطة يومية، مدرب شخصي افتراضي، برنامج لانقطاع الطمث، ودليل عيادات ومختبرات معتمدة. لا تشخّص ولا تصف أدوية.", en:"Longevity is an AI platform built in the UAE for the world, in Arabic and English: it reads your labs and InBody report, gives you a health score and a daily plan, a virtual personal trainer, a menopause program, and a directory of accredited clinics and labs. It does not diagnose or prescribe."},
+ {k:["ما هي","what is","المنصة","platform","amad","أمد","مدى","mada","ايش","وش"], ar:"أمد منصة ذكاء اصطناعي للعمر الصحي مبنية في الإمارات للعالم، بالعربية والإنجليزية. مؤشرها الصحي اسمه \"مدى\": تقرأ فحوصاتك وتقرير InBody، تعطيك درجة صحية وخطة يومية، مدرب شخصي افتراضي، برنامج لانقطاع الطمث، ودليل عيادات ومختبرات معتمدة. لا تشخّص ولا تصف أدوية.", en:"Amad is an AI healthy-longevity platform built in the UAE for the world, in Arabic and English. Its health score is called Mada: it reads your labs and InBody report, gives you a health score and a daily plan, a virtual personal trainer, a menopause program, and a directory of accredited clinics and labs. It does not diagnose or prescribe."},
  {k:["سعر","اشتراك","كم","price","cost","how much","subscription","plan","باقة","باقات","مجاني","free"], ar:"الأسعار المقترحة عند الإطلاق: مجاني (ملف صحي، قراءة فحص واحد، الدليل)، مميز 79 درهم شهرياً أو 699 سنوياً (قراءات بلا حد، خطة كاملة، مدرب متكيّف، برنامج انقطاع الطمث، متابعة)، مميز مع طبيب 1,499 درهم سنوياً. المسجّلون مبكراً يحصلون على أفضل سعر.", en:"Proposed launch pricing: Free (profile, one report reading, directory), Premium AED 79/month or 699/year (unlimited readings, full plan, adaptive trainer, menopause program, tracking), Premium + Doctor AED 1,499/year. Early members get the best price."},
  {k:["عيادة","مختبر","clinic","lab","provider","أنضم","join as","شريك","partner","إدراج"], ar:"العيادات والمختبرات تُدرج مجاناً في الدليل بعد التحقق من الترخيص، مع عمولة حجز 10–15٪ وإدراج مميز اختياري بـ 1,500 درهم شهرياً. سجّل من نموذج قائمة الانتظار واختر \"عيادة أو مختبر\".", en:"Clinics and labs are listed free in the directory after license checks, with a 10–15% booking commission and an optional featured listing at AED 1,500/month. Register through the waitlist form and choose \"A clinic or lab\"."},
  {k:["بيانات","خصوصية","data","privacy","stored","تخزين","آمن","secure"], ar:"كل البيانات الصحية تُخزّن وتُعالج داخل دولة الإمارات، بموافقة واضحة منك، ويمكنك حذفها في أي وقت. لا نشارك بياناتك مع أي جهة.", en:"All health data is stored and processed inside the UAE, with your clear consent, and you can delete it at any time. We never share your data."},
- {k:["مدرب","تدريب","تمرين","حديد","trainer","training","workout","exercise","gym","program"], ar:"المدرب الشخصي الافتراضي يبني لك برنامج حديد ومقاومة كاملاً من تقرير InBody وفحوصاتك وهدفك (2–4 أيام، نادٍ أو منزل)، بصورة توضيحية لكل تمرين، ويعدّله أسبوعياً. جرّبه من صفحة \"المدرب الافتراضي\".", en:"The virtual personal trainer builds a complete strength and resistance program from your InBody report, labs and goal (2–4 days, gym or home), with an illustration for every exercise, and adjusts it weekly. Try it on the Virtual trainer page."},
+ {k:["مدرب","تدريب","تمرين","حديد","trainer","training","workout","exercise","gym","program"], ar:"المدرب الشخصي الافتراضي يبني لك برنامج حديد ومقاومة كاملاً من تقرير InBody وفحوصاتك وهدفك (2–4 أيام، نادٍ أو منزل)، بصورة توضيحية لكل تمرين، ويعدّله أسبوعياً. جرّبه من صفحة \"مدرب أمد\".", en:"The virtual personal trainer builds a complete strength and resistance program from your InBody report, labs and goal (2–4 days, gym or home), with an illustration for every exercise, and adjusts it weekly. Try it on the Amad Coach page."},
  {k:["inbody","ان بودي","تكوين الجسم","دهون","عضل","body composition","muscle","fat"], ar:"ترفع تقرير InBody (أو Tanita وSeca) صورة أو PDF، والمنصة تقرأ الكتلة العضلية ونسبة الدهون والدهون الحشوية ومعدل الأيض وتوازن الأطراف، وتربطها بفحوصاتك وبرنامجك التدريبي. شاهد النموذج في صفحة التقرير.", en:"Upload your InBody (or Tanita/Seca) report as an image or PDF; the platform reads muscle mass, body fat, visceral fat, BMR and limb balance, and links them to your labs and training program. See the sample on the report page."},
  {k:["انقطاع","الطمث","menopause","سن اليأس","نساء","women","هبات","hot flash"], ar:"برنامج انقطاع الطمث: متتبّع أعراض ومحفزات، قراءة فحوصات هذه المرحلة وكثافة العظام، تدريب للعظام والعضل، تغذية ونوم، وملخص جاهز لطبيبة النساء مع دليل أطباء مرخصين. المنصة لا تصف علاجاً هرمونياً.", en:"The menopause program: a symptom and trigger tracker, labs and bone density reading, training for bone and muscle, nutrition and sleep, and a ready summary for your gynecologist with a directory of licensed doctors. The platform does not prescribe hormone therapy."},
  {k:["متى","إطلاق","launch","when","تجريبي","beta","موعد"], ar:"المنصة في مرحلة ما قبل الإطلاق. النسخة التجريبية في الشهر السادس (200 مستخدم من قائمة الانتظار)، والإطلاق الرسمي بعد التصاريح والفحص الأمني. سجّل الآن لتصلك الدعوة.", en:"The platform is in pre-launch. The beta opens in month 6 (200 users from the waitlist), and the official launch follows permits and the security audit. Register now to receive an invitation."},
